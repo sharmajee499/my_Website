@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts | Sandesh Sharma</title>
+    <link>/post/</link>
+      <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Posts</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 20 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_512x512_fill_lanczos_center_2.png</url>
+      <title>Posts</title>
+      <link>/post/</link>
+    </image>
+    
+    <item>
+      <title>Getting Started with R</title>
+      <link>/post/install_r/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>/post/install_r/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;R&lt;/strong&gt; is a beautiful and powerful programming language. People always
+debate about the Python vs. R. For me, both have advantages in their
+respective fields. I have used Python and R for about equal amount of
+time. Personally, I find R to be more powerful in data manipulation,
+cleaning, summarizing and making statistical models. However, Python is
+more easy to work when it comes to deep learning and advance
+computational modeling. Moreover, Python is general purposed programming
+language meaning, it could be used to make anything. I mean anything
+like website, computer software, mobile app, API etc.&lt;/p&gt;
+&lt;h3 id=&#34;how-to-install-r-&#34;&gt;How to Install R ?&lt;/h3&gt;
+&lt;p&gt;One basically needs to download two things to get started with R coding
+i.e. R &amp;amp; R Studio. Think R as a engine whereas R studio as the whole car
+which supports the engines execution.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download R from CRAN (Comprehensive R Archive Network)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;First of all go to &lt;a href=&#34;https://cran.r-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt; website and
+download the needed file depending upon your operating system. After you
+downloaded, install the file and you are all set for first part.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;fig1.jpg.png&#34; alt=&#34;CRAN R&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download R Studio&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;No after downloading the R, you are all set to download the R Studio
+from &lt;a href=&#34;https://rstudio.com/products/rstudio/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;. Install the R Studio
+by opening up the downloaded file. There is nothing wierd setting to be
+set while installing, go with the flow.&lt;/p&gt;
+&lt;p&gt;If everything goes alright you should be able to set the R environment
+for you analytical journey.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;rstudio.jpg.png&#34; alt=&#34;R studio&#34; title=&#34;Comparison of R Studio Products&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
