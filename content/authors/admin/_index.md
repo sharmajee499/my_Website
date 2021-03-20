@@ -34,7 +34,17 @@ social:
   link: https://www.linkedin.com/in/sharmajee499/
 superuser: true
 title: Sandesh Sharma
-
+design:
+  columns: "1"
+  background:
+    image: open-book.jpg
+    image_darken: 1.0
+    image_parallax: true
+    image_position: center
+    image_size: cover
+    text_color_light: false
+  spacing:
+    padding: ["20px", "0", "20px", "0"]
 ---
 
 Couples of year ago, I saw the immense capability of **analytics**. So, I decided to make people see the power of data in **decision making** which could be applied to any domain. 

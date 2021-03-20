@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories | Sandesh Sharma</title>
-    <link>/categories/</link>
-      <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://sharmajee499.netlify.app/categories/</link>
+      <atom:link href="https://sharmajee499.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
     <image>
-      <url>/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_512x512_fill_lanczos_center_2.png</url>
+      <url>https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_512x512_fill_lanczos_center_2.png</url>
       <title>Categories</title>
-      <link>/categories/</link>
+      <link>https://sharmajee499.netlify.app/categories/</link>
     </image>
     
   </channel>
