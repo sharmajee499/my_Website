@@ -9,6 +9,7 @@ output: html_document
 editor_options: 
   markdown: 
     wrap: 72
+tags: ["Blogs"]
 ---
 
 **R** is a beautiful and powerful programming language. People always
@@ -37,7 +38,7 @@ downloaded, install the file and you are all set for first part.
 
 1.  Download R Studio
 
-No after downloading the R, you are all set to download the R Studio
+Now after downloading the R, you are all set to download the R Studio
 from [this](https://rstudio.com/products/rstudio/). Install the R Studio
 by opening up the downloaded file. There is nothing wierd setting to be
 set while installing, go with the flow.

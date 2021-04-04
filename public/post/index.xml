@@ -5,12 +5,28 @@
     <link>https://sharmajee499.netlify.app/post/</link>
       <atom:link href="https://sharmajee499.netlify.app/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 20 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 04 Apr 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
       <link>https://sharmajee499.netlify.app/post/</link>
     </image>
+    
+    <item>
+      <title>Data Analytics Presentation</title>
+      <link>https://sharmajee499.netlify.app/post/data_analytics_presentation/</link>
+      <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/post/data_analytics_presentation/</guid>
+      <description>
+&lt;script src=&#34;https://sharmajee499.netlify.app/post/data_analytics_presentation/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Recently, I was invited by couples of faculty member from Nicholls State University’s College of Business to present about the Data Analytics. The presentation was all about data analytics future, job demand, scope and resources available at College of Business. I want to thank &lt;a href=&#34;https://cmcastille.netlify.app/&#34; target=&#34;_blank&#34;&gt;Dr. Chris Castille&lt;/a&gt; for arranging this opportunity. I have already given 6 presentation in the various classes like Computer Information System [CIS_231], Business Statistics [QBA_282/283], Management [MNGT_301], Marketing [MKTG_470] and Business Administration [BSAD_101]. I still have two more presentation to give which is on mid-April.&lt;/p&gt;
+&lt;p&gt;The video of one of my presentation given on MKTG_470 can be found on this &lt;a href=&#34;https://youtu.be/6E7b6CPwx9s&#34; target=&#34;&amp;quot;_blank&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I am sorry for the audio quality of the video. I should have presented nearby the mic. There are plenty of mistakes as I was nervous as well as excited. At the end, I would like to thank the respective faculties who gave me a chance to present in their classes. In addition, I would also expand my gratitude towards the students who listened my presentation for 45 minutes. 😃&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Getting Started with R</title>
@@ -40,7 +56,7 @@ downloaded, install the file and you are all set for first part.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Download R Studio&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;No after downloading the R, you are all set to download the R Studio
+&lt;p&gt;Now after downloading the R, you are all set to download the R Studio
 from &lt;a href=&#34;https://rstudio.com/products/rstudio/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;. Install the R Studio
 by opening up the downloaded file. There is nothing wierd setting to be
 set while installing, go with the flow.&lt;/p&gt;
