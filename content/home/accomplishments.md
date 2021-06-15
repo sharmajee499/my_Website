@@ -47,4 +47,12 @@ item:
   organization_url: https://www.crla.net/
   title: "International Tutor Training Program Certification- Level 3"
   url: ""
+- certificate_url: ""
+  date_end: "2021-05-01"
+  date_start: "2021-01-29"
+  description: Competing teams engage in the art and science of decision-making as well as practice their ability to draw business insight from a comprehensive analysis of relevant data.
+  organization: The O'Malley School of Business, Manhattan College
+  organization_url: https://manhattan.edu/academics/schools-and-departments/school-of-business/business-analytics-competition/index.php
+  title: Business Analytics Competition, 2nd Position
+  
 ---

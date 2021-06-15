@@ -1,0 +1,1344 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.0.0-beta.3 for Hugo" />
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Sandesh Sharma" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Logistic Regression is one of the most used classification algorithm in statistical analysis and machine learning. The interpretability of output, easy to understand concept and efficient to train makes logistic regression one of the best tool for statistical inference and prediction." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://sharmajee499.netlify.app/post/logistic_regression/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#4caf50" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono%7CLora:400,700%7CRoboto:400,700&display=swap">
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.a1df60f10c1ba929db5349d9e296669f.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://sharmajee499.netlify.app/post/logistic_regression/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Sandesh Sharma" />
+  <meta property="og:url" content="https://sharmajee499.netlify.app/post/logistic_regression/" />
+  <meta property="og:title" content="Logistic Regression | Sandesh Sharma" />
+  <meta property="og:description" content="Logistic Regression is one of the most used classification algorithm in statistical analysis and machine learning. The interpretability of output, easy to understand concept and efficient to train makes logistic regression one of the best tool for statistical inference and prediction." /><meta property="og:image" content="https://sharmajee499.netlify.app/post/logistic_regression/featured.png" />
+    <meta property="twitter:image" content="https://sharmajee499.netlify.app/post/logistic_regression/featured.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2020-05-25T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2020-05-25T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sharmajee499.netlify.app/post/logistic_regression/"
+  },
+  "headline": "Logistic Regression",
+  
+  "image": [
+    "https://sharmajee499.netlify.app/post/logistic_regression/featured.png"
+  ],
+  
+  "datePublished": "2020-05-25T00:00:00Z",
+  "dateModified": "2020-05-25T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Sandesh Sharma"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sandesh Sharma",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Logistic Regression is one of the most used classification algorithm in statistical analysis and machine learning. The interpretability of output, easy to understand concept and efficient to train makes logistic regression one of the best tool for statistical inference and prediction."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Logistic Regression | Sandesh Sharma</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="ee6644e4df2143cba7c51402acf5f7ab" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.b024895df05e271929739bb54886c674.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Sandesh Sharma</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Sandesh Sharma</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/bucket_list"><span>Bucket List</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="https://twitter.com/sharmajee499" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>Logistic Regression</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    May 25, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+    <span class="middot-divider"></span>
+    <a href="/post/logistic_regression/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
+  <div style="position: relative">
+    <img src="/post/logistic_regression/featured_huf78e90abb0719d4cda2be5812fedbd89_263382_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    <span class="article-header-caption">Image credit: <a href="https://www.tomahawknation.com/2020/6/8/21275692/series-on-sports-analytics-college-football-expected-points-model-fundamentals-part-2"><strong>Chris Albon</strong></a></span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="https://sharmajee499.netlify.app/post/logistic_regression/index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Logistic Regression is one of the most used classification algorithm in statistical analysis and machine learning. The interpretability of output, easy to understand concept and efficient to train makes logistic regression one of the best tool for statistical inference and prediction.</p>
+<div id="why-not-linear-regression" class="section level3">
+<h3>Why not Linear Regression?</h3>
+<p>The use case of Linear Regression and Logistic Regression is totally different. Linear regression is used to predict continuous set of values whereas logistic regression is used to predict binary prediction like alive or dead, yes or no, 0 or 1 etc. There are techniques to expand the logistic regression to classify multiple classes.</p>
+<p>Let us assume we have a dependent variable with binary class 0 and 1 in our dataset. If we use linear regression, some of our estimates might be outside [0,1] interval making them hard to interpret as probabilities.</p>
+<p><img src="logist_best%20fit.png" /></p>
+<p>As shown in the figure above, which I copied from the <a href="https://towardsdatascience.com/why-linear-regression-is-not-suitable-for-binary-classification-c64457be8e28">article</a> in the <em>Medium</em>, we can see the the linear line is not fitting majority of the data points. On the other hand, the best fit line is going above 1 and below 0 making it hard to interpret the target variable. Any time a straight line is fit to a binary response that is coded as 0 or 1, the prediction can always get probabilities &lt;0 or for some values and &gt;1 for some values.</p>
+<p>Let us define <span class="math inline">\(P(X)\)</span> be the linear regression function which is defined as <span class="math inline">\(P(X) = \beta_{0}+\beta_{1}X\)</span>, where <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span> are the coefficients of intercept and independent variable respectively.</p>
+<p>Now, to restrict the functions output between 0 and 1 for all values of <span class="math inline">\(X\)</span>, we will use <em>logistic function</em> which will restrict the output within the range [0,1].</p>
+<p><span class="math display">\[P(X) = \frac{e^{\beta_{0}+\beta_{1}X}}{1+e^{\beta_{0}+\beta_{1}X}} \tag{1}\]</span> When further simplified by cross-multiplication and taking common, we will end up with</p>
+<p><span class="math display">\[\frac{P(X)}{1-P(X)}= e^{\beta_{0}+\beta_{1}X} \tag{2}\]</span></p>
+<p>The left-hand side of the equation is called <em>odds</em> and can take any value between 0 and <span class="math inline">\(\infty\)</span>. According to the dictionary Merriam-Webster, Odds simply means the probability that one thing is so or will happen rather than another. The value of odds close to 0 indicated low probabilities whereas high value indicated high probabilities.</p>
+<p>By taking <span class="math inline">\(\log\)</span> on both sides of the above equation:</p>
+<p><span class="math display">\[\log\left({\frac{P(X)}{1-P(X)}}\right)= \beta_{0}+\beta_{1}X \tag{3}\]</span> The left-hand side is called the <em>log-odds</em> or <em>logit</em>. We see that logistic regression model has a logit that is linear in <span class="math inline">\(X\)</span>. In <em>linear regression</em> <span class="math inline">\(\beta{1}\)</span> gives the change rate in <span class="math inline">\(Y\)</span> with one unit increase in <span class="math inline">\(X\)</span>. However, in logistic regression, increasing <span class="math inline">\(X\)</span> by one unit change log odds by <span class="math inline">\(\beta_{1}\)</span>.</p>
+<p>Since, the hurdle to restrict the value within 0 and 1 is solved, we now proceed to find the value of our coefficients.</p>
+</div>
+<div id="finding-the-coefficients" class="section level3">
+<h3>Finding the Coefficients</h3>
+<p>The coefficients are estimated based on the training data with mathematical equation called likelihood function. I am not going to explain this function in detail and which is also not necessary at the moment. One doesn’t have to write the function and work from bottom up, R does the stuff for you. However, I will lay down the function below:</p>
+<p><span class="math display">\[l(\beta_{0}, \beta_{1}) = \prod_{i:y_{i}=1} p(x_{i}) \prod_{i^{\prime}:y_{i^{\prime}}=0} (1-p(x_{i^{\prime}})) \tag{4}\]</span></p>
+</div>
+<div id="lets-predict" class="section level3">
+<h3>Let’s Predict</h3>
+<p>After finding the <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span>, we simply plug the value of <span class="math inline">\(X\)</span> for the needed prediction. We will use the logit function which is our equation 1. Since, <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span> are estimated by the likelihood function, we plug the dependent variable i.e. X which will give us the respective probability of that instance.</p>
+<p>The same idea can be expanded for the multiple independent variables. For the categorical variables, the data is encoded as dummy variable. Moreover, Logistic Regression can also used to classify a response variable that has more than two classes.</p>
+</div>
+<div id="demo" class="section level3">
+<h3>Demo</h3>
+<p>In this section, I will demonstrate the working process of logistic regression in R.</p>
+<pre class="r"><code>#Installing the package 
+suppressPackageStartupMessages(library(tidyverse))            #for data manipulation
+suppressPackageStartupMessages(library(ISLR))                 #for dataset</code></pre>
+<pre><code>## Warning: package &#39;ISLR&#39; was built under R version 4.0.5</code></pre>
+<pre class="r"><code>#Importing Dataset
+data(&quot;Default&quot;) #dataset</code></pre>
+<pre class="r"><code>#Summerizing the data
+summary(Default)</code></pre>
+<pre><code>##  default    student       balance           income     
+##  No :9667   No :7056   Min.   :   0.0   Min.   :  772  
+##  Yes: 333   Yes:2944   1st Qu.: 481.7   1st Qu.:21340  
+##                        Median : 823.6   Median :34553  
+##                        Mean   : 835.4   Mean   :33517  
+##                        3rd Qu.:1166.3   3rd Qu.:43808  
+##                        Max.   :2654.3   Max.   :73554</code></pre>
+<p>We can see that, there are 3 independent variable and our dependent variable is <em>default</em> which has two classes ‘Yes’ and ‘No’. The total data points are 10,000. For more info, on the dataset go to <a href="https://cran.r-project.org/web/packages/ISLR/index.html">this</a> link and access the reference manual.</p>
+<pre class="r"><code>#Building Model
+model &lt;- glm(default~., family=&quot;binomial&quot;, data=Default)
+summary(model)</code></pre>
+<pre><code>## 
+## Call:
+## glm(formula = default ~ ., family = &quot;binomial&quot;, data = Default)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -2.4691  -0.1418  -0.0557  -0.0203   3.7383  
+## 
+## Coefficients:
+##               Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept) -1.087e+01  4.923e-01 -22.080  &lt; 2e-16 ***
+## studentYes  -6.468e-01  2.363e-01  -2.738  0.00619 ** 
+## balance      5.737e-03  2.319e-04  24.738  &lt; 2e-16 ***
+## income       3.033e-06  8.203e-06   0.370  0.71152    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 2920.6  on 9999  degrees of freedom
+## Residual deviance: 1571.5  on 9996  degrees of freedom
+## AIC: 1579.5
+## 
+## Number of Fisher Scoring iterations: 8</code></pre>
+<p>In the model building glm() function, we started with the y value (dependent variable) connecting all dependent variable(<em>Note</em>: If you want to use all the columns of your data frame then just put period sign like in above code.) by tilde(~) sign. We put ‘binomial’ on the ‘family’ because we are using logistic regression.</p>
+<p>The summary output throws a bunch of useful information. The coefficients section give the estimated <span class="math inline">\(\beta\)</span> for the respective variable with the p-value for the significance. Let me remind you one more time, the coefficient is log odds. It is explained as, one unit increase in ‘balance’ is associated with an increase in log odds of default by 0.0057.</p>
+<pre class="r"><code>#Predicting the value
+predict(model,newdata=data.frame(student=&quot;No&quot;,balance=1000,income=50000), type=&quot;response&quot;)</code></pre>
+<pre><code>##           1 
+## 0.006821253</code></pre>
+<p>So, we predicted the probability of the new data that we fed into the ‘predict()’ function. In the function, first we have our model, newdata and type. The ‘type’ tells that we want our answer in probability. From the code, we got our predicted probability as 0.68%, which is pretty low. So, we can conclude that this instance is most likely to get a ‘No’. Generally, the cutoff value for ‘Yes’ &amp; ‘No’ is 50%, however this can be changed depending upon the problem.</p>
+<p>In this demo, I am skipping various steps. Some of them are, splitting the data into train &amp; test data to calculate the accuracy and efficiency of the model, confusion matrix, cross-validate, detailed EDA etc. The sole purpose of the article is to give you some basic theoretical concept of Logistic Regression and interpretation of results when analysis is done in R.</p>
+<p>At last, if one wants to master data science, machine learning, or any analysis, logistic regression is a must known algorithm.</p>
+<p><em>Note: For the article, I was dependent upon “An Introduction to Statistical Learning” book. This is by far one of the best book on getting started with data science. I highly advise to read the book.</em></p>
+</div>
+<div id="references" class="section level3">
+<h3>References</h3>
+<ul>
+<li><a href="https://towardsdatascience.com/why-linear-regression-is-not-suitable-for-binary-classification-c64457be8e28" class="uri">https://towardsdatascience.com/why-linear-regression-is-not-suitable-for-binary-classification-c64457be8e28</a></li>
+<li><a href="https://www.merriam-webster.com/dictionary/odds" class="uri">https://www.merriam-webster.com/dictionary/odds</a></li>
+<li><a href="https://cran.r-project.org/web/packages/ISLR/index.html" class="uri">https://cran.r-project.org/web/packages/ISLR/index.html</a></li>
+<li><a href="https://www.statlearning.com/" class="uri">https://www.statlearning.com/</a></li>
+</ul>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/blogs/">Blogs</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://sharmajee499.netlify.app/post/logistic_regression/&amp;text=Logistic%20Regression" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://sharmajee499.netlify.app/post/logistic_regression/&amp;t=Logistic%20Regression" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Logistic%20Regression&amp;body=https://sharmajee499.netlify.app/post/logistic_regression/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://sharmajee499.netlify.app/post/logistic_regression/&amp;title=Logistic%20Regression" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Logistic%20Regression%20https://sharmajee499.netlify.app/post/logistic_regression/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://sharmajee499.netlify.app/post/logistic_regression/&amp;title=Logistic%20Regression" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://sharmajee499.netlify.app"><img class="avatar mr-3 avatar-circle" src="/author/sandesh-sharma/avatar_hu1ea872d4bf3c24b5b3c1a9b72fe2b59d_212427_270x270_fill_q75_lanczos_center.jpg" alt="Sandesh Sharma"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://sharmajee499.netlify.app">Sandesh Sharma</a></h5>
+      <h6 class="card-subtitle">A Data Advocate</h6>
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/sharmajee499" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/sharmajee499" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/sharmajee499/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  <section id="comments">
+    
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://https-sharmajee499-netlify-app.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  </section>
+  
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/install_r/">Getting Started with R</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+      <script id="dsq-count-scr" src="https://sharmajee499.disqus.com/count.js" async></script>
+    
+
+    <script src="/js/_vendor/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.c94d0fe1afcc7ce01dd92c78f1ddb5e6.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

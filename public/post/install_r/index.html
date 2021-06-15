@@ -33,7 +33,7 @@
   
     
   
-  <meta name="description" content="R is a beautiful and powerful programming language. People always debate about the Python vs. R. For me, both have advantages in their respective fields. I have used Python and R for about equal amount of time." />
+  <meta name="description" content="R is a beautiful and powerful programming language. People alwaysdebate about the Python vs. R. For me, both have advantages in theirrespective fields. I have used Python and R for about equal amount oftime." />
 
   
   <link rel="alternate" hreflang="en-us" href="https://sharmajee499.netlify.app/post/install_r/" />
@@ -64,12 +64,17 @@
 
   
   
+    
+    <script src="/js/mathjax-config.js"></script>
+  
 
   
   
   
   
     
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
 
@@ -81,14 +86,6 @@
     
       
     
-    
-      
-      
-        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
-        
-      
     
 
     
@@ -210,9 +207,9 @@
 
       
       
-        
-      
 
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -295,7 +292,7 @@
   <meta property="og:site_name" content="Sandesh Sharma" />
   <meta property="og:url" content="https://sharmajee499.netlify.app/post/install_r/" />
   <meta property="og:title" content="Getting Started with R | Sandesh Sharma" />
-  <meta property="og:description" content="R is a beautiful and powerful programming language. People always debate about the Python vs. R. For me, both have advantages in their respective fields. I have used Python and R for about equal amount of time." /><meta property="og:image" content="https://sharmajee499.netlify.app/post/install_r/featured.jpg" />
+  <meta property="og:description" content="R is a beautiful and powerful programming language. People alwaysdebate about the Python vs. R. For me, both have advantages in theirrespective fields. I have used Python and R for about equal amount oftime." /><meta property="og:image" content="https://sharmajee499.netlify.app/post/install_r/featured.jpg" />
     <meta property="twitter:image" content="https://sharmajee499.netlify.app/post/install_r/featured.jpg" /><meta property="og:locale" content="en-us" />
   
     
@@ -352,7 +349,7 @@
       "url": "https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "R is a beautiful and powerful programming language. People always debate about the Python vs. R. For me, both have advantages in their respective fields. I have used Python and R for about equal amount of time."
+  "description": "R is a beautiful and powerful programming language. People always\rdebate about the Python vs. R. For me, both have advantages in their\rrespective fields. I have used Python and R for about equal amount of\rtime."
 }
 </script>
 
@@ -372,7 +369,7 @@
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="1d8c470a9535ab47b513a359426b1892" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="078150b8b2545a2eba095b4aa277da72" >
 
   
   
@@ -618,6 +615,36 @@
         
         
 
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/bucket_list"><span>Bucket List</span></a>
+        </li>
+
+        
+        
+
       
 
         
@@ -774,8 +801,12 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p><strong>R</strong> is a beautiful and powerful programming language. People always
-debate about the Python vs. R. For me, both have advantages in their
+      
+<script src="https://sharmajee499.netlify.app/post/install_r/index_files/header-attrs/header-attrs.js"></script>
+
+
+<p><strong>R</strong> is a beautiful and powerful programming language. People always
+debate about the Python vs. R. For me, both have advantages in their
 respective fields. I have used Python and R for about equal amount of
 time. Personally, I find R to be more powerful in data manipulation,
 cleaning, summarizing and making statistical models. However, Python is
@@ -783,27 +814,35 @@ more easy to work when it comes to deep learning and advance
 computational modeling. Moreover, Python is general purposed programming
 language meaning, it could be used to make anything. I mean anything
 like website, computer software, mobile app, API etc.</p>
-<h3 id="how-to-install-r-">How to Install R ?</h3>
+<div id="how-to-install-r" class="section level3">
+<h3>How to Install R ?</h3>
 <p>One basically needs to download two things to get started with R coding
-i.e. R &amp; R Studio. Think R as a engine whereas R studio as the whole car
+i.e. R &amp; R Studio. Think R as a engine whereas R studio as the whole car
 which supports the engines execution.</p>
-<ol>
+<ol style="list-style-type: decimal">
 <li>Download R from CRAN (Comprehensive R Archive Network)</li>
 </ol>
-<p>First of all go to <a href="https://cran.r-project.org/" target="_blank" rel="noopener">this</a> website and
+<p>First of all go to <a href="https://cran.r-project.org/">this</a> website and
 download the needed file depending upon your operating system. After you
 downloaded, install the file and you are all set for first part.</p>
-<p><img src="fig1.jpg.png" alt="CRAN R"></p>
-<ol>
+<div class="figure">
+<img src="fig1.jpg.png" alt="" />
+<p class="caption">CRAN R</p>
+</div>
+<ol style="list-style-type: decimal">
 <li>Download R Studio</li>
 </ol>
 <p>Now after downloading the R, you are all set to download the R Studio
-from <a href="https://rstudio.com/products/rstudio/" target="_blank" rel="noopener">this</a>. Install the R Studio
+from <a href="https://rstudio.com/products/rstudio/">this</a>. Install the R Studio
 by opening up the downloaded file. There is nothing wierd setting to be
 set while installing, go with the flow.</p>
 <p>If everything goes alright you should be able to set the R environment
 for you analytical journey.</p>
-<p><img src="rstudio.jpg.png" alt="R studio" title="Comparison of R Studio Products"></p>
+<div class="figure">
+<img src="rstudio.jpg.png" title="Comparison of R Studio Products" alt="" />
+<p class="caption">R studio</p>
+</div>
+</div>
 
     </div>
 
@@ -1066,6 +1105,15 @@ for you analytical journey.</p>
 
   
   
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/logistic_regression/">Logistic Regression</a></li>
+      
+    </ul>
+  </div>
+  
 
 
 
@@ -1162,16 +1210,6 @@ for you analytical journey.</p>
       
 
       
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
-        
-      
 
     
 
@@ -1240,7 +1278,7 @@ for you analytical journey.</p>
       
     
     
-    <script src="/en/js/wowchemy.min.f3e5a2ed0c33ddcaef88a720b0abe966.js"></script>
+    <script src="/en/js/wowchemy.min.c94d0fe1afcc7ce01dd92c78f1ddb5e6.js"></script>
 
     
   <script async defer src="https://buttons.github.io/buttons.js"></script>

@@ -2,9 +2,10 @@
 bio: 
 education:
   courses:
-  - course: BSc Computer Information System 
+  - course : MSc Data Science ('23)
+    institution: Minnesota State University, Mankato
+  - course: BSc Computer Information System ('21)
     institution: Nicholls State University
-    year: 2021
 email: "sandeshsharma499@gmail.com"
 highlight_name: true
 interests:

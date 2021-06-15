@@ -27,7 +27,7 @@ experience:
     company_url: 'https://www.nicholls.edu/academic-services-center/tutorial-and-academic-enhancement-center/'
     location: Thibodaux, Louisiana
     date_start: '2019-01-15'
-    date_end: ''
+    date_end: '2021-05-10'
     description: |2-
         Responsibilities include:
         
@@ -39,11 +39,11 @@ experience:
     company_url: 'https://cmcastille.netlify.app/project/the-people-analytics-lab/'
     location: Thibodaux, Louisiana
     date_start: '2020-11-15'
-    date_end: ''
+    date_end: '2021-05-15'
     description: |2-
         Responsibilities include:
         
-        * Modeling 'Nicholls' Student Attrition' Project. 
+        * Modeling 'Nicholls Student Attrition' Project. 
         * Creating and maintaining 'Shiny' Website for attrition model.
         * Building PAL's website using Hugo, Blogdown and Netlify. 
 ---

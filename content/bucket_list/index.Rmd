@@ -1,0 +1,43 @@
+---
+title: "The Bucket List" 
+author: "Sandesh"
+date: "4/6/2021"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+Yes, I do also have a exhaustive list of wishes. I know these are just
+few that came into my mind while I was writing this. However, I will
+keep adding :wink:
+
+-   Visit all states of the America 🇺🇸
+
+-   Cruise Ship
+
+-   Visit Rara Lake 🇳🇵
+
+-   ~~Roller Coaster~~
+
+-   ~~Run 5K~~
+
+-   Six Pack 🤣
+
+-   Visit all 75 districts of Nepal
+
+-   Read Bhagavad Gita 🕉️, Bible ✝️ and Quran ☪️
+
+-   Watch Lion King
+
+-   ~~Drink Blue Label~~
+
+-   Bungee jump
+
+-   ~~Donate Blood~~
+
+-   Donate Hair
+
+-   Present Ted Talk
+
+-   Visit Caribbean

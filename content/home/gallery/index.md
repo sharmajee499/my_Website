@@ -12,6 +12,7 @@ weight: 66
 title: Gallery
 subtitle:
 active: false
+
 ---
 
 {{< gallery >}}

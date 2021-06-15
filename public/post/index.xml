@@ -29,12 +29,120 @@
     </item>
     
     <item>
+      <title>Logistic Regression</title>
+      <link>https://sharmajee499.netlify.app/post/logistic_regression/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/post/logistic_regression/</guid>
+      <description>
+&lt;script src=&#34;https://sharmajee499.netlify.app/post/logistic_regression/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Logistic Regression is one of the most used classification algorithm in statistical analysis and machine learning. The interpretability of output, easy to understand concept and efficient to train makes logistic regression one of the best tool for statistical inference and prediction.&lt;/p&gt;
+&lt;div id=&#34;why-not-linear-regression&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Why not Linear Regression?&lt;/h3&gt;
+&lt;p&gt;The use case of Linear Regression and Logistic Regression is totally different. Linear regression is used to predict continuous set of values whereas logistic regression is used to predict binary prediction like alive or dead, yes or no, 0 or 1 etc. There are techniques to expand the logistic regression to classify multiple classes.&lt;/p&gt;
+&lt;p&gt;Let us assume we have a dependent variable with binary class 0 and 1 in our dataset. If we use linear regression, some of our estimates might be outside [0,1] interval making them hard to interpret as probabilities.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;logist_best%20fit.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;As shown in the figure above, which I copied from the &lt;a href=&#34;https://towardsdatascience.com/why-linear-regression-is-not-suitable-for-binary-classification-c64457be8e28&#34;&gt;article&lt;/a&gt; in the &lt;em&gt;Medium&lt;/em&gt;, we can see the the linear line is not fitting majority of the data points. On the other hand, the best fit line is going above 1 and below 0 making it hard to interpret the target variable. Any time a straight line is fit to a binary response that is coded as 0 or 1, the prediction can always get probabilities &amp;lt;0 or for some values and &amp;gt;1 for some values.&lt;/p&gt;
+&lt;p&gt;Let us define &lt;span class=&#34;math inline&#34;&gt;\(P(X)\)&lt;/span&gt; be the linear regression function which is defined as &lt;span class=&#34;math inline&#34;&gt;\(P(X) = \beta_{0}+\beta_{1}X\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(\beta_{0}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt; are the coefficients of intercept and independent variable respectively.&lt;/p&gt;
+&lt;p&gt;Now, to restrict the functions output between 0 and 1 for all values of &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;, we will use &lt;em&gt;logistic function&lt;/em&gt; which will restrict the output within the range [0,1].&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[P(X) = \frac{e^{\beta_{0}+\beta_{1}X}}{1+e^{\beta_{0}+\beta_{1}X}} \tag{1}\]&lt;/span&gt; When further simplified by cross-multiplication and taking common, we will end up with&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\frac{P(X)}{1-P(X)}= e^{\beta_{0}+\beta_{1}X} \tag{2}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The left-hand side of the equation is called &lt;em&gt;odds&lt;/em&gt; and can take any value between 0 and &lt;span class=&#34;math inline&#34;&gt;\(\infty\)&lt;/span&gt;. According to the dictionary Merriam-Webster, Odds simply means the probability that one thing is so or will happen rather than another. The value of odds close to 0 indicated low probabilities whereas high value indicated high probabilities.&lt;/p&gt;
+&lt;p&gt;By taking &lt;span class=&#34;math inline&#34;&gt;\(\log\)&lt;/span&gt; on both sides of the above equation:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\log\left({\frac{P(X)}{1-P(X)}}\right)= \beta_{0}+\beta_{1}X \tag{3}\]&lt;/span&gt; The left-hand side is called the &lt;em&gt;log-odds&lt;/em&gt; or &lt;em&gt;logit&lt;/em&gt;. We see that logistic regression model has a logit that is linear in &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;. In &lt;em&gt;linear regression&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\beta{1}\)&lt;/span&gt; gives the change rate in &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; with one unit increase in &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;. However, in logistic regression, increasing &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; by one unit change log odds by &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Since, the hurdle to restrict the value within 0 and 1 is solved, we now proceed to find the value of our coefficients.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;finding-the-coefficients&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Finding the Coefficients&lt;/h3&gt;
+&lt;p&gt;The coefficients are estimated based on the training data with mathematical equation called likelihood function. I am not going to explain this function in detail and which is also not necessary at the moment. One doesn’t have to write the function and work from bottom up, R does the stuff for you. However, I will lay down the function below:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[l(\beta_{0}, \beta_{1}) = \prod_{i:y_{i}=1} p(x_{i}) \prod_{i^{\prime}:y_{i^{\prime}}=0} (1-p(x_{i^{\prime}})) \tag{4}\]&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;lets-predict&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Let’s Predict&lt;/h3&gt;
+&lt;p&gt;After finding the &lt;span class=&#34;math inline&#34;&gt;\(\beta_{0}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt;, we simply plug the value of &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; for the needed prediction. We will use the logit function which is our equation 1. Since, &lt;span class=&#34;math inline&#34;&gt;\(\beta_{0}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt; are estimated by the likelihood function, we plug the dependent variable i.e. X which will give us the respective probability of that instance.&lt;/p&gt;
+&lt;p&gt;The same idea can be expanded for the multiple independent variables. For the categorical variables, the data is encoded as dummy variable. Moreover, Logistic Regression can also used to classify a response variable that has more than two classes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;demo&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Demo&lt;/h3&gt;
+&lt;p&gt;In this section, I will demonstrate the working process of logistic regression in R.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Installing the package 
+suppressPackageStartupMessages(library(tidyverse))            #for data manipulation
+suppressPackageStartupMessages(library(ISLR))                 #for dataset&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;ISLR&amp;#39; was built under R version 4.0.5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Importing Dataset
+data(&amp;quot;Default&amp;quot;) #dataset&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Summerizing the data
+summary(Default)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  default    student       balance           income     
+##  No :9667   No :7056   Min.   :   0.0   Min.   :  772  
+##  Yes: 333   Yes:2944   1st Qu.: 481.7   1st Qu.:21340  
+##                        Median : 823.6   Median :34553  
+##                        Mean   : 835.4   Mean   :33517  
+##                        3rd Qu.:1166.3   3rd Qu.:43808  
+##                        Max.   :2654.3   Max.   :73554&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can see that, there are 3 independent variable and our dependent variable is &lt;em&gt;default&lt;/em&gt; which has two classes ‘Yes’ and ‘No’. The total data points are 10,000. For more info, on the dataset go to &lt;a href=&#34;https://cran.r-project.org/web/packages/ISLR/index.html&#34;&gt;this&lt;/a&gt; link and access the reference manual.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Building Model
+model &amp;lt;- glm(default~., family=&amp;quot;binomial&amp;quot;, data=Default)
+summary(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Call:
+## glm(formula = default ~ ., family = &amp;quot;binomial&amp;quot;, data = Default)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -2.4691  -0.1418  -0.0557  -0.0203   3.7383  
+## 
+## Coefficients:
+##               Estimate Std. Error z value Pr(&amp;gt;|z|)    
+## (Intercept) -1.087e+01  4.923e-01 -22.080  &amp;lt; 2e-16 ***
+## studentYes  -6.468e-01  2.363e-01  -2.738  0.00619 ** 
+## balance      5.737e-03  2.319e-04  24.738  &amp;lt; 2e-16 ***
+## income       3.033e-06  8.203e-06   0.370  0.71152    
+## ---
+## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 2920.6  on 9999  degrees of freedom
+## Residual deviance: 1571.5  on 9996  degrees of freedom
+## AIC: 1579.5
+## 
+## Number of Fisher Scoring iterations: 8&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the model building glm() function, we started with the y value (dependent variable) connecting all dependent variable(&lt;em&gt;Note&lt;/em&gt;: If you want to use all the columns of your data frame then just put period sign like in above code.) by tilde(~) sign. We put ‘binomial’ on the ‘family’ because we are using logistic regression.&lt;/p&gt;
+&lt;p&gt;The summary output throws a bunch of useful information. The coefficients section give the estimated &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt; for the respective variable with the p-value for the significance. Let me remind you one more time, the coefficient is log odds. It is explained as, one unit increase in ‘balance’ is associated with an increase in log odds of default by 0.0057.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Predicting the value
+predict(model,newdata=data.frame(student=&amp;quot;No&amp;quot;,balance=1000,income=50000), type=&amp;quot;response&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##           1 
+## 0.006821253&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So, we predicted the probability of the new data that we fed into the ‘predict()’ function. In the function, first we have our model, newdata and type. The ‘type’ tells that we want our answer in probability. From the code, we got our predicted probability as 0.68%, which is pretty low. So, we can conclude that this instance is most likely to get a ‘No’. Generally, the cutoff value for ‘Yes’ &amp;amp; ‘No’ is 50%, however this can be changed depending upon the problem.&lt;/p&gt;
+&lt;p&gt;In this demo, I am skipping various steps. Some of them are, splitting the data into train &amp;amp; test data to calculate the accuracy and efficiency of the model, confusion matrix, cross-validate, detailed EDA etc. The sole purpose of the article is to give you some basic theoretical concept of Logistic Regression and interpretation of results when analysis is done in R.&lt;/p&gt;
+&lt;p&gt;At last, if one wants to master data science, machine learning, or any analysis, logistic regression is a must known algorithm.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note: For the article, I was dependent upon “An Introduction to Statistical Learning” book. This is by far one of the best book on getting started with data science. I highly advise to read the book.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;References&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://towardsdatascience.com/why-linear-regression-is-not-suitable-for-binary-classification-c64457be8e28&#34; class=&#34;uri&#34;&gt;https://towardsdatascience.com/why-linear-regression-is-not-suitable-for-binary-classification-c64457be8e28&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.merriam-webster.com/dictionary/odds&#34; class=&#34;uri&#34;&gt;https://www.merriam-webster.com/dictionary/odds&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/ISLR/index.html&#34; class=&#34;uri&#34;&gt;https://cran.r-project.org/web/packages/ISLR/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.statlearning.com/&#34; class=&#34;uri&#34;&gt;https://www.statlearning.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Getting Started with R</title>
       <link>https://sharmajee499.netlify.app/post/install_r/</link>
       <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
       <guid>https://sharmajee499.netlify.app/post/install_r/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;R&lt;/strong&gt; is a beautiful and powerful programming language. People always
-debate about the Python vs. R. For me, both have advantages in their
+      <description>
+&lt;script src=&#34;https://sharmajee499.netlify.app/post/install_r/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;strong&gt;R&lt;/strong&gt; is a beautiful and powerful programming language. People always
+debate about the Python vs. R. For me, both have advantages in their
 respective fields. I have used Python and R for about equal amount of
 time. Personally, I find R to be more powerful in data manipulation,
 cleaning, summarizing and making statistical models. However, Python is
@@ -42,27 +150,35 @@ more easy to work when it comes to deep learning and advance
 computational modeling. Moreover, Python is general purposed programming
 language meaning, it could be used to make anything. I mean anything
 like website, computer software, mobile app, API etc.&lt;/p&gt;
-&lt;h3 id=&#34;how-to-install-r-&#34;&gt;How to Install R ?&lt;/h3&gt;
+&lt;div id=&#34;how-to-install-r&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;How to Install R ?&lt;/h3&gt;
 &lt;p&gt;One basically needs to download two things to get started with R coding
-i.e. R &amp;amp; R Studio. Think R as a engine whereas R studio as the whole car
+i.e. R &amp;amp; R Studio. Think R as a engine whereas R studio as the whole car
 which supports the engines execution.&lt;/p&gt;
-&lt;ol&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;Download R from CRAN (Comprehensive R Archive Network)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;First of all go to &lt;a href=&#34;https://cran.r-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt; website and
+&lt;p&gt;First of all go to &lt;a href=&#34;https://cran.r-project.org/&#34;&gt;this&lt;/a&gt; website and
 download the needed file depending upon your operating system. After you
 downloaded, install the file and you are all set for first part.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;fig1.jpg.png&#34; alt=&#34;CRAN R&#34;&gt;&lt;/p&gt;
-&lt;ol&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;fig1.jpg.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;CRAN R&lt;/p&gt;
+&lt;/div&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
 &lt;li&gt;Download R Studio&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Now after downloading the R, you are all set to download the R Studio
-from &lt;a href=&#34;https://rstudio.com/products/rstudio/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt;. Install the R Studio
+from &lt;a href=&#34;https://rstudio.com/products/rstudio/&#34;&gt;this&lt;/a&gt;. Install the R Studio
 by opening up the downloaded file. There is nothing wierd setting to be
 set while installing, go with the flow.&lt;/p&gt;
 &lt;p&gt;If everything goes alright you should be able to set the R environment
 for you analytical journey.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;rstudio.jpg.png&#34; alt=&#34;R studio&#34; title=&#34;Comparison of R Studio Products&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;rstudio.jpg.png&#34; title=&#34;Comparison of R Studio Products&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;R studio&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 </description>
     </item>
     
