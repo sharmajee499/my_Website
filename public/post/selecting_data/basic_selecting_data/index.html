@@ -1,0 +1,1394 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.0.0-beta.3 for Hugo" />
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Sandesh Sharma" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="In this article we will discuss the basic of the data manipulation –slicing and selecting. As we have seen, majority of time, we need to workwith a subset of the data for the analysis." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://sharmajee499.netlify.app/post/selecting_data/basic_selecting_data/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#4caf50" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono%7CLora:400,700%7CRoboto:400,700&display=swap">
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.a1df60f10c1ba929db5349d9e296669f.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://sharmajee499.netlify.app/post/selecting_data/basic_selecting_data/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Sandesh Sharma" />
+  <meta property="og:url" content="https://sharmajee499.netlify.app/post/selecting_data/basic_selecting_data/" />
+  <meta property="og:title" content="Basic of Selecting Data | Sandesh Sharma" />
+  <meta property="og:description" content="In this article we will discuss the basic of the data manipulation –slicing and selecting. As we have seen, majority of time, we need to workwith a subset of the data for the analysis." /><meta property="og:image" content="https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-11-07T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-11-07T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sharmajee499.netlify.app/post/selecting_data/basic_selecting_data/"
+  },
+  "headline": "Basic of Selecting Data",
+  
+  "datePublished": "2021-11-07T00:00:00Z",
+  "dateModified": "2021-11-07T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Sandesh Sharma"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sandesh Sharma",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "In this article we will discuss the basic of the data manipulation –\rslicing and selecting. As we have seen, majority of time, we need to work\rwith a subset of the data for the analysis."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Basic of Selecting Data | Sandesh Sharma</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="cb10df64f5f44c7db09af5ac840e2c16" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.b024895df05e271929739bb54886c674.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Sandesh Sharma</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Sandesh Sharma</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/bucket_list"><span>Bucket List</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="https://twitter.com/sharmajee499" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Basic of Selecting Data</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Nov 7, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+    <span class="middot-divider"></span>
+    <a href="/post/selecting_data/basic_selecting_data/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>In this article we will discuss the basic of the data manipulation –
+slicing and selecting. As we have seen, majority of time, we need to work
+with a subset of the data for the analysis. We might need just need to
+work on the description on one variable. Such situation is common in the
+data analytics workflow. So, selection and slicing of right data in
+efficient manner is an essential skill for a data analyst. The article
+will discuss about selecting data for following data structures:</p>
+<ol style="list-style-type: decimal">
+<li><p>Vector</p></li>
+<li><p>List</p></li>
+<li><p>Data Frame</p></li>
+</ol>
+<p><strong>Vectors:</strong></p>
+<p>Vector is the basic data-structure in R. The element of the vectors must
+be of same data types. Meaning a vector can’t contain the mixed
+variables like integer, string, Boolean etc. Vectors are one
+dimensional.</p>
+<p>For the selection of a specific element of the vector, we simply put the
+index number inside the big bracket. For instance, if we have to select
+the 2nd element of vector X, our code will be X[2]. Let me remind you
+one more time, unlike other majority of programming languages, the
+indexing of R always start at 1. We will explore the details in the demo
+below.</p>
+<pre class="r"><code>#Making some vectors
+
+vec1 &lt;- c(11,23,34,46,51)
+vec2 &lt;- c(&#39;this&#39;,&#39;is&#39;,&#39;a&#39;,&#39;vector&#39;)
+vec3 &lt;- c(TRUE, FALSE, FALSE, TRUE)
+
+#Selecting the single values
+vec1[2]</code></pre>
+<pre><code>## [1] 23</code></pre>
+<pre class="r"><code>#selecting the multiple values
+vec1[c(2,3)] #in this example we are selecting the 2nd and 3rd element of vec1</code></pre>
+<pre><code>## [1] 23 34</code></pre>
+<pre class="r"><code>#selecting after a certain index
+vec1[1:5] #we selected everything from index 1 to 5.</code></pre>
+<pre><code>## [1] 11 23 34 46 51</code></pre>
+<pre class="r"><code>vec2[-1]  # -1 will include everything except the first element</code></pre>
+<pre><code>## [1] &quot;is&quot;     &quot;a&quot;      &quot;vector&quot;</code></pre>
+<p><strong>List</strong></p>
+<p>List are different than the vector because they can have multiple data
+types.The list are formulated by using list() instead of c() in vectors.
+List sometimes can be recursive as a list can contain list within the
+list. I know that’s confusing but will explain on the demo below:</p>
+<pre class="r"><code>lst1 &lt;- list(100, 101, 102, 103, 104, 105)
+lst2 &lt;- list(155, &#39;program&#39;, TRUE, 3.25, 200)
+lst3 &lt;- list(lst1, lst2 , 534, 546, TRUE, 1.98) #the complicated list
+
+#selection in the plain list
+lst1[2] #this is similar to the vector</code></pre>
+<pre><code>## [[1]]
+## [1] 101</code></pre>
+<pre class="r"><code>lst2[3:5]</code></pre>
+<pre><code>## [[1]]
+## [1] TRUE
+## 
+## [[2]]
+## [1] 3.25
+## 
+## [[3]]
+## [1] 200</code></pre>
+<pre class="r"><code>#selection in the complicated one
+lst3[[2]][2]  </code></pre>
+<pre><code>## [[1]]
+## [1] &quot;program&quot;</code></pre>
+<pre class="r"><code>#first double bracket is selecting the 2nd element of the lst3 
+#which is lst2, then we are selecting the 2nd element of lst2.
+
+lst3[[1]][2:5] </code></pre>
+<pre><code>## [[1]]
+## [1] 101
+## 
+## [[2]]
+## [1] 102
+## 
+## [[3]]
+## [1] 103
+## 
+## [[4]]
+## [1] 104</code></pre>
+<pre class="r"><code>#another similar example like above but we selecting from all 
+#elements between 2nd and 5th. </code></pre>
+<p><strong>Data Frame</strong></p>
+<p>Data Frame are the general structure that we usually see in our analysis
+project. Think them as the Excel sheet- with the rows and columns. The proper
+methods of selecting right data from the data frame plays a vital role in data
+analysis.</p>
+<pre class="r"><code>data= iris #loading the iris data and saving in the &#39;data&#39; variable
+head(data) #looking at the first few rows of the dataset.</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<pre class="r"><code>#QUESTION 1: How do you select the value in 3rd column and 2nd row?
+row_number = 2
+column_number =3
+
+data[row_number,column_number] #1.4 is our output. </code></pre>
+<pre><code>## [1] 1.4</code></pre>
+<pre class="r"><code>#QUESTION 2: How to select all the rows of the 2nd column?
+data$Sepal.Width #the &#39;$&#39; sign in the easiest way to select a column.</code></pre>
+<pre><code>##   [1] 3.5 3.0 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 3.7 3.4 3.0 3.0 4.0 4.4 3.9 3.5
+##  [19] 3.8 3.8 3.4 3.7 3.6 3.3 3.4 3.0 3.4 3.5 3.4 3.2 3.1 3.4 4.1 4.2 3.1 3.2
+##  [37] 3.5 3.6 3.0 3.4 3.5 2.3 3.2 3.5 3.8 3.0 3.8 3.2 3.7 3.3 3.2 3.2 3.1 2.3
+##  [55] 2.8 2.8 3.3 2.4 2.9 2.7 2.0 3.0 2.2 2.9 2.9 3.1 3.0 2.7 2.2 2.5 3.2 2.8
+##  [73] 2.5 2.8 2.9 3.0 2.8 3.0 2.9 2.6 2.4 2.4 2.7 2.7 3.0 3.4 3.1 2.3 3.0 2.5
+##  [91] 2.6 3.0 2.6 2.3 2.7 3.0 2.9 2.9 2.5 2.8 3.3 2.7 3.0 2.9 3.0 3.0 2.5 2.9
+## [109] 2.5 3.6 3.2 2.7 3.0 2.5 2.8 3.2 3.0 3.8 2.6 2.2 3.2 2.8 2.8 2.7 3.3 3.2
+## [127] 2.8 3.0 2.8 3.0 2.8 3.8 2.8 2.8 2.6 3.0 3.4 3.1 3.0 3.1 3.1 3.1 2.7 3.2
+## [145] 3.3 3.0 2.5 3.0 3.4 3.0</code></pre>
+<pre class="r"><code>#QUESTION 3:How to select multiple column?
+data[1:10,c(2,3)] #by indexing. Making vector of needed column.</code></pre>
+<pre><code>##    Sepal.Width Petal.Length
+## 1          3.5          1.4
+## 2          3.0          1.4
+## 3          3.2          1.3
+## 4          3.1          1.5
+## 5          3.6          1.4
+## 6          3.9          1.7
+## 7          3.4          1.4
+## 8          3.4          1.5
+## 9          2.9          1.4
+## 10         3.1          1.5</code></pre>
+<pre class="r"><code>data[1:10,c(&#39;Sepal.Width&#39;,&#39;Sepal.Length&#39;)] #by using column name</code></pre>
+<pre><code>##    Sepal.Width Sepal.Length
+## 1          3.5          5.1
+## 2          3.0          4.9
+## 3          3.2          4.7
+## 4          3.1          4.6
+## 5          3.6          5.0
+## 6          3.9          5.4
+## 7          3.4          4.6
+## 8          3.4          5.0
+## 9          2.9          4.4
+## 10         3.1          4.9</code></pre>
+<pre class="r"><code>#QUESTION 4: How to select first 10 rows of 2nd and 3rd column
+data[1:10,c(2,3)]</code></pre>
+<pre><code>##    Sepal.Width Petal.Length
+## 1          3.5          1.4
+## 2          3.0          1.4
+## 3          3.2          1.3
+## 4          3.1          1.5
+## 5          3.6          1.4
+## 6          3.9          1.7
+## 7          3.4          1.4
+## 8          3.4          1.5
+## 9          2.9          1.4
+## 10         3.1          1.5</code></pre>
+<pre class="r"><code>#QUESTION 5: Select all the &#39;Sepal.Length&#39; that is greater than 7
+data[data$Sepal.Length&gt;7,] </code></pre>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+## 103          7.1         3.0          5.9         2.1 virginica
+## 106          7.6         3.0          6.6         2.1 virginica
+## 108          7.3         2.9          6.3         1.8 virginica
+## 110          7.2         3.6          6.1         2.5 virginica
+## 118          7.7         3.8          6.7         2.2 virginica
+## 119          7.7         2.6          6.9         2.3 virginica
+## 123          7.7         2.8          6.7         2.0 virginica
+## 126          7.2         3.2          6.0         1.8 virginica
+## 130          7.2         3.0          5.8         1.6 virginica
+## 131          7.4         2.8          6.1         1.9 virginica
+## 132          7.9         3.8          6.4         2.0 virginica
+## 136          7.7         3.0          6.1         2.3 virginica</code></pre>
+<pre class="r"><code>#in the row we defined our condition and in column we left empty because we 
+#needed all the columns</code></pre>
+<p>In this article, I just showed the basic of selecting data in R. Indeed,
+these method can be made more complex to subset various data. Similar to
+‘QUESTION 5’, we can use the filter conditions to select different variety of
+data. However, this article is intended for the people who are getting started
+with R. I will post much advance methods in future posts.</p>
+<p>Thank You</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://sharmajee499.netlify.app/post/selecting_data/basic_selecting_data/&amp;text=Basic%20of%20Selecting%20Data" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://sharmajee499.netlify.app/post/selecting_data/basic_selecting_data/&amp;t=Basic%20of%20Selecting%20Data" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Basic%20of%20Selecting%20Data&amp;body=https://sharmajee499.netlify.app/post/selecting_data/basic_selecting_data/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://sharmajee499.netlify.app/post/selecting_data/basic_selecting_data/&amp;title=Basic%20of%20Selecting%20Data" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Basic%20of%20Selecting%20Data%20https://sharmajee499.netlify.app/post/selecting_data/basic_selecting_data/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://sharmajee499.netlify.app/post/selecting_data/basic_selecting_data/&amp;title=Basic%20of%20Selecting%20Data" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://sharmajee499.netlify.app"><img class="avatar mr-3 avatar-circle" src="/author/sandesh-sharma/avatar_hu1ea872d4bf3c24b5b3c1a9b72fe2b59d_212427_270x270_fill_q75_lanczos_center.jpg" alt="Sandesh Sharma"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://sharmajee499.netlify.app">Sandesh Sharma</a></h5>
+      <h6 class="card-subtitle">A Data Advocate</h6>
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/sharmajee499" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/sharmajee499" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/sharmajee499/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  <section id="comments">
+    
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://https-sharmajee499-netlify-app.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  </section>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+      <script id="dsq-count-scr" src="https://sharmajee499.disqus.com/count.js" async></script>
+    
+
+    <script src="/js/_vendor/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.c94d0fe1afcc7ce01dd92c78f1ddb5e6.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

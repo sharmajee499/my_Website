@@ -46,4 +46,19 @@ experience:
         * Modeling 'Nicholls Student Attrition' Project. 
         * Creating and maintaining 'Shiny' Website for attrition model.
         * Building PAL's website using Hugo, Blogdown and Netlify. 
+        
+  
+  - title: Academic Advisor - Graduate Assistant
+    company: College of Business Student Center, Minnesota State University, Mankato
+    company_url: 'https://cob.mnsu.edu/studentcenter/'
+    location: Mankato, Minnesota
+    date_start: '2021-08-23'
+    date_end: ''
+    description: |2-
+        Responsibilities include:
+        
+        * Assisting students in creating academic plans. 
+        * Advising and Motivating students to overcome academic hurdles.
+        * Organizing different advising campaign around campus.
+        
 ---

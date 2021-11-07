@@ -1,0 +1,127 @@
+---
+title: "Basic of Selecting Data"
+author: "Sandesh"
+date: "2021-11-07"
+output: html_document
+---
+
+In this article we will discuss the basic of the data manipulation --
+slicing and selecting. As we have seen, majority of time, we need to work
+with a subset of the data for the analysis. We might need just need to
+work on the description on one variable. Such situation is common in the
+data analytics workflow. So, selection and slicing of right data in
+efficient manner is an essential skill for a data analyst. The article
+will discuss about selecting data for following data structures:
+
+1.  Vector
+
+2.  List
+
+3.  Data Frame
+
+**Vectors:**
+
+Vector is the basic data-structure in R. The element of the vectors must
+be of same data types. Meaning a vector can't contain the mixed
+variables like integer, string, Boolean etc. Vectors are one
+dimensional.
+
+For the selection of a specific element of the vector, we simply put the
+index number inside the big bracket. For instance, if we have to select
+the 2nd element of vector X, our code will be X[2]. Let me remind you
+one more time, unlike other majority of programming languages, the
+indexing of R always start at 1. We will explore the details in the demo
+below.
+
+```{r Vectors Selection}
+
+#Making some vectors
+
+vec1 <- c(11,23,34,46,51)
+vec2 <- c('this','is','a','vector')
+vec3 <- c(TRUE, FALSE, FALSE, TRUE)
+
+#Selecting the single values
+vec1[2]
+
+#selecting the multiple values
+vec1[c(2,3)] #in this example we are selecting the 2nd and 3rd element of vec1
+
+#selecting after a certain index
+vec1[1:5] #we selected everything from index 1 to 5.
+vec2[-1]  # -1 will include everything except the first element
+```
+
+**List**
+
+List are different than the vector because they can have multiple data
+types.The list are formulated by using list() instead of c() in vectors.
+List sometimes can be recursive as a list can contain list within the
+list. I know that's confusing but will explain on the demo below:
+
+```{r List Selection}
+lst1 <- list(100, 101, 102, 103, 104, 105)
+lst2 <- list(155, 'program', TRUE, 3.25, 200)
+lst3 <- list(lst1, lst2 , 534, 546, TRUE, 1.98) #the complicated list
+
+#selection in the plain list
+lst1[2] #this is similar to the vector
+lst2[3:5]
+
+#selection in the complicated one
+lst3[[2]][2]  
+#first double bracket is selecting the 2nd element of the lst3 
+#which is lst2, then we are selecting the 2nd element of lst2.
+
+lst3[[1]][2:5] 
+#another similar example like above but we selecting from all 
+#elements between 2nd and 5th. 
+
+```
+
+**Data Frame**
+
+Data Frame are the general structure that we usually see in our analysis
+project. Think them as the Excel sheet- with the rows and columns. The proper 
+methods of selecting right data from the data frame plays a vital role in data
+analysis. 
+
+```{r DataFrame}
+data= iris #loading the iris data and saving in the 'data' variable
+head(data) #looking at the first few rows of the dataset.
+
+
+#QUESTION 1: How do you select the value in 3rd column and 2nd row?
+row_number = 2
+column_number =3
+
+data[row_number,column_number] #1.4 is our output. 
+
+
+#QUESTION 2: How to select all the rows of the 2nd column?
+data$Sepal.Width #the '$' sign in the easiest way to select a column.
+
+
+#QUESTION 3:How to select multiple column?
+data[1:10,c(2,3)] #by indexing. Making vector of needed column.
+data[1:10,c('Sepal.Width','Sepal.Length')] #by using column name
+
+
+#QUESTION 4: How to select first 10 rows of 2nd and 3rd column
+data[1:10,c(2,3)]
+
+
+#QUESTION 5: Select all the 'Sepal.Length' that is greater than 7
+data[data$Sepal.Length>7,] 
+#in the row we defined our condition and in column we left empty because we 
+#needed all the columns
+
+```
+
+In this article, I just showed the basic of selecting data in R. Indeed,
+these method can be made more complex to subset various data. Similar to
+'QUESTION 5', we can use the filter conditions to select different variety of 
+data. However, this article is intended for the people who are getting started 
+with R. I will post much advance methods in future posts.
+
+Thank You
