@@ -1,0 +1,1279 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.0.0-beta.3 for Hugo" />
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Sandesh Sharma" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="We all have heard about the Linear Regression from our basic statistics class or some newspaper or somewhere here and there. What I mean to say is that Linear Regression is one of the most common algorithm that we will see in many kinds of predictive analysis as well as finding linear relationship between the dependent and independent variables." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://sharmajee499.netlify.app/post/math_linear_regression/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#4caf50" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono%7CLora:400,700%7CRoboto:400,700&display=swap">
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.a1df60f10c1ba929db5349d9e296669f.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://sharmajee499.netlify.app/post/math_linear_regression/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Sandesh Sharma" />
+  <meta property="og:url" content="https://sharmajee499.netlify.app/post/math_linear_regression/" />
+  <meta property="og:title" content="Math Behind Simple Linear Regression: Least Square Method | Sandesh Sharma" />
+  <meta property="og:description" content="We all have heard about the Linear Regression from our basic statistics class or some newspaper or somewhere here and there. What I mean to say is that Linear Regression is one of the most common algorithm that we will see in many kinds of predictive analysis as well as finding linear relationship between the dependent and independent variables." /><meta property="og:image" content="https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-11-26T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-11-26T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sharmajee499.netlify.app/post/math_linear_regression/"
+  },
+  "headline": "Math Behind Simple Linear Regression: Least Square Method",
+  
+  "datePublished": "2021-11-26T00:00:00Z",
+  "dateModified": "2021-11-26T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Sandesh Sharma"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sandesh Sharma",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "We all have heard about the Linear Regression from our basic statistics class or some newspaper or somewhere here and there. What I mean to say is that Linear Regression is one of the most common algorithm that we will see in many kinds of predictive analysis as well as finding linear relationship between the dependent and independent variables."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Math Behind Simple Linear Regression: Least Square Method | Sandesh Sharma</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="c5821835cd2aa8ac4f534a8659af40ca" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.b024895df05e271929739bb54886c674.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Sandesh Sharma</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Sandesh Sharma</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/bucket_list"><span>Bucket List</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="https://twitter.com/sharmajee499" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Math Behind Simple Linear Regression: Least Square Method</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Nov 26, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+    <span class="middot-divider"></span>
+    <a href="/post/math_linear_regression/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="https://sharmajee499.netlify.app/post/math_linear_regression/index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>We all have heard about the Linear Regression from our basic statistics class or some newspaper or somewhere here and there. What I mean to say is that Linear Regression is one of the most common algorithm that we will see in many kinds of predictive analysis as well as finding linear relationship between the dependent and independent variables.</p>
+<p>In this post, we will particularly talk about the mathematical working principal for the simple linear regression. Let me rephrase again, just Simple Linear Regression not Multiple Regression at this post. However, the concepts are similar.</p>
+<p><strong>MATH ALERT</strong></p>
+<p>Mathematically, if we have a independent variable X and dependent variable Y, then we can write: <span class="math display">\[
+Y \sim \beta_0 + \beta_1X_i \tag{1}
+\]</span> where <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> are the two unknown constants that represents the intercept and slope term of the linear model respectively. One can see this as the coordinates that we studied at our school level where we have slope-intercept formula as</p>
+<p><span class="math display">\[
+y=mx+c
+\]</span></p>
+<p>Once we used the training data to find the coefficients we can predict the respective <span class="math inline">\(y\)</span> value by the below equation <span class="math display">\[
+\hat{Y}=\hat{\beta_0}+\hat{\beta_1}X\tag{2}
+\]</span></p>
+<div id="estimating-the-coefficients" class="section level2">
+<h2>Estimating the Coefficients</h2>
+<p>To find the <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>, we must use the training data. Our goal is to find <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> such that the linear model fits the every available data points with minimum error as shown in the figure below. There are several approach to minimize the error between the line and the data points however, in this post we will particularly talk about the least square method.</p>
+</div>
+<div id="least-square-methods" class="section level2">
+<h2>Least Square Methods</h2>
+<p><a href="https://www.jmp.com/en_hk/statistics-knowledge-portal/what-is-multiple-regression/fitting-multiple-regression-model.html"><img src="linear_ols.webp" title="Method of Least Square" alt="Least Square" /></a></p>
+<p>Least square in one the most popular method to estimate the beta coefficients for the simple linear regression. Similar to the <span class="math inline">\(Equation 2\)</span>, we can predict value of <span class="math inline">\(i^{th}\)</span> sample using the below equation. <span class="math display">\[
+\hat{Y_i}=\hat{\beta_0}+\hat{\beta_1}X_i\tag{3}
+\]</span> Then, <span class="math inline">\(e_i = y_i - \hat{y_i}\)</span>, where <span class="math inline">\(e_i\)</span> represents the residual or error of the <span class="math inline">\(i^{th}\)</span> response. So our goal become to minimize the error. We square the error which makes the final equation as <span class="math display">\[
+{e_1}^2 = (y_i - \hat{y_i})^2
+\]</span> Now for all of the data points the sum of the square of the residuals,RSS, will be <span class="math display">\[
+RSS = {e_1}^2+{e_2}^2+\cdots+{e_n}^2
+\]</span> <span class="math display">\[
+RSS = (y_1 - \hat{y_1})^2+\cdots+(y_n - \hat{y_n})^2 \tag{4}
+\]</span> Now, substituting the value of <span class="math inline">\(\hat{y_i}\)</span> from <span class="math inline">\(equation 2\)</span> to <span class="math inline">\(equation 4\)</span>. <span class="math display">\[
+RSS = (y_1-(\beta_0+\beta_1X_1))^2+\cdots+(y_n-(\beta_0+\beta_nX_n))^2
+\]</span> which can also be written as <span class="math display">\[
+RSS = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big]
+\]</span> In the functional notation it can be written as <span class="math display">\[
+f(\beta_0,\beta_1) = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big] \tag{5}
+\]</span></p>
+<p>So, to minimize the RSS or <span class="math inline">\(Equation5\)</span> we will take the partial derivative with respect to <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> and equalize to <span class="math inline">\(0\)</span> for minimization.</p>
+<p>First of all let’s take derivative with respect to <span class="math inline">\(\beta_0\)</span></p>
+<p><span class="math display">\[
+\frac{\partial (\beta_0,\beta_1)}{\partial \beta_0} = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big] \tag{5}
+\]</span> <span class="math display">\[
+\Rightarrow \sum2(y_i-\beta_0-\beta_1X_i)(-1) = 0
+\]</span> We took the derivative and equalize to zero.</p>
+<p><span class="math display">\[
+\Rightarrow -2 \sum y_i-\beta_0-\beta_1X_i =0
+\]</span> <span class="math display">\[
+\Rightarrow \sum y_i - \sum\beta_0 -\sum\beta_1X_i =0
+\]</span> <span class="math display">\[
+\Rightarrow \sum y_i = n\beta_0 +\sum \beta_1X_i 
+\]</span> <span class="math display">\[\beta_0 \text{: is a constant so summing n time will be n times beta}\]</span> <span class="math display">\[\Rightarrow \frac{\sum y_i -\beta_1\sum X_i}{n}=\beta_0 \]</span> <span class="math display">\[\Rightarrow \frac{\sum y_i}{n}-\beta_1 \frac{\sum X_i}{n} = \beta_0 \]</span> <span class="math display">\[\text{We know } \frac{\sum y_i}{n}= \bar{y}, \frac{\sum X_i}{n}=\bar{x}\]</span> <span class="math display">\[\beta_0 = \bar{y}-\beta_1\bar{x} \tag{6}\]</span> Now in a similar way we will take the derivative with respect to <span class="math inline">\(\beta_1\)</span></p>
+<p><span class="math display">\[\frac{\partial (\beta_0,\beta_1)}{\partial \beta_1} = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big]\]</span> <span class="math display">\[\Rightarrow \sum2(y_i-\beta_0-\beta_1X_i)(-X_i) = 0\]</span> <span class="math display">\[\Rightarrow \sum X_i(y_i-(\beta_0+\beta_1X_i))=0 \tag{7}\]</span> From <span class="math inline">\(Equation6\)</span> we know that value of <span class="math inline">\(\beta_0\)</span> therefore substituting in <span class="math inline">\(Equation7\)</span></p>
+<p><span class="math display">\[\Rightarrow \sum X_i(y_i-(\bar{y}-\beta_1\bar{x}+\beta_1X_i)) = 0 \]</span> <span class="math display">\[\Rightarrow \sum X_i(y_i-\bar{y}-\beta_1(X_i-\bar{x})) =0 \\\]</span> <span class="math display">\[\Rightarrow \sum X_i(y_i-\bar{y}) = \beta_1 \sum X_i(X_i-\bar{x}) \]</span> <span class="math display">\[\Rightarrow \beta_1 = \frac {\sum X_i(y_i-\bar{y})}{\sum X_i(X_i-\bar{x})} \tag{8}\]</span> The <span class="math inline">\(Equation 8\)</span> can be written as <span class="math display">\[\beta_1 = \frac{\sum(X_i-\bar{x})(y_i-\bar{y})}{\sum (X_i-\bar{x})^2} \tag{9}\]</span> I know there is lot of things in between the <span class="math inline">\(Equation8\)</span> and <span class="math inline">\(Equation9\)</span>. Below I will explain how that miracle happened.</p>
+<p>First of all let’s look at the numerator of <span class="math inline">\(Equation9\)</span> <span class="math display">\[\sum(X_i-\bar{x})(y_i-\bar{y}) = \sum X_i(y_i-\bar{y})-\sum \bar{x}(y_i-\bar{y})\]</span> <span class="math display">\[=  \sum X_i(y_i-\bar{y})- \bar{x}\sum(y_i-\bar{y})\]</span> <span class="math display">\[\text{We know} \sum(y_i-\bar{y}) =0 \]</span> <span class="math display">\[\text{The sum of the deviations from mean is zero.}\]</span> <span class="math display">\[\sum(X_i-\bar{x})(y_i-\bar{y}) = \sum X_i(y_i-\bar{y})\]</span> Now again let’s look at the denominator of the <span class="math inline">\(Equation8\)</span> <span class="math display">\[\sum (X_i-\bar{x})^2 = \sum(X_i-\bar{x})(X_i-\bar{x})\]</span> <span class="math display">\[= \sum X_i(X_i-\bar{x})-\bar{x} \sum(X_i-\bar{x})\]</span> <span class="math display">\[\text{Again similar to above reason} \sum(X_i-\bar{x}) =0 \]</span> <span class="math display">\[ \sum (X_i-\bar{x})^2 = \sum X_i(X_i-\bar{x}) \]</span> Finally, after long journey of mathematics we found our two unknown variables that is <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>. Now, with the help of <span class="math inline">\(Equation3\)</span> we can predict any <span class="math inline">\(\hat{y}\)</span> for the given <span class="math inline">\(X\)</span>.</p>
+<p>In my next posts, I will talk about estimating parameters with the Maximum Likelihood Methods as well as Gradient Descent too.</p>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+<p>JBstatistics. (2019, March 22). <em>Deriving the least squares estimators of the slope and intercept (simple linear regression)</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=ewnc1cXJmGA" class="uri">https://www.youtube.com/watch?v=ewnc1cXJmGA</a></p>
+<p>Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani. (2013). <em>An introduction to statistical learning : with applications in R.</em></p>
+<p>Devore, J. L. (1995). <em>Probability and statistics for engineering and the sciences</em>. Belmont: Duxbury Press.</p>
+<p>Image Link: <a href="https://www.jmp.com/en_hk/statistics-knowledge-portal/what-is-multiple-regression/fitting-multiple-regression-model.html" class="uri">https://www.jmp.com/en_hk/statistics-knowledge-portal/what-is-multiple-regression/fitting-multiple-regression-model.html</a></p>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://sharmajee499.netlify.app/post/math_linear_regression/&amp;text=Math%20Behind%20Simple%20Linear%20Regression:%20Least%20Square%20Method" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://sharmajee499.netlify.app/post/math_linear_regression/&amp;t=Math%20Behind%20Simple%20Linear%20Regression:%20Least%20Square%20Method" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Math%20Behind%20Simple%20Linear%20Regression:%20Least%20Square%20Method&amp;body=https://sharmajee499.netlify.app/post/math_linear_regression/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://sharmajee499.netlify.app/post/math_linear_regression/&amp;title=Math%20Behind%20Simple%20Linear%20Regression:%20Least%20Square%20Method" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Math%20Behind%20Simple%20Linear%20Regression:%20Least%20Square%20Method%20https://sharmajee499.netlify.app/post/math_linear_regression/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://sharmajee499.netlify.app/post/math_linear_regression/&amp;title=Math%20Behind%20Simple%20Linear%20Regression:%20Least%20Square%20Method" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://sharmajee499.netlify.app"><img class="avatar mr-3 avatar-circle" src="/author/sandesh-sharma/avatar_hu1ea872d4bf3c24b5b3c1a9b72fe2b59d_212427_270x270_fill_q75_lanczos_center.jpg" alt="Sandesh Sharma"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://sharmajee499.netlify.app">Sandesh Sharma</a></h5>
+      <h6 class="card-subtitle">A Data Advocate</h6>
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/sharmajee499" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/sharmajee499" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/sharmajee499/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  <section id="comments">
+    
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://https-sharmajee499-netlify-app.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  </section>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+      <script id="dsq-count-scr" src="https://sharmajee499.disqus.com/count.js" async></script>
+    
+
+    <script src="/js/_vendor/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.c94d0fe1afcc7ce01dd92c78f1ddb5e6.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+---
+title: "Math Behind Simple Linear Regression: Least Square Method"
+author: "Sandesh"
+date: "2021-11-26"
+---
+
+We all have heard about the Linear Regression from our basic statistics class or some newspaper or somewhere here and there. What I mean to say is that Linear Regression is one of the most common algorithm that we will see in many kinds of predictive analysis as well as finding linear relationship between the dependent and independent variables.
+
+In this post, we will particularly talk about the mathematical working principal for the simple linear regression. Let me rephrase again, just Simple Linear Regression not Multiple Regression at this post. However, the concepts are similar.
+
+**MATH ALERT**
+
+Mathematically, if we have a independent variable X and dependent variable Y, then we can write: $$
+Y \sim \beta_0 + \beta_1X_i \tag{1}
+$$ where $\beta_0$ and $\beta_1$ are the two unknown constants that represents the intercept and slope term of the linear model respectively. One can see this as the coordinates that we studied at our school level where we have slope-intercept formula as
+
+$$
+y=mx+c
+$$
+
+Once we used the training data to find the coefficients we can predict the respective $y$ value by the below equation $$
+\hat{Y}=\hat{\beta_0}+\hat{\beta_1}X\tag{2}
+$$
+
+## Estimating the Coefficients
+
+To find the $\beta_0$ and $\beta_1$, we must use the training data. Our goal is to find $\beta_0$ and $\beta_1$ such that the linear model fits the every available data points with minimum error as shown in the figure below. There are several approach to minimize the error between the line and the data points however, in this post we will particularly talk about the least square method.
+
+## Least Square Methods
+
+[![Least Square](linear_ols.webp "Method of Least Square")](https://www.jmp.com/en_hk/statistics-knowledge-portal/what-is-multiple-regression/fitting-multiple-regression-model.html)
+
+Least square in one the most popular method to estimate the beta coefficients for the simple linear regression. Similar to the $Equation 2$, we can predict value of $i^{th}$ sample using the below equation. $$
+\hat{Y_i}=\hat{\beta_0}+\hat{\beta_1}X_i\tag{3}
+$$ Then, $e_i = y_i - \hat{y_i}$, where $e_i$ represents the residual or error of the $i^{th}$ response. So our goal become to minimize the error. We square the error which makes the final equation as $$
+{e_1}^2 = (y_i - \hat{y_i})^2
+$$ Now for all of the data points the sum of the square of the residuals,RSS, will be $$
+RSS = {e_1}^2+{e_2}^2+\cdots+{e_n}^2
+$$ $$
+RSS = (y_1 - \hat{y_1})^2+\cdots+(y_n - \hat{y_n})^2 \tag{4}
+$$ Now, substituting the value of $\hat{y_i}$ from $equation 2$ to $equation 4$. $$
+RSS = (y_1-(\beta_0+\beta_1X_1))^2+\cdots+(y_n-(\beta_0+\beta_nX_n))^2
+$$ which can also be written as $$
+RSS = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big]
+$$ In the functional notation it can be written as $$
+f(\beta_0,\beta_1) = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big] \tag{5}
+$$
+
+So, to minimize the RSS or $Equation5$ we will take the partial derivative with respect to $\beta_0$ and $\beta_1$ and equalize to $0$ for minimization.
+
+First of all let's take derivative with respect to $\beta_0$
+
+$$
+\frac{\partial (\beta_0,\beta_1)}{\partial \beta_0} = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big] \tag{5}
+$$ $$
+\Rightarrow \sum2(y_i-\beta_0-\beta_1X_i)(-1) = 0
+$$ We took the derivative and equalize to zero.
+
+$$
+\Rightarrow -2 \sum y_i-\beta_0-\beta_1X_i =0
+$$ $$
+\Rightarrow \sum y_i - \sum\beta_0 -\sum\beta_1X_i =0
+$$ $$
+\Rightarrow \sum y_i = n\beta_0 +\sum \beta_1X_i 
+$$ $$\beta_0 \text{: is a constant so summing n time will be n times beta}$$ $$\Rightarrow \frac{\sum y_i -\beta_1\sum X_i}{n}=\beta_0 $$ $$\Rightarrow \frac{\sum y_i}{n}-\beta_1 \frac{\sum X_i}{n} = \beta_0 $$ $$\text{We know } \frac{\sum y_i}{n}= \bar{y}, \frac{\sum X_i}{n}=\bar{x}$$ $$\beta_0 = \bar{y}-\beta_1\bar{x} \tag{6}$$ Now in a similar way we will take the derivative with respect to $\beta_1$
+
+$$\frac{\partial (\beta_0,\beta_1)}{\partial \beta_1} = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big]$$ $$\Rightarrow \sum2(y_i-\beta_0-\beta_1X_i)(-X_i) = 0$$ $$\Rightarrow \sum X_i(y_i-(\beta_0+\beta_1X_i))=0 \tag{7}$$ From $Equation6$ we know that value of $\beta_0$ therefore substituting in $Equation7$
+
+$$\Rightarrow \sum X_i(y_i-(\bar{y}-\beta_1\bar{x}+\beta_1X_i)) = 0 $$ $$\Rightarrow \sum X_i(y_i-\bar{y}-\beta_1(X_i-\bar{x})) =0 \\$$ $$\Rightarrow \sum X_i(y_i-\bar{y}) = \beta_1 \sum X_i(X_i-\bar{x}) $$ $$\Rightarrow \beta_1 = \frac {\sum X_i(y_i-\bar{y})}{\sum X_i(X_i-\bar{x})} \tag{8}$$ The $Equation 8$ can be written as $$\beta_1 = \frac{\sum(X_i-\bar{x})(y_i-\bar{y})}{\sum (X_i-\bar{x})^2} \tag{9}$$ I know there is lot of things in between the $Equation8$ and $Equation9$. Below I will explain how that miracle happened.
+
+First of all let's look at the numerator of $Equation9$ $$\sum(X_i-\bar{x})(y_i-\bar{y}) = \sum X_i(y_i-\bar{y})-\sum \bar{x}(y_i-\bar{y})$$ $$=  \sum X_i(y_i-\bar{y})- \bar{x}\sum(y_i-\bar{y})$$ $$\text{We know} \sum(y_i-\bar{y}) =0 $$ $$\text{The sum of the deviations from mean is zero.}$$ $$\sum(X_i-\bar{x})(y_i-\bar{y}) = \sum X_i(y_i-\bar{y})$$ Now again let's look at the denominator of the $Equation8$ $$\sum (X_i-\bar{x})^2 = \sum(X_i-\bar{x})(X_i-\bar{x})$$ $$= \sum X_i(X_i-\bar{x})-\bar{x} \sum(X_i-\bar{x})$$ $$\text{Again similar to above reason} \sum(X_i-\bar{x}) =0 $$ $$ \sum (X_i-\bar{x})^2 = \sum X_i(X_i-\bar{x}) $$ Finally, after long journey of mathematics we found our two unknown variables that is $\beta_0$ and $\beta_1$. Now, with the help of $Equation3$ we can predict any $\hat{y}$ for the given $X$.
+
+In my next posts, I will talk about estimating parameters with the Maximum Likelihood Methods as well as Gradient Descent too.
+
+## References
+
+JBstatistics. (2019, March 22). *Deriving the least squares estimators of the slope and intercept (simple linear regression)* [Video]. YouTube. <https://www.youtube.com/watch?v=ewnc1cXJmGA>
+
+Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani. (2013). *An introduction to statistical learning : with applications in R.*
+
+Devore, J. L. (1995). *Probability and statistics for engineering and the sciences*. Belmont: Duxbury Press.
+
+Image Link: <https://www.jmp.com/en_hk/statistics-knowledge-portal/what-is-multiple-regression/fitting-multiple-regression-model.html>

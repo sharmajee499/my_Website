@@ -1,0 +1,69 @@
+---
+title: "Math Behind Simple Linear Regression: Least Square Method"
+author: "Sandesh"
+date: "2021-11-26"
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>We all have heard about the Linear Regression from our basic statistics class or some newspaper or somewhere here and there. What I mean to say is that Linear Regression is one of the most common algorithm that we will see in many kinds of predictive analysis as well as finding linear relationship between the dependent and independent variables.</p>
+<p>In this post, we will particularly talk about the mathematical working principal for the simple linear regression. Let me rephrase again, just Simple Linear Regression not Multiple Regression at this post. However, the concepts are similar.</p>
+<p><strong>MATH ALERT</strong></p>
+<p>Mathematically, if we have a independent variable X and dependent variable Y, then we can write: <span class="math display">\[
+Y \sim \beta_0 + \beta_1X_i \tag{1}
+\]</span> where <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> are the two unknown constants that represents the intercept and slope term of the linear model respectively. One can see this as the coordinates that we studied at our school level where we have slope-intercept formula as</p>
+<p><span class="math display">\[
+y=mx+c
+\]</span></p>
+<p>Once we used the training data to find the coefficients we can predict the respective <span class="math inline">\(y\)</span> value by the below equation <span class="math display">\[
+\hat{Y}=\hat{\beta_0}+\hat{\beta_1}X\tag{2}
+\]</span></p>
+<div id="estimating-the-coefficients" class="section level2">
+<h2>Estimating the Coefficients</h2>
+<p>To find the <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>, we must use the training data. Our goal is to find <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> such that the linear model fits the every available data points with minimum error as shown in the figure below. There are several approach to minimize the error between the line and the data points however, in this post we will particularly talk about the least square method.</p>
+</div>
+<div id="least-square-methods" class="section level2">
+<h2>Least Square Methods</h2>
+<p><a href="https://www.jmp.com/en_hk/statistics-knowledge-portal/what-is-multiple-regression/fitting-multiple-regression-model.html"><img src="linear_ols.webp" title="Method of Least Square" alt="Least Square" /></a></p>
+<p>Least square in one the most popular method to estimate the beta coefficients for the simple linear regression. Similar to the <span class="math inline">\(Equation 2\)</span>, we can predict value of <span class="math inline">\(i^{th}\)</span> sample using the below equation. <span class="math display">\[
+\hat{Y_i}=\hat{\beta_0}+\hat{\beta_1}X_i\tag{3}
+\]</span> Then, <span class="math inline">\(e_i = y_i - \hat{y_i}\)</span>, where <span class="math inline">\(e_i\)</span> represents the residual or error of the <span class="math inline">\(i^{th}\)</span> response. So our goal become to minimize the error. We square the error which makes the final equation as <span class="math display">\[
+{e_1}^2 = (y_i - \hat{y_i})^2
+\]</span> Now for all of the data points the sum of the square of the residuals,RSS, will be <span class="math display">\[
+RSS = {e_1}^2+{e_2}^2+\cdots+{e_n}^2
+\]</span> <span class="math display">\[
+RSS = (y_1 - \hat{y_1})^2+\cdots+(y_n - \hat{y_n})^2 \tag{4}
+\]</span> Now, substituting the value of <span class="math inline">\(\hat{y_i}\)</span> from <span class="math inline">\(equation 2\)</span> to <span class="math inline">\(equation 4\)</span>. <span class="math display">\[
+RSS = (y_1-(\beta_0+\beta_1X_1))^2+\cdots+(y_n-(\beta_0+\beta_nX_n))^2
+\]</span> which can also be written as <span class="math display">\[
+RSS = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big]
+\]</span> In the functional notation it can be written as <span class="math display">\[
+f(\beta_0,\beta_1) = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big] \tag{5}
+\]</span></p>
+<p>So, to minimize the RSS or <span class="math inline">\(Equation5\)</span> we will take the partial derivative with respect to <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> and equalize to <span class="math inline">\(0\)</span> for minimization.</p>
+<p>First of all let’s take derivative with respect to <span class="math inline">\(\beta_0\)</span></p>
+<p><span class="math display">\[
+\frac{\partial (\beta_0,\beta_1)}{\partial \beta_0} = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big] \tag{5}
+\]</span> <span class="math display">\[
+\Rightarrow \sum2(y_i-\beta_0-\beta_1X_i)(-1) = 0
+\]</span> We took the derivative and equalize to zero.</p>
+<p><span class="math display">\[
+\Rightarrow -2 \sum y_i-\beta_0-\beta_1X_i =0
+\]</span> <span class="math display">\[
+\Rightarrow \sum y_i - \sum\beta_0 -\sum\beta_1X_i =0
+\]</span> <span class="math display">\[
+\Rightarrow \sum y_i = n\beta_0 +\sum \beta_1X_i 
+\]</span> <span class="math display">\[\beta_0 \text{: is a constant so summing n time will be n times beta}\]</span> <span class="math display">\[\Rightarrow \frac{\sum y_i -\beta_1\sum X_i}{n}=\beta_0 \]</span> <span class="math display">\[\Rightarrow \frac{\sum y_i}{n}-\beta_1 \frac{\sum X_i}{n} = \beta_0 \]</span> <span class="math display">\[\text{We know } \frac{\sum y_i}{n}= \bar{y}, \frac{\sum X_i}{n}=\bar{x}\]</span> <span class="math display">\[\beta_0 = \bar{y}-\beta_1\bar{x} \tag{6}\]</span> Now in a similar way we will take the derivative with respect to <span class="math inline">\(\beta_1\)</span></p>
+<p><span class="math display">\[\frac{\partial (\beta_0,\beta_1)}{\partial \beta_1} = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big]\]</span> <span class="math display">\[\Rightarrow \sum2(y_i-\beta_0-\beta_1X_i)(-X_i) = 0\]</span> <span class="math display">\[\Rightarrow \sum X_i(y_i-(\beta_0+\beta_1X_i))=0 \tag{7}\]</span> From <span class="math inline">\(Equation6\)</span> we know that value of <span class="math inline">\(\beta_0\)</span> therefore substituting in <span class="math inline">\(Equation7\)</span></p>
+<p><span class="math display">\[\Rightarrow \sum X_i(y_i-(\bar{y}-\beta_1\bar{x}+\beta_1X_i)) = 0 \]</span> <span class="math display">\[\Rightarrow \sum X_i(y_i-\bar{y}-\beta_1(X_i-\bar{x})) =0 \\\]</span> <span class="math display">\[\Rightarrow \sum X_i(y_i-\bar{y}) = \beta_1 \sum X_i(X_i-\bar{x}) \]</span> <span class="math display">\[\Rightarrow \beta_1 = \frac {\sum X_i(y_i-\bar{y})}{\sum X_i(X_i-\bar{x})} \tag{8}\]</span> The <span class="math inline">\(Equation 8\)</span> can be written as <span class="math display">\[\beta_1 = \frac{\sum(X_i-\bar{x})(y_i-\bar{y})}{\sum (X_i-\bar{x})^2} \tag{9}\]</span> I know there is lot of things in between the <span class="math inline">\(Equation8\)</span> and <span class="math inline">\(Equation9\)</span>. Below I will explain how that miracle happened.</p>
+<p>First of all let’s look at the numerator of <span class="math inline">\(Equation9\)</span> <span class="math display">\[\sum(X_i-\bar{x})(y_i-\bar{y}) = \sum X_i(y_i-\bar{y})-\sum \bar{x}(y_i-\bar{y})\]</span> <span class="math display">\[=  \sum X_i(y_i-\bar{y})- \bar{x}\sum(y_i-\bar{y})\]</span> <span class="math display">\[\text{We know} \sum(y_i-\bar{y}) =0 \]</span> <span class="math display">\[\text{The sum of the deviations from mean is zero.}\]</span> <span class="math display">\[\sum(X_i-\bar{x})(y_i-\bar{y}) = \sum X_i(y_i-\bar{y})\]</span> Now again let’s look at the denominator of the <span class="math inline">\(Equation8\)</span> <span class="math display">\[\sum (X_i-\bar{x})^2 = \sum(X_i-\bar{x})(X_i-\bar{x})\]</span> <span class="math display">\[= \sum X_i(X_i-\bar{x})-\bar{x} \sum(X_i-\bar{x})\]</span> <span class="math display">\[\text{Again similar to above reason} \sum(X_i-\bar{x}) =0 \]</span> <span class="math display">\[ \sum (X_i-\bar{x})^2 = \sum X_i(X_i-\bar{x}) \]</span> Finally, after long journey of mathematics we found our two unknown variables that is <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>. Now, with the help of <span class="math inline">\(Equation3\)</span> we can predict any <span class="math inline">\(\hat{y}\)</span> for the given <span class="math inline">\(X\)</span>.</p>
+<p>In my next posts, I will talk about estimating parameters with the Maximum Likelihood Methods as well as Gradient Descent too.</p>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+<p>JBstatistics. (2019, March 22). <em>Deriving the least squares estimators of the slope and intercept (simple linear regression)</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=ewnc1cXJmGA" class="uri">https://www.youtube.com/watch?v=ewnc1cXJmGA</a></p>
+<p>Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani. (2013). <em>An introduction to statistical learning : with applications in R.</em></p>
+<p>Devore, J. L. (1995). <em>Probability and statistics for engineering and the sciences</em>. Belmont: Duxbury Press.</p>
+<p>Image Link: <a href="https://www.jmp.com/en_hk/statistics-knowledge-portal/what-is-multiple-regression/fitting-multiple-regression-model.html" class="uri">https://www.jmp.com/en_hk/statistics-knowledge-portal/what-is-multiple-regression/fitting-multiple-regression-model.html</a></p>
+</div>
