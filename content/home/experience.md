@@ -43,9 +43,9 @@ experience:
     description: |2-
         Responsibilities include:
         
-        * Modeling 'Nicholls Student Attrition' Project. 
-        * Creating and maintaining 'Shiny' Website for attrition model.
-        * Building PAL's website using Hugo, Blogdown and Netlify. 
+        * Modeled 'Nicholls Student Attrition' Project. 
+        * Created and maintaining 'Shiny' Website for attrition model.
+        * Build PAL's website using Hugo, Blogdown and Netlify. 
         
   
   - title: Academic Advisor - Graduate Assistant

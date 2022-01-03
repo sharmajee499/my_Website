@@ -12,7 +12,7 @@ weight: 90
 
 title: Recent Publications
 
-active: false
+active: true
 subtitle: ''
 
 content:
@@ -40,6 +40,4 @@ design:
   view: 4
 ---
 
-{{% callout note %}}
-Quickly discover relevant content by [filtering publications](./publication/).
-{{% /callout %}}
+

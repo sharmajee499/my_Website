@@ -1,52 +1,30 @@
 ---
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
-  ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed
-  ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis
-  sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida
-  egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id
-  dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.
-  Vestibulum sit amet erat at nulla eleifend gravida.
+abstract: Insufficient effort responding (IER) is a common concern of survey researchers especially those who collect data through crowdsourcing. Methods of controlling for IER may be overt (identifiable by respondents) or covert. This study examines the relative impact of controlling for covert IER when overt-IER methods are in the survey design. Using data from an experiment on performance feedback reactions where overt IER controls were in place, we examine the scale reliabilities and convergent and discriminant validity, both of which change negligibly by controlling for covert IER. Findings suggest controlling for covert IER lacks incremental value beyond controlling for overt IER.
 author_notes:
+- Equal contribution
 - Equal contribution
 - Equal contribution
 authors:
 - admin
-- Robert Ford
-date: "2015-09-01T00:00:00Z"
+- Dr. Christopher M Castille
+- Dr. Ann-Marie R Castille
+date: "2021-12-10"
 doi: ""
-featured: false
-image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
-  focal_point: ""
-  preview_only: false
-projects: []
-publication: '*Journal of Source Themes, 1*(1)'
+publication: '*Journal of Organizational Psychology*'
 publication_short: ""
 publication_types:
 - "2"
-publishDate: "2017-01-01T00:00:00Z"
-slides: example
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
-  ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+publishDate: "2021-12-10"
+#slides: example
 tags:
-- Source Themes
-title: An example journal article
-url_code: ""
-url_dataset: ""
-url_pdf: http://arxiv.org/pdf/1512.04133v1
-url_poster: ""
-url_project: ""
-url_slides: ""
-url_source: ""
-url_video: ""
+title: The Incremental Value of Controlling for Covert Insufficient Effort Responding
+#url_code: ""
+#url_dataset: ""
+url_pdf: https://www.proquest.com/scholarly-journals/incremental-value-controlling-covert-insufficient/docview/2603241866/se-2?accountid=12259
+#url_poster: ""
+#url_project: ""
+#url_slides: ""
+#url_source: ""
+#url_video: ""
 ---
 
-{{% callout note %}}
-Click the *Cite* button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-{{% /callout %}}
-
-{{% callout note %}}
-Create your slides in Markdown - click the *Slides* button to check out the example.
-{{% /callout %}}
-
-Supplementary notes can be added here, including [code, math, and images](https://wowchemy.com/docs/writing-markdown-latex/).

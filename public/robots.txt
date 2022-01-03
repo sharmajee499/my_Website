@@ -1,3 +1,0 @@
-User-agent: *
-
-Sitemap: https://sharmajee499.netlify.app/sitemap.xml
