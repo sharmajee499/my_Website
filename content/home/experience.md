@@ -31,8 +31,9 @@ experience:
     description: |2-
         Responsibilities include:
         
-        * Taught Statistics, Calculus, College Algebra & Trigonometry etc.
-        * Mentored New Tutors.
+        * Certified CRLA-Level 3 tutor with more than 280 hours of experience.
+        * Tutored diverse courses like Statistics, Calculus, Accounting, Finance and CIS.
+        * Mentored new tutors for a better fit to the work environment.
         
   - title: Research Assistant
     company: People Analytics Lab (PAL) @ Nicholls
@@ -43,9 +44,9 @@ experience:
     description: |2-
         Responsibilities include:
         
-        * Modeled 'Nicholls Student Attrition' Project. 
-        * Created and maintaining 'Shiny' Website for attrition model.
-        * Build PAL's website using Hugo, Blogdown and Netlify. 
+        * Developed ‘Student Retention Model’ through which we  formulated plan to save more than  $200,000 for Nicholls State.  
+        * Single-handed developed whole modeling prototype from cleaning to model deployment in Shiny Web App.
+        * Presented the outcome to respective administration and different student group for feedback and improvement. 
         
   
   - title: Academic Advisor - Graduate Assistant
@@ -57,8 +58,9 @@ experience:
     description: |2-
         Responsibilities include:
         
-        * Assisting students in creating academic plans. 
-        * Advising and Motivating students to overcome academic hurdles.
-        * Organizing different advising campaign around campus.
+        * Assessing the students to their academic career/plans based on their interest, skills, and potential careers. 
+        *  Reviewing the students test scores, transcript, and program pre-requisite to determine their eligibility for the respective classes. 
+        * Providing guidance, mentorship, moral as well as emotional support to overcome academic hurdles. 
+        * Representing the College of Business to the prospective students through admission events, and meetings.
         
 ---
