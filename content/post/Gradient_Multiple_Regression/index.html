@@ -24,7 +24,7 @@ output: html_document
 <p>This <span class="math inline">\(Equation2\)</span> can be changed into the matrix notation which will look like: <span class="math display">\[ h_{\theta}(x) = \theta^{T}x \tag{3}\]</span> <span class="math inline">\(x = [x_{0},x_{1},\ldots,x_{n}]\)</span> and <span class="math inline">\(\theta = [\theta_{0},\theta_{1},\ldots,\theta_{n}]\)</span></p>
 <p>The whole purpose of the optimization algorithms is to find the optimal value. But what is the optimal situation for the Linear Regression Problem. It is finding the minimum error possible while modeling. In other words, finds the values of <span class="math inline">\(\theta\)</span> , such that it will give us the lowest error possible.</p>
 <p>Now, from the statistics class you may have heard about the Mean Squared Error (MSE). As the word says itself, it is the average of the squared error/residuals. The formula for the MSE is</p>
-<p><span class="math display">\[ MSE = \frac{1}{m}\sum_{i=1}^{m}\bigg[h_{\theta}(x^{(i)}) - y^{i} \bigg] \tag{4}\]</span> In the Machine Learning lingo, we call this Loss Function which is modified further:</p>
+<p><span class="math display">\[ MSE = \frac{1}{m}\sum_{i=1}^{m}\bigg[h_{\theta}(x^{(i)}) - y^{i} \bigg]^2 \tag{4}\]</span> In the Machine Learning lingo, we call this Loss Function which is modified further:</p>
 <p><span class="math display">\[J(\theta_{0},\theta_{1},\ldots,\theta_{n}) = \frac{1}{2m}\sum_{i=1}^m \bigg[h_{\theta}(x^{(i)}) - y^{i} \bigg]^2 \tag{5}\]</span>
 Now, let’s look at the update rule, meaning how should we change <span class="math inline">\(\theta\)</span> according to the gradient. As you can see, there is extra constant 2, which is introduced because it makes easier in taking derivatives.</p>
 <p><span class="math display">\[ \theta_{j} := \theta_{j} - \alpha \frac{\partial}{\partial\theta_{j}}J(\theta) \tag{6}\]</span>
@@ -53,6 +53,7 @@ As we see, we introduced a new term <span class="math inline">\(\alpha\)</span> 
 <p>Here, <span class="math inline">\(\text{repeat untill convergence}\)</span> means updating the <span class="math inline">\(\theta\)</span>’s until some iteration (epochs) or criteria are reached.</p>
 <p>This is just the tip of the Gradient Descent as it has wide application to offer. There are different types of Gradient Descent like Stochastic, Mini-batch which are more popular than the Batch Gradient Descent (Vanilla).</p>
 <p>Understanding of Gradient Descent is must in the field of data science/machine learning. I hope this article was helpful to build some intuition behind the working principle. I am not using any code because there are different popular library that does those jobs.</p>
+<p>If you want to understand the working of Gradient Descent in Excel, please check out this <a href="https://www.youtube.com/watch?v=3hYMuQXCj8c">link</a></p>
 <div id="references" class="section level2">
 <h2>References</h2>
 <p>Image Link: <a href="https://towardsdatascience.com/stochastic-gradient-descent-explained-in-real-life-predicting-your-pizzas-cooking-time-b7639d5e6a32" class="uri">https://towardsdatascience.com/stochastic-gradient-descent-explained-in-real-life-predicting-your-pizzas-cooking-time-b7639d5e6a32</a></p>

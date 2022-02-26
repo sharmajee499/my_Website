@@ -1,0 +1,10 @@
+---
+title: "Understanding Gradient Descent Using Excel"
+author: "Sandesh"
+date: "2022-02-26"
+output: html_document
+---
+
+In my last post, I described the math behind the Gradient Descent. In there, I explained about the definition, working principles and how does it works in terms of Multiple Linear Regression. You can check out the article through this [link](https://sharmajee499.netlify.app/post/gradient_multiple_regression/){target="_blank"}
+
+In this video, **which can be accessed via this [link](https://www.youtube.com/watch?v=3hYMuQXCj8c){target="_blank"}**, I explained how the Gradient Descent works in order to solve the Multiple Regression Problem. 

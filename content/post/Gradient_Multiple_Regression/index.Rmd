@@ -37,7 +37,7 @@ The whole purpose of the optimization algorithms is to find the optimal value. B
 
 Now, from the statistics class you may have heard about the Mean Squared Error (MSE). As the word says itself, it is the average of the squared error/residuals. The formula for the MSE is
 
-$$ MSE = \frac{1}{m}\sum_{i=1}^{m}\bigg[h_{\theta}(x^{(i)}) - y^{i} \bigg] \tag{4}$$ In the Machine Learning lingo, we call this Loss Function which is modified further:
+$$ MSE = \frac{1}{m}\sum_{i=1}^{m}\bigg[h_{\theta}(x^{(i)}) - y^{i} \bigg]^2 \tag{4}$$ In the Machine Learning lingo, we call this Loss Function which is modified further:
 
 $$J(\theta_{0},\theta_{1},\ldots,\theta_{n}) = \frac{1}{2m}\sum_{i=1}^m \bigg[h_{\theta}(x^{(i)}) - y^{i} \bigg]^2 \tag{5}$$ 
 Now, let's look at the update rule, meaning how should we change $\theta$ according to the gradient. As you can see, there is extra constant 2, which is introduced because it makes easier in taking derivatives. 
@@ -92,6 +92,8 @@ Here, $\text{repeat untill convergence}$ means updating the $\theta$'s until som
 This is just the tip of the Gradient Descent as it has wide application to offer. There are different types of Gradient Descent like Stochastic, Mini-batch which are more popular than the Batch Gradient Descent (Vanilla). 
 
 Understanding of Gradient Descent is must in the field of data science/machine learning. I hope this article was helpful to build some intuition behind the working principle. I am not using any code because there are different popular library that does those jobs.
+
+If you want to understand the working of Gradient Descent in Excel, please check out this [link](https://www.youtube.com/watch?v=3hYMuQXCj8c)
 
 ## References
 
