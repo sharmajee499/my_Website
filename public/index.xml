@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sandesh Sharma</title>
+    <link>https://sharmajee499.netlify.app/</link>
+      <atom:link href="https://sharmajee499.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <description>Sandesh Sharma</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_512x512_fill_lanczos_center_2.png</url>
+      <title>Sandesh Sharma</title>
+      <link>https://sharmajee499.netlify.app/</link>
+    </image>
+    
+    <item>
+      <title>Python basics</title>
+      <link>https://sharmajee499.netlify.app/courses/example/python/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/courses/example/python/</guid>
+      <description>&lt;p&gt;Build a foundation in Python.&lt;/p&gt;
+&lt;p&gt;
+  &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 1-2 hours per week, for 8 weeks&lt;/p&gt;
+&lt;h2 id=&#34;learn&#34;&gt;Learn&lt;/h2&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/rfscVS0vtbw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;quiz&#34;&gt;Quiz&lt;/h2&gt;
+&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-2&#34;&gt;
+  &lt;summary&gt;What is the difference between lists and tuples?&lt;/summary&gt;
+  &lt;p&gt;&lt;p&gt;Lists&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lists are mutable - they can be changed&lt;/li&gt;
+&lt;li&gt;Slower than tuples&lt;/li&gt;
+&lt;li&gt;Syntax: &lt;code&gt;a_list = [1, 2.0, &#39;Hello world&#39;]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tuples&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tuples are immutable - they can&amp;rsquo;t be changed&lt;/li&gt;
+&lt;li&gt;Tuples are faster than lists&lt;/li&gt;
+&lt;li&gt;Syntax: &lt;code&gt;a_tuple = (1, 2.0, &#39;Hello world&#39;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+&lt;/details&gt;
+&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-3&#34;&gt;
+  &lt;summary&gt;Is Python case-sensitive?&lt;/summary&gt;
+  &lt;p&gt;Yes&lt;/p&gt;
+&lt;/details&gt;</description>
+    </item>
+    
+    <item>
+      <title>Visualization</title>
+      <link>https://sharmajee499.netlify.app/courses/example/visualization/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/courses/example/visualization/</guid>
+      <description>&lt;p&gt;Learn how to visualize data with Plotly.&lt;/p&gt;
+&lt;p&gt;
+  &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 1-2 hours per week, for 8 weeks&lt;/p&gt;
+&lt;h2 id=&#34;learn&#34;&gt;Learn&lt;/h2&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/hSPmj7mK6ng&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;quiz&#34;&gt;Quiz&lt;/h2&gt;
+&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-2&#34;&gt;
+  &lt;summary&gt;When is a heatmap useful?&lt;/summary&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+&lt;/details&gt;
+&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-3&#34;&gt;
+  &lt;summary&gt;Write Plotly code to render a bar chart&lt;/summary&gt;
+  &lt;p&gt;&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import plotly.express as px
+data_canada = px.data.gapminder().query(&amp;quot;country == &#39;Canada&#39;&amp;quot;)
+fig = px.bar(data_canada, x=&#39;year&#39;, y=&#39;pop&#39;)
+fig.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/p&gt;
+&lt;/details&gt;</description>
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>https://sharmajee499.netlify.app/courses/example/stats/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/courses/example/stats/</guid>
+      <description>&lt;p&gt;Introduction to statistics for data science.&lt;/p&gt;
+&lt;p&gt;
+  &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 1-2 hours per week, for 8 weeks&lt;/p&gt;
+&lt;h2 id=&#34;learn&#34;&gt;Learn&lt;/h2&gt;
+&lt;p&gt;The general form of the &lt;strong&gt;normal&lt;/strong&gt; probability density function is:&lt;/p&gt;
+&lt;p&gt;$$
+f(x) = \frac{1}{\sigma \sqrt{2\pi} } e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+$$&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    The parameter $\mu$ is the mean or expectation of the distribution.
+$\sigma$ is its standard deviation.
+The variance of the distribution is $\sigma^{2}$.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;quiz&#34;&gt;Quiz&lt;/h2&gt;
+&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-2&#34;&gt;
+  &lt;summary&gt;What is the parameter $\mu$?&lt;/summary&gt;
+  &lt;p&gt;The parameter $\mu$ is the mean or expectation of the distribution.&lt;/p&gt;
+&lt;/details&gt;</description>
+    </item>
+    
+    <item>
+      <title>Regularizations</title>
+      <link>https://sharmajee499.netlify.app/post/regularizations/</link>
+      <pubDate>Sat, 16 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/post/regularizations/</guid>
+      <description>
+&lt;script src=&#34;https://sharmajee499.netlify.app/post/regularizations/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;The notion of Regularization arises because of overfitting. So, let’s
+start with overfitting then. I will keep aside all fancy definition.
+Overfitting simply means when your model does good on the training data
+but performs poor on the testing data. In other words, the inadequacy of
+model to be generalized. The regularization adds the penalty term to
+reduce the overfitting.&lt;/p&gt;
+&lt;p&gt;In Statistical Learning/Machine Learning there are in general 2 kinds of
+Regularization. They are as follows:&lt;/p&gt;
+&lt;div id=&#34;ridge-regression-l2-regularization&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;1. Ridge Regression (L2 Regularization)&lt;/h2&gt;
+&lt;p&gt;These regularization techniques follow the same procedure to find the optimal weights
+as discussed in &lt;a href=&#34;https://sharmajee499.netlify.app/post/gradient_multiple_regression/&#34; target=&#34;_blank&#34;&gt;Gradient Descent&lt;/a&gt;.
+The only difference is, we add the penalty/regularized term on the cost
+function. In particular we add:
+&lt;span class=&#34;math display&#34;&gt;\[\lambda \sum_{j=1}^n \theta_{j}^2 \tag{1}\]&lt;/span&gt;For instance, if we take
+the simple Linear Regression with MSE (Mean Squared Error) as our cost
+function then the cost function with regularization will look like:
+&lt;span class=&#34;math display&#34;&gt;\[\text{Error}=\frac{1}{n}\sum_{i=1}^n\bigg((y_{i} - \sum_{j =0}^p \theta_{j}x_{ij})\bigg)^2 + \lambda \sum_{j=1}^n \theta_{j}^2\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In this equation, &lt;span class=&#34;math inline&#34;&gt;\({x_{10}, x_{20}, \ldots, x_{n0} = 1}\)&lt;/span&gt;. The same
+formula can be represented in this way too:
+&lt;span class=&#34;math display&#34;&gt;\[\frac{1}{n} \sum_{i=1}^n \bigg(y_{i}-\theta_{0}-\sum_{j=1}^p \theta_{j}x_{ij}\bigg)^2 + \lambda \sum_{j=1}^n \theta_{j}^2\]&lt;/span&gt;.
+These are just different way of saying the same thing just to confuse
+novice people and also to make it look fancy. Forget all those fancy
+formula just remember:
+&lt;span class=&#34;math display&#34;&gt;\[\frac{1}{\text{number of obs.}}\bigg(\text{truth} - \text{predicted}\bigg)^2 + \text{regularization penalty}\]&lt;/span&gt;
+This is much easier. As we already know, &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt;’s are the
+weight/coefficients. You might noticed or not but our weights starts
+with &lt;span class=&#34;math inline&#34;&gt;\(\theta_{0}\)&lt;/span&gt;. Weights are the vector that looks like
+&lt;span class=&#34;math inline&#34;&gt;\([\theta_{0},\theta_{1},\ldots,\theta_{n}]\)&lt;/span&gt;. If you put close attention
+to &lt;span class=&#34;math inline&#34;&gt;\(Eq1\)&lt;/span&gt;, you see that we are summing the weights from &lt;span class=&#34;math inline&#34;&gt;\(\theta_{1}\)&lt;/span&gt;,
+excluding &lt;span class=&#34;math inline&#34;&gt;\(\theta_{0}\)&lt;/span&gt; in the regularization penalty term. I found very straight forward reason in &lt;a href=&#34;https://www.statlearning.com/&#34; target=&#34;_blank&#34;&gt;ISLR
+Book&lt;/a&gt;,&lt;strong&gt;&#34;We want
+to shrink the estimated associations of the each variable with the
+response; however, we do not want to shrink the intercept, which is
+simply a measure of the mean value of the response when&lt;/strong&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(x_{i1} = x_{i2} = \ldots = x_{ip} = 0\)&lt;/span&gt;.&#34;&lt;/p&gt;
+&lt;p&gt;Now, the general question is why the regularization works better than
+the simple regression methods. The reason lies in the &lt;strong&gt;bias-variance
+tradeoff&lt;/strong&gt;. Bias-Variance tradeoff could be a whole new topic, but I
+will try to explain it in as minimal as possible. You can check out
+&lt;a href=&#34;https://www.youtube.com/watch?v=EuBBz3bI-aA&#34; target=&#34;_blank&#34;&gt;this&lt;/a&gt; for
+more info.&lt;/p&gt;
+&lt;p&gt;Take a instance, where you have a overfitted linear model, meaning the
+response and the predicted are close to linear in training data but poor
+on the testing data. This means the model has high variance and low
+bias. So, in order to decrease the variance, we introduce small bias.
+Small increase in bias can decrease the large variance. Therefore, the
+ridge regression or regularization performs better when we have high
+variance in our model. I know, you lost me in this paragraph but we will
+discuss this thing much more in details on our future post.&lt;/p&gt;
+&lt;p&gt;You may have noticed that in the Ordinary Least Square (OLS) regression,
+scaling doesn’t have any effect on the &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt;. (Please note, I am
+taking about OLS. Regression using Gradient Descent should be scaled for
+efficient convergence). However, for the Ridge Regression the data has
+to be scaled to get the correct intrepretable results. So, scale the
+data before performing Ridge Regression or any regularization.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;lasso-regression-least-absolute-shrinkage-and-selector-operator-l1-regularization&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;2. Lasso Regression (Least Absolute Shrinkage and Selector Operator/ L1 Regularization)&lt;/h2&gt;
+&lt;p&gt;One obvious disadvantage of the Ridge regression is that, ridge
+regression includes all predictor/features in the final model. This
+might not be the problem in term of accuracy however might give hard
+time in interpreting the results. With the increasing value of the
+&lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;, the magnitudes of the coefficient reduces but never reaches
+to zero. Therefore, the LASSO regression comes to rescue. In LASSO
+regression we add, the following penalized term to the cost function:
+&lt;span class=&#34;math display&#34;&gt;\[\lambda \sum_{j=1}^{p}|\theta_{j}|\]&lt;/span&gt;Instead of squaring the betas, in
+L1 we take the absolute value of the coefficients and sum them. Similar
+to the ridge regression, LASSO also shrinks the coefficients/weights
+towards zero. However, LASSO also can force some coefficients estimates
+equal to be zero when the tuning parameter is sufficiently large.&lt;/p&gt;
+&lt;p&gt;We have heard and may be utilized the step-wise regression to do the
+variable selection. In the similar manner, LASSO can be used to perform
+the variable selection. Therefore, the model generated by the LASSO are
+easily interpretable as compared to Ridge.&lt;/p&gt;
+&lt;p&gt;Now, as we already know that majority of the model performance depended
+upon the right selection of &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;. We choose a grid of &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;
+values and then compute the cross-validation error for each value of
+&lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt; to get optimal value of &lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;There is also third variation of the regularization that combine both L1
+and L2. It is called Elastic Net. The formula for the elastic net looks
+like:
+&lt;span class=&#34;math display&#34;&gt;\[\frac{1}{n}\sum_{i=1}^n\bigg((y_{i} - \sum_{1}^p \beta_{j}x_{ij})\bigg)^2 + \lambda_{1} \sum_{j=1}^n \theta_{j}^2 + \lambda_{2} \sum_{j=1}^{p}|\theta_{j}|\]&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;why-lasso-can-make-the-coefficientsweights-zero-but-ridge-cannot&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Why LASSO can make the coefficients/weights zero but Ridge cannot?&lt;/h2&gt;
+&lt;p&gt;Majority of time, people have explained above question with the below
+figure which I extracted from ISLR book.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;In simple explanation, the contour is our cost function and diamond (L1)
+and circle (L2) are our regularization constrains. From the ISLR
+book,“The Ridge regression has a circular constrains with no sharp
+points which will not occur on the axis so the estimates will be
+exclusively zero. However, for Lasso, because of the corners at each of
+the axis, the ellipse often intersect the constrain region at an axis
+making the coefficients zero.” Please refer to the ISLR book or
+&lt;a href=&#34;https://explained.ai/regularization/constraints.html&#34;&gt;this&lt;/a&gt; article for
+in-depth explanation.&lt;/p&gt;
+&lt;p&gt;I know, it took me a long time to understand this concept too. However,
+there is another angle to look at the same explanation. I have made a
+small video that will help you to understand the same concept with
+different approach.&lt;/p&gt;
+&lt;p&gt;Please, check out &lt;a href=&#34;https://youtu.be/W1R33bGYaTA&#34; target=&#34;&amp;quot;_blank&#34;&gt;this&lt;/a&gt; link or click on the below
+picture to watch video.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/W1R33bGYaTA&#34;&gt;&lt;img src=&#34;regula_thumbnail.png&#34; alt=&#34;Why Lasso works as variable selection?&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;References&lt;/h3&gt;
+&lt;p&gt;James, G., Witten, D., Hastie, T., &amp;amp; Tibshirani, R. (2013). &lt;em&gt;An
+introduction to statistical learning&lt;/em&gt; (1st ed.) [PDF]. Springer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Understanding Gradient Descent Using Excel</title>
+      <link>https://sharmajee499.netlify.app/post/gradient_descent_excel/</link>
+      <pubDate>Sat, 26 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/post/gradient_descent_excel/</guid>
+      <description>
+&lt;script src=&#34;https://sharmajee499.netlify.app/post/gradient_descent_excel/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;In my last post, I described the math behind the Gradient Descent. In there, I explained about the definition, working principles and how does it works in terms of Multiple Linear Regression. You can check out the article through this &lt;a href=&#34;https://sharmajee499.netlify.app/post/gradient_multiple_regression/&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this video, &lt;strong&gt;which can be accessed via this &lt;a href=&#34;https://www.youtube.com/watch?v=3hYMuQXCj8c&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt;&lt;/strong&gt;, I explained how the Gradient Descent works in order to solve the Multiple Regression Problem.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Math Behind Linear Regression: Gradient Descent</title>
+      <link>https://sharmajee499.netlify.app/post/gradient_multiple_regression/</link>
+      <pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/post/gradient_multiple_regression/</guid>
+      <description>
+&lt;script src=&#34;https://sharmajee499.netlify.app/post/gradient_multiple_regression/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Gradient descent is one of the most popular optimization algorithms in the data science and machine learning.&lt;/p&gt;
+&lt;p&gt;For definition, as always, I investigated the Wikipedia. It says, “&lt;em&gt;In mathematics gradient descent (also often called steepest descent) is a &lt;strong&gt;first-order&lt;/strong&gt; iterative optimization algorithm for &lt;strong&gt;finding a local minimum&lt;/strong&gt; of a &lt;strong&gt;differentiate function&lt;/strong&gt;. The idea is to take repeated steps in the &lt;strong&gt;opposite direction of the gradient&lt;/strong&gt; (or approximate gradient) of the function at the current point, because this is the direction of steepest descent.&lt;/em&gt;” Now, let me break down the key words from the definition to make ease.&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Gradient:&lt;/u&gt; Gradient is like a slope. It is the rate of change. The only difference is, slope term is used when there are two variables i.e., x and y, whereas the gradient is applicable in multi-dimensions. Moreover, slope is a scalar whereas gradient is vector&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;First-Order&lt;/u&gt;: It only considers the first derivative when performing the update on the parameter.&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Local Minimum&lt;/u&gt;: The lowest point of the function. For instance, if the function looks like a parabola facing upward, lowest point is where your function outputs minimum value for a given x.&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Differentiable Function&lt;/u&gt;: It means we should be able to calculate the derivative of the given function. It sounds obvious. However, if you want to know what kind of function are differentiable, check out &lt;a href=&#34;https://www.mathsisfun.com/calculus/differentiable.html&#34;&gt;this&lt;/a&gt; website.&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Opposite Direction of Gradient:&lt;/u&gt; Since our objective is to find the minimum point, we travel in the opposite direction of the gradient. If we have to reach to the maximum point, we would have travelled in the direction of the gradient.&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Iterative:&lt;/u&gt; It means finding minimum value by repeating the process until some criteria is met. The criteria can be number of iterations, change is gradient etc. depending upon the problem.&lt;/p&gt;
+&lt;p&gt;The above whole thing can be summarized by the picture in the top:&lt;/p&gt;
+&lt;p&gt;Woof, that’s a lot of definition and introduction. Now,let’s move over the application side. We will solve the problem of multiple regression using the Gradient Descent.&lt;/p&gt;
+&lt;p&gt;First, let’s start with the hypothesis. As we all know the general hypothesis of the linear regression in Ordinary Least Square Method is:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ h(x) = \beta_{0} + \beta_{1}x_{1} + \ldots+\beta_{n}x_{n} \tag{1}\]&lt;/span&gt; However, we are going to change this equation with different machine learning notation, but the essence remains the same.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ h(x) = \theta_{0}x_{0}+\theta_{1}x_{1}+\ldots+\theta_{n}x_{n} \tag{2}\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(x_{0} = 1\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(x_{1},x_{2},\ldots,x_{n}\)&lt;/span&gt; are the multiple input values.&lt;/p&gt;
+&lt;p&gt;This &lt;span class=&#34;math inline&#34;&gt;\(Equation2\)&lt;/span&gt; can be changed into the matrix notation which will look like: &lt;span class=&#34;math display&#34;&gt;\[ h_{\theta}(x) = \theta^{T}x \tag{3}\]&lt;/span&gt; &lt;span class=&#34;math inline&#34;&gt;\(x = [x_{0},x_{1},\ldots,x_{n}]\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\theta = [\theta_{0},\theta_{1},\ldots,\theta_{n}]\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The whole purpose of the optimization algorithms is to find the optimal value. But what is the optimal situation for the Linear Regression Problem. It is finding the minimum error possible while modeling. In other words, finds the values of &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; , such that it will give us the lowest error possible.&lt;/p&gt;
+&lt;p&gt;Now, from the statistics class you may have heard about the Mean Squared Error (MSE). As the word says itself, it is the average of the squared error/residuals. The formula for the MSE is&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ MSE = \frac{1}{m}\sum_{i=1}^{m}\bigg[h_{\theta}(x^{(i)}) - y^{i} \bigg]^2 \tag{4}\]&lt;/span&gt; In the Machine Learning lingo, we call this Loss Function which is modified further:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[J(\theta_{0},\theta_{1},\ldots,\theta_{n}) = \frac{1}{2m}\sum_{i=1}^m \bigg[h_{\theta}(x^{(i)}) - y^{i} \bigg]^2 \tag{5}\]&lt;/span&gt;
+Now, let’s look at the update rule, meaning how should we change &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; according to the gradient. As you can see, there is extra constant 2, which is introduced because it makes easier in taking derivatives.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \theta_{j} := \theta_{j} - \alpha \frac{\partial}{\partial\theta_{j}}J(\theta) \tag{6}\]&lt;/span&gt;
+As we see, we introduced a new term &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt; which is called learning rate. Learning rate is a hyper-parameter for the step size while climbing down the hill. Check &lt;a href=&#34;https://developers.google.com/machine-learning/crash-course/reducing-loss/learning-rate&#34;&gt;this&lt;/a&gt; link for more info on learning rate.&lt;/p&gt;
+&lt;p&gt;For the understanding purpose, let’s first apply the update rule for &lt;span class=&#34;math inline&#34;&gt;\(\theta_{0}\)&lt;/span&gt; only. The derivative is going to look like:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\text{Substituiting eq5 in eq6, we get}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\theta_{0} = \theta_{0} - \alpha \frac{\partial \bigg(\frac{1}{2m} \sum_{i=1}^{m} \big[h_{\theta}(x^{(i)}) - y^{(i)} \big] \bigg)^2}{\partial \theta_{0}} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\text{Using Chain Rule}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\theta_{0} = \theta_{0} - \alpha \bigg(\frac{2}{2m} \sum_{i=1}^{m} \big[h_{\theta}(x^{(i)}) - y^{(i)} \big] \bigg) \partial \frac {(h_{\theta}(x^{(i)}) - y^{(i)})} {\partial\theta_{0}} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\theta_{0} =\theta_{0} - \alpha \bigg(\frac{1}{m} \sum_{i=1}^{m} \big[h_{\theta}(x^{(i)}) - y^{(i)} \big] x_{0}^{(i)} \bigg) \tag{7}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Now, you must be wondering how we went to final step from second last step. Let me break it down for you:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \partial \frac {(h_{\theta}(x^{(i)}) - y^{(i)})} {\partial\theta_{0}} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\text{From eq2, we can replace the } h_{\theta}(x^{(i)}) \text{ and we will take example for single row only}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\frac{\partial \big (\theta_{0}x_{0} + \ldots + \theta_{n}x_{n} - y     \big)}{\partial \theta_{0}}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[=&amp;gt; x_{0} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;All part that doesn’t contain &lt;span class=&#34;math inline&#34;&gt;\(\theta_{0}\)&lt;/span&gt; are constant so, derivative with respect to &lt;span class=&#34;math inline&#34;&gt;\(\theta_{0}\)&lt;/span&gt; will give zero output.&lt;/p&gt;
+&lt;p&gt;This is just for the single observation, however for all observation it takes the form of the &lt;span class=&#34;math inline&#34;&gt;\(eq7\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;&lt;strong&gt;Multiple Linear Regression Using Gradient Descent&lt;/strong&gt;&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;The same concept applies to the Multiple Linear Regression. Instead of doing it for only &lt;span class=&#34;math inline&#34;&gt;\(\theta_{0}\)&lt;/span&gt;, we will do it for several variables.&lt;/p&gt;
+&lt;p&gt;The Gradient descent formula or update rule looks like:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \text{repeat until convergence :}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\theta_{0} = \theta_{0} - \alpha \bigg(\frac{1}{m} \sum_{i=1}^{m}\big[h_{\theta}(x^{(i)}) - y^{(i)} \big]x_{0}^{(i)} \bigg) \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\theta_{1} = \theta_{1} - \alpha \bigg(\frac{1}{m} \sum_{i=1}^{m}\big[h_{\theta}(x^{(i)}) - y^{(i)} \big]x_{1}^{(i)} \bigg) \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\vdots \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\theta_{n} =\theta_{n} - \alpha \bigg(\frac{1}{m} \sum_{i=1}^{m} \big[h_{\theta}(x^{(i)}) - y^{(i)} \big]x_{n}^{(i)} \bigg)\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here, &lt;span class=&#34;math inline&#34;&gt;\(\text{repeat untill convergence}\)&lt;/span&gt; means updating the &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt;’s until some iteration (epochs) or criteria are reached.&lt;/p&gt;
+&lt;p&gt;This is just the tip of the Gradient Descent as it has wide application to offer. There are different types of Gradient Descent like Stochastic, Mini-batch which are more popular than the Batch Gradient Descent (Vanilla).&lt;/p&gt;
+&lt;p&gt;Understanding of Gradient Descent is must in the field of data science/machine learning. I hope this article was helpful to build some intuition behind the working principle. I am not using any code because there are different popular library that does those jobs.&lt;/p&gt;
+&lt;p&gt;If you want to understand the working of Gradient Descent in Excel, please check out this &lt;a href=&#34;https://www.youtube.com/watch?v=3hYMuQXCj8c&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;Image Link: &lt;a href=&#34;https://towardsdatascience.com/stochastic-gradient-descent-explained-in-real-life-predicting-your-pizzas-cooking-time-b7639d5e6a32&#34; class=&#34;uri&#34;&gt;https://towardsdatascience.com/stochastic-gradient-descent-explained-in-real-life-predicting-your-pizzas-cooking-time-b7639d5e6a32&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Wikimedia Foundation. (2022, February 15). &lt;em&gt;Gradient descent.&lt;/em&gt; Wikipedia. Retrieved February 24, 2022, from &lt;a href=&#34;https://en.wikipedia.org/wiki/Gradient_descent&#34; class=&#34;uri&#34;&gt;https://en.wikipedia.org/wiki/Gradient_descent&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Géron, A. (2020). &lt;em&gt;Hands-on machine learning with scikit-learn, Keras, and tensorflow: Concepts, tools, and techniques to build Intelligent Systems.&lt;/em&gt; O’Reilly.&lt;/p&gt;
+&lt;p&gt;Mani, A. (2019, December 1). &lt;em&gt;Solving multivariate linear regression using gradient descent.&lt;/em&gt; Atma’s blog. Retrieved February 24, 2022, from &lt;a href=&#34;https://atmamani.github.io/projects/ml/coursera-gd-multivariate-linear-regression/&#34; class=&#34;uri&#34;&gt;https://atmamani.github.io/projects/ml/coursera-gd-multivariate-linear-regression/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Gunjal, S. (2020, May 13). &lt;em&gt;Multivariate linear regression from scratch with python.&lt;/em&gt; Quality Tech Tutorials. Retrieved February 24, 2022, from &lt;a href=&#34;https://satishgunjal.com/multivariate_lr/&#34; class=&#34;uri&#34;&gt;https://satishgunjal.com/multivariate_lr/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Incremental Value of Controlling for Covert Insufficient Effort Responding</title>
+      <link>https://sharmajee499.netlify.app/publication/journal-article/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/publication/journal-article/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Math Behind Simple Linear Regression: Least Square Method</title>
+      <link>https://sharmajee499.netlify.app/post/math_linear_regression/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/post/math_linear_regression/</guid>
+      <description>
+&lt;script src=&#34;https://sharmajee499.netlify.app/post/math_linear_regression/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;We all have heard about the Linear Regression from our basic statistics class or some newspaper or somewhere here and there. What I mean to say is that Linear Regression is one of the most common algorithm that we will see in many kinds of predictive analysis as well as finding linear relationship between the dependent and independent variables.&lt;/p&gt;
+&lt;p&gt;In this post, we will particularly talk about the mathematical working principal for the simple linear regression. Let me rephrase again, just Simple Linear Regression not Multiple Regression at this post. However, the concepts are similar.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MATH ALERT&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Mathematically, if we have a independent variable X and dependent variable Y, then we can write: &lt;span class=&#34;math display&#34;&gt;\[
+Y \sim \beta_0 + \beta_1X_i \tag{1}
+\]&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(\beta_0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\beta_1\)&lt;/span&gt; are the two unknown constants that represents the intercept and slope term of the linear model respectively. One can see this as the coordinates that we studied at our school level where we have slope-intercept formula as&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+y=mx+c
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Once we used the training data to find the coefficients we can predict the respective &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt; value by the below equation &lt;span class=&#34;math display&#34;&gt;\[
+\hat{Y}=\hat{\beta_0}+\hat{\beta_1}X\tag{2}
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;div id=&#34;estimating-the-coefficients&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Estimating the Coefficients&lt;/h2&gt;
+&lt;p&gt;To find the &lt;span class=&#34;math inline&#34;&gt;\(\beta_0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\beta_1\)&lt;/span&gt;, we must use the training data. Our goal is to find &lt;span class=&#34;math inline&#34;&gt;\(\beta_0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\beta_1\)&lt;/span&gt; such that the linear model fits the every available data points with minimum error as shown in the figure below. There are several approach to minimize the error between the line and the data points however, in this post we will particularly talk about the least square method.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;least-square-methods&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Least Square Methods&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.jmp.com/en_hk/statistics-knowledge-portal/what-is-multiple-regression/fitting-multiple-regression-model.html&#34;&gt;&lt;img src=&#34;linear_ols.webp&#34; title=&#34;Method of Least Square&#34; alt=&#34;Least Square&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Least square in one the most popular method to estimate the beta coefficients for the simple linear regression. Similar to the &lt;span class=&#34;math inline&#34;&gt;\(Equation 2\)&lt;/span&gt;, we can predict value of &lt;span class=&#34;math inline&#34;&gt;\(i^{th}\)&lt;/span&gt; sample using the below equation. &lt;span class=&#34;math display&#34;&gt;\[
+\hat{Y_i}=\hat{\beta_0}+\hat{\beta_1}X_i\tag{3}
+\]&lt;/span&gt; Then, &lt;span class=&#34;math inline&#34;&gt;\(e_i = y_i - \hat{y_i}\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(e_i\)&lt;/span&gt; represents the residual or error of the &lt;span class=&#34;math inline&#34;&gt;\(i^{th}\)&lt;/span&gt; response. So our goal become to minimize the error. We square the error which makes the final equation as &lt;span class=&#34;math display&#34;&gt;\[
+{e_1}^2 = (y_i - \hat{y_i})^2
+\]&lt;/span&gt; Now for all of the data points the sum of the square of the residuals,RSS, will be &lt;span class=&#34;math display&#34;&gt;\[
+RSS = {e_1}^2+{e_2}^2+\cdots+{e_n}^2
+\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[
+RSS = (y_1 - \hat{y_1})^2+\cdots+(y_n - \hat{y_n})^2 \tag{4}
+\]&lt;/span&gt; Now, substituting the value of &lt;span class=&#34;math inline&#34;&gt;\(\hat{y_i}\)&lt;/span&gt; from &lt;span class=&#34;math inline&#34;&gt;\(equation 2\)&lt;/span&gt; to &lt;span class=&#34;math inline&#34;&gt;\(equation 4\)&lt;/span&gt;. &lt;span class=&#34;math display&#34;&gt;\[
+RSS = (y_1-(\beta_0+\beta_1X_1))^2+\cdots+(y_n-(\beta_0+\beta_nX_n))^2
+\]&lt;/span&gt; which can also be written as &lt;span class=&#34;math display&#34;&gt;\[
+RSS = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big]
+\]&lt;/span&gt; In the functional notation it can be written as &lt;span class=&#34;math display&#34;&gt;\[
+f(\beta_0,\beta_1) = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big] \tag{5}
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;So, to minimize the RSS or &lt;span class=&#34;math inline&#34;&gt;\(Equation5\)&lt;/span&gt; we will take the partial derivative with respect to &lt;span class=&#34;math inline&#34;&gt;\(\beta_0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\beta_1\)&lt;/span&gt; and equalize to &lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt; for minimization.&lt;/p&gt;
+&lt;p&gt;First of all let’s take derivative with respect to &lt;span class=&#34;math inline&#34;&gt;\(\beta_0\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+\frac{\partial (\beta_0,\beta_1)}{\partial \beta_0} = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big] \tag{5}
+\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[
+\Rightarrow \sum2(y_i-\beta_0-\beta_1X_i)(-1) = 0
+\]&lt;/span&gt; We took the derivative and equalize to zero.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
+\Rightarrow -2 \sum y_i-\beta_0-\beta_1X_i =0
+\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[
+\Rightarrow \sum y_i - \sum\beta_0 -\sum\beta_1X_i =0
+\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[
+\Rightarrow \sum y_i = n\beta_0 +\sum \beta_1X_i 
+\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\beta_0 \text{: is a constant so summing n time will be n times beta}\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\Rightarrow \frac{\sum y_i -\beta_1\sum X_i}{n}=\beta_0 \]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\Rightarrow \frac{\sum y_i}{n}-\beta_1 \frac{\sum X_i}{n} = \beta_0 \]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\text{We know } \frac{\sum y_i}{n}= \bar{y}, \frac{\sum X_i}{n}=\bar{x}\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\beta_0 = \bar{y}-\beta_1\bar{x} \tag{6}\]&lt;/span&gt; Now in a similar way we will take the derivative with respect to &lt;span class=&#34;math inline&#34;&gt;\(\beta_1\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\frac{\partial (\beta_0,\beta_1)}{\partial \beta_1} = \sum_{i=1}^n \Big[y_i-(\beta_0+\beta_1X_i)^2\Big]\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\Rightarrow \sum2(y_i-\beta_0-\beta_1X_i)(-X_i) = 0\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\Rightarrow \sum X_i(y_i-(\beta_0+\beta_1X_i))=0 \tag{7}\]&lt;/span&gt; From &lt;span class=&#34;math inline&#34;&gt;\(Equation6\)&lt;/span&gt; we know that value of &lt;span class=&#34;math inline&#34;&gt;\(\beta_0\)&lt;/span&gt; therefore substituting in &lt;span class=&#34;math inline&#34;&gt;\(Equation7\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\Rightarrow \sum X_i(y_i-(\bar{y}-\beta_1\bar{x}+\beta_1X_i)) = 0 \]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\Rightarrow \sum X_i(y_i-\bar{y}-\beta_1(X_i-\bar{x})) =0 \\\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\Rightarrow \sum X_i(y_i-\bar{y}) = \beta_1 \sum X_i(X_i-\bar{x}) \]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\Rightarrow \beta_1 = \frac {\sum X_i(y_i-\bar{y})}{\sum X_i(X_i-\bar{x})} \tag{8}\]&lt;/span&gt; The &lt;span class=&#34;math inline&#34;&gt;\(Equation 8\)&lt;/span&gt; can be written as &lt;span class=&#34;math display&#34;&gt;\[\beta_1 = \frac{\sum(X_i-\bar{x})(y_i-\bar{y})}{\sum (X_i-\bar{x})^2} \tag{9}\]&lt;/span&gt; I know there is lot of things in between the &lt;span class=&#34;math inline&#34;&gt;\(Equation8\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(Equation9\)&lt;/span&gt;. Below I will explain how that miracle happened.&lt;/p&gt;
+&lt;p&gt;First of all let’s look at the numerator of &lt;span class=&#34;math inline&#34;&gt;\(Equation9\)&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\sum(X_i-\bar{x})(y_i-\bar{y}) = \sum X_i(y_i-\bar{y})-\sum \bar{x}(y_i-\bar{y})\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[=  \sum X_i(y_i-\bar{y})- \bar{x}\sum(y_i-\bar{y})\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\text{We know} \sum(y_i-\bar{y}) =0 \]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\text{The sum of the deviations from mean is zero.}\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\sum(X_i-\bar{x})(y_i-\bar{y}) = \sum X_i(y_i-\bar{y})\]&lt;/span&gt; Now again let’s look at the denominator of the &lt;span class=&#34;math inline&#34;&gt;\(Equation8\)&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\sum (X_i-\bar{x})^2 = \sum(X_i-\bar{x})(X_i-\bar{x})\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[= \sum X_i(X_i-\bar{x})-\bar{x} \sum(X_i-\bar{x})\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[\text{Again similar to above reason} \sum(X_i-\bar{x}) =0 \]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[ \sum (X_i-\bar{x})^2 = \sum X_i(X_i-\bar{x}) \]&lt;/span&gt; Finally, after long journey of mathematics we found our two unknown variables that is &lt;span class=&#34;math inline&#34;&gt;\(\beta_0\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\beta_1\)&lt;/span&gt;. Now, with the help of &lt;span class=&#34;math inline&#34;&gt;\(Equation3\)&lt;/span&gt; we can predict any &lt;span class=&#34;math inline&#34;&gt;\(\hat{y}\)&lt;/span&gt; for the given &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;In my next posts, I will talk about estimating parameters with the Maximum Likelihood Methods as well as Gradient Descent too.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;JBstatistics. (2019, March 22). &lt;em&gt;Deriving the least squares estimators of the slope and intercept (simple linear regression)&lt;/em&gt; [Video]. YouTube. &lt;a href=&#34;https://www.youtube.com/watch?v=ewnc1cXJmGA&#34; class=&#34;uri&#34;&gt;https://www.youtube.com/watch?v=ewnc1cXJmGA&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani. (2013). &lt;em&gt;An introduction to statistical learning : with applications in R.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Devore, J. L. (1995). &lt;em&gt;Probability and statistics for engineering and the sciences&lt;/em&gt;. Belmont: Duxbury Press.&lt;/p&gt;
+&lt;p&gt;Image Link: &lt;a href=&#34;https://www.jmp.com/en_hk/statistics-knowledge-portal/what-is-multiple-regression/fitting-multiple-regression-model.html&#34; class=&#34;uri&#34;&gt;https://www.jmp.com/en_hk/statistics-knowledge-portal/what-is-multiple-regression/fitting-multiple-regression-model.html&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Basic of Selecting Data</title>
+      <link>https://sharmajee499.netlify.app/post/selecting_data/basic_selecting_data/</link>
+      <pubDate>Sun, 07 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/post/selecting_data/basic_selecting_data/</guid>
+      <description>
+&lt;script src=&#34;https://sharmajee499.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;In this article we will discuss the basic of the data manipulation –
+slicing and selecting. As we have seen, majority of time, we need to work
+with a subset of the data for the analysis. We might need just need to
+work on the description on one variable. Such situation is common in the
+data analytics workflow. So, selection and slicing of right data in
+efficient manner is an essential skill for a data analyst. The article
+will discuss about selecting data for following data structures:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Vector&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;List&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Data Frame&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Vectors:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Vector is the basic data-structure in R. The element of the vectors must
+be of same data types. Meaning a vector can’t contain the mixed
+variables like integer, string, Boolean etc. Vectors are one
+dimensional.&lt;/p&gt;
+&lt;p&gt;For the selection of a specific element of the vector, we simply put the
+index number inside the big bracket. For instance, if we have to select
+the 2nd element of vector X, our code will be X[2]. Let me remind you
+one more time, unlike other majority of programming languages, the
+indexing of R always start at 1. We will explore the details in the demo
+below.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Making some vectors
+
+vec1 &amp;lt;- c(11,23,34,46,51)
+vec2 &amp;lt;- c(&amp;#39;this&amp;#39;,&amp;#39;is&amp;#39;,&amp;#39;a&amp;#39;,&amp;#39;vector&amp;#39;)
+vec3 &amp;lt;- c(TRUE, FALSE, FALSE, TRUE)
+
+#Selecting the single values
+vec1[2]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 23&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#selecting the multiple values
+vec1[c(2,3)] #in this example we are selecting the 2nd and 3rd element of vec1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 23 34&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#selecting after a certain index
+vec1[1:5] #we selected everything from index 1 to 5.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 11 23 34 46 51&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;vec2[-1]  # -1 will include everything except the first element&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;is&amp;quot;     &amp;quot;a&amp;quot;      &amp;quot;vector&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;List&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;List are different than the vector because they can have multiple data
+types.The list are formulated by using list() instead of c() in vectors.
+List sometimes can be recursive as a list can contain list within the
+list. I know that’s confusing but will explain on the demo below:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lst1 &amp;lt;- list(100, 101, 102, 103, 104, 105)
+lst2 &amp;lt;- list(155, &amp;#39;program&amp;#39;, TRUE, 3.25, 200)
+lst3 &amp;lt;- list(lst1, lst2 , 534, 546, TRUE, 1.98) #the complicated list
+
+#selection in the plain list
+lst1[2] #this is similar to the vector&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## [1] 101&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lst2[3:5]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## [1] TRUE
+## 
+## [[2]]
+## [1] 3.25
+## 
+## [[3]]
+## [1] 200&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#selection in the complicated one
+lst3[[2]][2]  &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## [1] &amp;quot;program&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#first double bracket is selecting the 2nd element of the lst3 
+#which is lst2, then we are selecting the 2nd element of lst2.
+
+lst3[[1]][2:5] &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## [1] 101
+## 
+## [[2]]
+## [1] 102
+## 
+## [[3]]
+## [1] 103
+## 
+## [[4]]
+## [1] 104&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#another similar example like above but we selecting from all 
+#elements between 2nd and 5th. &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Data Frame&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Data Frame are the general structure that we usually see in our analysis
+project. Think them as the Excel sheet- with the rows and columns. The proper
+methods of selecting right data from the data frame plays a vital role in data
+analysis.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data= iris #loading the iris data and saving in the &amp;#39;data&amp;#39; variable
+head(data) #looking at the first few rows of the dataset.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#QUESTION 1: How do you select the value in 3rd column and 2nd row?
+row_number = 2
+column_number =3
+
+data[row_number,column_number] #1.4 is our output. &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1.4&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#QUESTION 2: How to select all the rows of the 2nd column?
+data$Sepal.Width #the &amp;#39;$&amp;#39; sign in the easiest way to select a column.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   [1] 3.5 3.0 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 3.7 3.4 3.0 3.0 4.0 4.4 3.9 3.5
+##  [19] 3.8 3.8 3.4 3.7 3.6 3.3 3.4 3.0 3.4 3.5 3.4 3.2 3.1 3.4 4.1 4.2 3.1 3.2
+##  [37] 3.5 3.6 3.0 3.4 3.5 2.3 3.2 3.5 3.8 3.0 3.8 3.2 3.7 3.3 3.2 3.2 3.1 2.3
+##  [55] 2.8 2.8 3.3 2.4 2.9 2.7 2.0 3.0 2.2 2.9 2.9 3.1 3.0 2.7 2.2 2.5 3.2 2.8
+##  [73] 2.5 2.8 2.9 3.0 2.8 3.0 2.9 2.6 2.4 2.4 2.7 2.7 3.0 3.4 3.1 2.3 3.0 2.5
+##  [91] 2.6 3.0 2.6 2.3 2.7 3.0 2.9 2.9 2.5 2.8 3.3 2.7 3.0 2.9 3.0 3.0 2.5 2.9
+## [109] 2.5 3.6 3.2 2.7 3.0 2.5 2.8 3.2 3.0 3.8 2.6 2.2 3.2 2.8 2.8 2.7 3.3 3.2
+## [127] 2.8 3.0 2.8 3.0 2.8 3.8 2.8 2.8 2.6 3.0 3.4 3.1 3.0 3.1 3.1 3.1 2.7 3.2
+## [145] 3.3 3.0 2.5 3.0 3.4 3.0&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#QUESTION 3:How to select multiple column?
+data[1:10,c(2,3)] #by indexing. Making vector of needed column.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Sepal.Width Petal.Length
+## 1          3.5          1.4
+## 2          3.0          1.4
+## 3          3.2          1.3
+## 4          3.1          1.5
+## 5          3.6          1.4
+## 6          3.9          1.7
+## 7          3.4          1.4
+## 8          3.4          1.5
+## 9          2.9          1.4
+## 10         3.1          1.5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data[1:10,c(&amp;#39;Sepal.Width&amp;#39;,&amp;#39;Sepal.Length&amp;#39;)] #by using column name&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Sepal.Width Sepal.Length
+## 1          3.5          5.1
+## 2          3.0          4.9
+## 3          3.2          4.7
+## 4          3.1          4.6
+## 5          3.6          5.0
+## 6          3.9          5.4
+## 7          3.4          4.6
+## 8          3.4          5.0
+## 9          2.9          4.4
+## 10         3.1          4.9&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#QUESTION 4: How to select first 10 rows of 2nd and 3rd column
+data[1:10,c(2,3)]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Sepal.Width Petal.Length
+## 1          3.5          1.4
+## 2          3.0          1.4
+## 3          3.2          1.3
+## 4          3.1          1.5
+## 5          3.6          1.4
+## 6          3.9          1.7
+## 7          3.4          1.4
+## 8          3.4          1.5
+## 9          2.9          1.4
+## 10         3.1          1.5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#QUESTION 5: Select all the &amp;#39;Sepal.Length&amp;#39; that is greater than 7
+data[data$Sepal.Length&amp;gt;7,] &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+## 103          7.1         3.0          5.9         2.1 virginica
+## 106          7.6         3.0          6.6         2.1 virginica
+## 108          7.3         2.9          6.3         1.8 virginica
+## 110          7.2         3.6          6.1         2.5 virginica
+## 118          7.7         3.8          6.7         2.2 virginica
+## 119          7.7         2.6          6.9         2.3 virginica
+## 123          7.7         2.8          6.7         2.0 virginica
+## 126          7.2         3.2          6.0         1.8 virginica
+## 130          7.2         3.0          5.8         1.6 virginica
+## 131          7.4         2.8          6.1         1.9 virginica
+## 132          7.9         3.8          6.4         2.0 virginica
+## 136          7.7         3.0          6.1         2.3 virginica&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#in the row we defined our condition and in column we left empty because we 
+#needed all the columns&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this article, I just showed the basic of selecting data in R. Indeed,
+these method can be made more complex to subset various data. Similar to
+‘QUESTION 5’, we can use the filter conditions to select different variety of
+data. However, this article is intended for the people who are getting started
+with R. I will post much advance methods in future posts.&lt;/p&gt;
+&lt;p&gt;Thank You&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data Analytics Presentation</title>
+      <link>https://sharmajee499.netlify.app/post/data_analytics_presentation/</link>
+      <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/post/data_analytics_presentation/</guid>
+      <description>
+&lt;script src=&#34;https://sharmajee499.netlify.app/post/data_analytics_presentation/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Recently, I was invited by couples of faculty member from Nicholls State University’s College of Business to present about the Data Analytics. The presentation was all about data analytics future, job demand, scope and resources available at College of Business. I want to thank &lt;a href=&#34;https://cmcastille.netlify.app/&#34; target=&#34;_blank&#34;&gt;Dr. Chris Castille&lt;/a&gt; for arranging this opportunity. I have already given 6 presentation in the various classes like Computer Information System [CIS_231], Business Statistics [QBA_282/283], Management [MNGT_301], Marketing [MKTG_470] and Business Administration [BSAD_101]. I still have two more presentation to give which is on mid-April.&lt;/p&gt;
+&lt;p&gt;The video of one of my presentation given on MKTG_470 can be found on this &lt;a href=&#34;https://youtu.be/6E7b6CPwx9s&#34; target=&#34;&amp;quot;_blank&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I am sorry for the audio quality of the video. I should have presented nearby the mic. There are plenty of mistakes as I was nervous as well as excited. At the end, I would like to thank the respective faculties who gave me a chance to present in their classes. In addition, I would also expand my gratitude towards the students who listened my presentation for 45 minutes. 😃&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Image Classification with Transfer Learning</title>
+      <link>https://sharmajee499.netlify.app/project/external-project/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/project/external-project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logistic Regression</title>
+      <link>https://sharmajee499.netlify.app/post/logistic_regression/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/post/logistic_regression/</guid>
+      <description>
+&lt;script src=&#34;https://sharmajee499.netlify.app/post/logistic_regression/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Logistic Regression is one of the most used classification algorithm in statistical analysis and machine learning. The interpretability of output, easy to understand concept and efficient to train makes logistic regression one of the best tool for statistical inference and prediction.&lt;/p&gt;
+&lt;div id=&#34;why-not-linear-regression&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Why not Linear Regression?&lt;/h3&gt;
+&lt;p&gt;The use case of Linear Regression and Logistic Regression is totally different. Linear regression is used to predict continuous set of values whereas logistic regression is used to predict binary prediction like alive or dead, yes or no, 0 or 1 etc. There are techniques to expand the logistic regression to classify multiple classes.&lt;/p&gt;
+&lt;p&gt;Let us assume we have a dependent variable with binary class 0 and 1 in our dataset. If we use linear regression, some of our estimates might be outside [0,1] interval making them hard to interpret as probabilities.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;logist_best%20fit.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;As shown in the figure above, which I copied from the &lt;a href=&#34;https://towardsdatascience.com/why-linear-regression-is-not-suitable-for-binary-classification-c64457be8e28&#34;&gt;article&lt;/a&gt; in the &lt;em&gt;Medium&lt;/em&gt;, we can see the the linear line is not fitting majority of the data points. On the other hand, the best fit line is going above 1 and below 0 making it hard to interpret the target variable. Any time a straight line is fit to a binary response that is coded as 0 or 1, the prediction can always get probabilities &amp;lt;0 or for some values and &amp;gt;1 for some values.&lt;/p&gt;
+&lt;p&gt;Let us define &lt;span class=&#34;math inline&#34;&gt;\(P(X)\)&lt;/span&gt; be the linear regression function which is defined as &lt;span class=&#34;math inline&#34;&gt;\(P(X) = \beta_{0}+\beta_{1}X\)&lt;/span&gt;, where &lt;span class=&#34;math inline&#34;&gt;\(\beta_{0}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt; are the coefficients of intercept and independent variable respectively.&lt;/p&gt;
+&lt;p&gt;Now, to restrict the functions output between 0 and 1 for all values of &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;, we will use &lt;em&gt;logistic function&lt;/em&gt; which will restrict the output within the range [0,1].&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[P(X) = \frac{e^{\beta_{0}+\beta_{1}X}}{1+e^{\beta_{0}+\beta_{1}X}} \tag{1}\]&lt;/span&gt; When further simplified by cross-multiplication and taking common, we will end up with&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\frac{P(X)}{1-P(X)}= e^{\beta_{0}+\beta_{1}X} \tag{2}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The left-hand side of the equation is called &lt;em&gt;odds&lt;/em&gt; and can take any value between 0 and &lt;span class=&#34;math inline&#34;&gt;\(\infty\)&lt;/span&gt;. According to the dictionary Merriam-Webster, Odds simply means the probability that one thing is so or will happen rather than another. The value of odds close to 0 indicated low probabilities whereas high value indicated high probabilities.&lt;/p&gt;
+&lt;p&gt;By taking &lt;span class=&#34;math inline&#34;&gt;\(\log\)&lt;/span&gt; on both sides of the above equation:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\log\left({\frac{P(X)}{1-P(X)}}\right)= \beta_{0}+\beta_{1}X \tag{3}\]&lt;/span&gt; The left-hand side is called the &lt;em&gt;log-odds&lt;/em&gt; or &lt;em&gt;logit&lt;/em&gt;. We see that logistic regression model has a logit that is linear in &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;. In &lt;em&gt;linear regression&lt;/em&gt; &lt;span class=&#34;math inline&#34;&gt;\(\beta{1}\)&lt;/span&gt; gives the change rate in &lt;span class=&#34;math inline&#34;&gt;\(Y\)&lt;/span&gt; with one unit increase in &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;. However, in logistic regression, increasing &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; by one unit change log odds by &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Since, the hurdle to restrict the value within 0 and 1 is solved, we now proceed to find the value of our coefficients.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;finding-the-coefficients&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Finding the Coefficients&lt;/h3&gt;
+&lt;p&gt;The coefficients are estimated based on the training data with mathematical equation called likelihood function. I am not going to explain this function in detail and which is also not necessary at the moment. One doesn’t have to write the function and work from bottom up, R does the stuff for you. However, I will lay down the function below:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[l(\beta_{0}, \beta_{1}) = \prod_{i:y_{i}=1} p(x_{i}) \prod_{i^{\prime}:y_{i^{\prime}}=0} (1-p(x_{i^{\prime}})) \tag{4}\]&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;lets-predict&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Let’s Predict&lt;/h3&gt;
+&lt;p&gt;After finding the &lt;span class=&#34;math inline&#34;&gt;\(\beta_{0}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt;, we simply plug the value of &lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt; for the needed prediction. We will use the logit function which is our equation 1. Since, &lt;span class=&#34;math inline&#34;&gt;\(\beta_{0}\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\beta_{1}\)&lt;/span&gt; are estimated by the likelihood function, we plug the dependent variable i.e. X which will give us the respective probability of that instance.&lt;/p&gt;
+&lt;p&gt;The same idea can be expanded for the multiple independent variables. For the categorical variables, the data is encoded as dummy variable. Moreover, Logistic Regression can also used to classify a response variable that has more than two classes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;demo&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Demo&lt;/h3&gt;
+&lt;p&gt;In this section, I will demonstrate the working process of logistic regression in R.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Installing the package 
+suppressPackageStartupMessages(library(tidyverse))            #for data manipulation
+suppressPackageStartupMessages(library(ISLR))                 #for dataset&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: package &amp;#39;ISLR&amp;#39; was built under R version 4.0.5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Importing Dataset
+data(&amp;quot;Default&amp;quot;) #dataset&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Summerizing the data
+summary(Default)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  default    student       balance           income     
+##  No :9667   No :7056   Min.   :   0.0   Min.   :  772  
+##  Yes: 333   Yes:2944   1st Qu.: 481.7   1st Qu.:21340  
+##                        Median : 823.6   Median :34553  
+##                        Mean   : 835.4   Mean   :33517  
+##                        3rd Qu.:1166.3   3rd Qu.:43808  
+##                        Max.   :2654.3   Max.   :73554&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can see that, there are 3 independent variable and our dependent variable is &lt;em&gt;default&lt;/em&gt; which has two classes ‘Yes’ and ‘No’. The total data points are 10,000. For more info, on the dataset go to &lt;a href=&#34;https://cran.r-project.org/web/packages/ISLR/index.html&#34;&gt;this&lt;/a&gt; link and access the reference manual.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Building Model
+model &amp;lt;- glm(default~., family=&amp;quot;binomial&amp;quot;, data=Default)
+summary(model)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Call:
+## glm(formula = default ~ ., family = &amp;quot;binomial&amp;quot;, data = Default)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -2.4691  -0.1418  -0.0557  -0.0203   3.7383  
+## 
+## Coefficients:
+##               Estimate Std. Error z value Pr(&amp;gt;|z|)    
+## (Intercept) -1.087e+01  4.923e-01 -22.080  &amp;lt; 2e-16 ***
+## studentYes  -6.468e-01  2.363e-01  -2.738  0.00619 ** 
+## balance      5.737e-03  2.319e-04  24.738  &amp;lt; 2e-16 ***
+## income       3.033e-06  8.203e-06   0.370  0.71152    
+## ---
+## Signif. codes:  0 &amp;#39;***&amp;#39; 0.001 &amp;#39;**&amp;#39; 0.01 &amp;#39;*&amp;#39; 0.05 &amp;#39;.&amp;#39; 0.1 &amp;#39; &amp;#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 2920.6  on 9999  degrees of freedom
+## Residual deviance: 1571.5  on 9996  degrees of freedom
+## AIC: 1579.5
+## 
+## Number of Fisher Scoring iterations: 8&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the model building glm() function, we started with the y value (dependent variable) connecting all dependent variable(&lt;em&gt;Note&lt;/em&gt;: If you want to use all the columns of your data frame then just put period sign like in above code.) by tilde(~) sign. We put ‘binomial’ on the ‘family’ because we are using logistic regression.&lt;/p&gt;
+&lt;p&gt;The summary output throws a bunch of useful information. The coefficients section give the estimated &lt;span class=&#34;math inline&#34;&gt;\(\beta\)&lt;/span&gt; for the respective variable with the p-value for the significance. Let me remind you one more time, the coefficient is log odds. It is explained as, one unit increase in ‘balance’ is associated with an increase in log odds of default by 0.0057.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Predicting the value
+predict(model,newdata=data.frame(student=&amp;quot;No&amp;quot;,balance=1000,income=50000), type=&amp;quot;response&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##           1 
+## 0.006821253&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So, we predicted the probability of the new data that we fed into the ‘predict()’ function. In the function, first we have our model, newdata and type. The ‘type’ tells that we want our answer in probability. From the code, we got our predicted probability as 0.68%, which is pretty low. So, we can conclude that this instance is most likely to get a ‘No’. Generally, the cutoff value for ‘Yes’ &amp;amp; ‘No’ is 50%, however this can be changed depending upon the problem.&lt;/p&gt;
+&lt;p&gt;In this demo, I am skipping various steps. Some of them are, splitting the data into train &amp;amp; test data to calculate the accuracy and efficiency of the model, confusion matrix, cross-validate, detailed EDA etc. The sole purpose of the article is to give you some basic theoretical concept of Logistic Regression and interpretation of results when analysis is done in R.&lt;/p&gt;
+&lt;p&gt;At last, if one wants to master data science, machine learning, or any analysis, logistic regression is a must known algorithm.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note: For the article, I was dependent upon “An Introduction to Statistical Learning” book. This is by far one of the best book on getting started with data science. I highly advise to read the book.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;References&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://towardsdatascience.com/why-linear-regression-is-not-suitable-for-binary-classification-c64457be8e28&#34; class=&#34;uri&#34;&gt;https://towardsdatascience.com/why-linear-regression-is-not-suitable-for-binary-classification-c64457be8e28&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.merriam-webster.com/dictionary/odds&#34; class=&#34;uri&#34;&gt;https://www.merriam-webster.com/dictionary/odds&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/ISLR/index.html&#34; class=&#34;uri&#34;&gt;https://cran.r-project.org/web/packages/ISLR/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.statlearning.com/&#34; class=&#34;uri&#34;&gt;https://www.statlearning.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Text Analytics With R.</title>
+      <link>https://sharmajee499.netlify.app/project/proj_txt/</link>
+      <pubDate>Mon, 25 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/project/proj_txt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Getting Started with R</title>
+      <link>https://sharmajee499.netlify.app/post/install_r/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/post/install_r/</guid>
+      <description>
+&lt;script src=&#34;https://sharmajee499.netlify.app/post/install_r/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;strong&gt;R&lt;/strong&gt; is a beautiful and powerful programming language. People always
+debate about the Python vs. R. For me, both have advantages in their
+respective fields. I have used Python and R for about equal amount of
+time. Personally, I find R to be more powerful in data manipulation,
+cleaning, summarizing and making statistical models. However, Python is
+more easy to work when it comes to deep learning and advance
+computational modeling. Moreover, Python is general purposed programming
+language meaning, it could be used to make anything. I mean anything
+like website, computer software, mobile app, API etc.&lt;/p&gt;
+&lt;div id=&#34;how-to-install-r&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;How to Install R ?&lt;/h3&gt;
+&lt;p&gt;One basically needs to download two things to get started with R coding
+i.e. R &amp;amp; R Studio. Think R as a engine whereas R studio as the whole car
+which supports the engines execution.&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Download R from CRAN (Comprehensive R Archive Network)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;First of all go to &lt;a href=&#34;https://cran.r-project.org/&#34;&gt;this&lt;/a&gt; website and
+download the needed file depending upon your operating system. After you
+downloaded, install the file and you are all set for first part.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;fig1.jpg.png&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;CRAN R&lt;/p&gt;
+&lt;/div&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Download R Studio&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now after downloading the R, you are all set to download the R Studio
+from &lt;a href=&#34;https://rstudio.com/products/rstudio/&#34;&gt;this&lt;/a&gt;. Install the R Studio
+by opening up the downloaded file. There is nothing wierd setting to be
+set while installing, go with the flow.&lt;/p&gt;
+&lt;p&gt;If everything goes alright you should be able to set the R environment
+for you analytical journey.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;rstudio.jpg.png&#34; title=&#34;Comparison of R Studio Products&#34; alt=&#34;&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;R studio&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>https://sharmajee499.netlify.app/slides/example/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/slides/example/</guid>
+      <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://owchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
+&lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
+&lt;li&gt;Supports speaker notes&lt;/li&gt;
+&lt;li&gt;Mobile friendly slides&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Finish: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Overview: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
+&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Code block:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
+if porridge == &amp;quot;blueberry&amp;quot;:
+    print(&amp;quot;Eating...&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
+&lt;p&gt;Block math:&lt;/p&gt;
+&lt;p&gt;$$
+f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
+&lt;p&gt;Make content appear incrementally&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
+{{% fragment %}} **Two** {{% /fragment %}}
+{{% fragment %}} Three {{% /fragment %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
+One
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+&lt;strong&gt;Two&lt;/strong&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+Three
+&lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
+&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
+- Only the speaker can read these notes
+- Press `S` key to view
+{{% /speaker_note %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
+&lt;aside class=&#34;notes&#34;&gt;
+  &lt;ul&gt;
+&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/aside&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
+&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
+&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
+&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
+&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
+&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/media/boards.jpg&#34;
+  &gt;
+
+&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
+&lt;p&gt;Customize the slide style and background&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/media/boards.jpg&amp;quot; &amp;gt;}}
+{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
+{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
+&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+  color: navy;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://sharmajee499.netlify.app/admin/config.yml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/admin/config.yml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Analytics: The Art of Converting Numbers into Decisions</title>
+      <link>https://sharmajee499.netlify.app/talk/data-analytics-the-art-of-converting-numbers-into-decisions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/talk/data-analytics-the-art-of-converting-numbers-into-decisions/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Data&lt;/strong&gt;: March 16, 2021 10:30 pm - 11:00 pm&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Location&lt;/strong&gt;: College of Business, Nicholls State University&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Class&lt;/strong&gt;: Management of Organizations and Behavioral Processes (MNGT-301)&lt;/p&gt;
+&lt;p&gt;The slides can be accessed via the &lt;a href=&#34;https://drive.google.com/file/d/1TNcZZPJD_vVGuKiF_YsmHHX6UBizL6cN/view?usp=sharing&#34; title=&#34;Slides Link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Bucket List</title>
+      <link>https://sharmajee499.netlify.app/bucket_list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/bucket_list/</guid>
+      <description>
+&lt;script src=&#34;https://sharmajee499.netlify.app/bucket_list/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Yes, I do also have a exhaustive list of wishes. I know these are just
+few that came into my mind while I was writing this. However, I will
+keep adding 😉&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Visit all states of the America 🇺🇸&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Cruise Ship&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Visit Rara Lake 🇳🇵&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;del&gt;Roller Coaster&lt;/del&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;del&gt;Run 5K&lt;/del&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Six Pack 🤣&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Visit all 75 districts of Nepal&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Read Bhagavad Gita 🕉️, Bible ✝️ and Quran ☪️&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Watch Lion King&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;del&gt;Drink Blue Label&lt;/del&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Bungee jump&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;del&gt;Donate Blood&lt;/del&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Donate Hair&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Present Ted Talk&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Visit Caribbean&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

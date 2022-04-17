@@ -1,0 +1,18 @@
+{
+  "name": "Sandesh Sharma",
+  "short_name": "Sandesh Sharma",
+  "lang": "en-us",
+  "theme_color": "#4caf50",
+  "background_color": "#4caf50",
+  "icons": [{
+    "src": "/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_192x192_fill_lanczos_center_2.png",
+    "sizes": "192x192",
+    "type": "image/png"
+    }, {
+    "src": "/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_512x512_fill_lanczos_center_2.png",
+    "sizes": "512x512",
+    "type": "image/png"
+     }],
+  "display": "standalone",
+  "start_url": "/?utm_source=web_app_manifest"
+}

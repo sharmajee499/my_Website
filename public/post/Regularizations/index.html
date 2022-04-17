@@ -1,0 +1,1383 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.0.0-beta.3 for Hugo" />
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Sandesh Sharma" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="The notion of Regularization arises because of overfitting. So, let’sstart with overfitting then. I will keep aside all fancy definition.Overfitting simply means when your model does good on the training databut performs poor on the testing data." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://sharmajee499.netlify.app/post/regularizations/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#4caf50" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono%7CLora:400,700%7CRoboto:400,700&display=swap">
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.a1df60f10c1ba929db5349d9e296669f.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://sharmajee499.netlify.app/post/regularizations/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Sandesh Sharma" />
+  <meta property="og:url" content="https://sharmajee499.netlify.app/post/regularizations/" />
+  <meta property="og:title" content="Regularizations | Sandesh Sharma" />
+  <meta property="og:description" content="The notion of Regularization arises because of overfitting. So, let’sstart with overfitting then. I will keep aside all fancy definition.Overfitting simply means when your model does good on the training databut performs poor on the testing data." /><meta property="og:image" content="https://sharmajee499.netlify.app/post/regularizations/featured.jpg" />
+    <meta property="twitter:image" content="https://sharmajee499.netlify.app/post/regularizations/featured.jpg" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2022-04-16T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2022-04-16T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sharmajee499.netlify.app/post/regularizations/"
+  },
+  "headline": "Regularizations",
+  
+  "image": [
+    "https://sharmajee499.netlify.app/post/regularizations/featured.jpg"
+  ],
+  
+  "datePublished": "2022-04-16T00:00:00Z",
+  "dateModified": "2022-04-16T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Sandesh Sharma"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sandesh Sharma",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "The notion of Regularization arises because of overfitting. So, let’s\rstart with overfitting then. I will keep aside all fancy definition.\rOverfitting simply means when your model does good on the training data\rbut performs poor on the testing data."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Regularizations | Sandesh Sharma</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="5e2729bd945827ca6383c161f904eed6" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.b024895df05e271929739bb54886c674.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Sandesh Sharma</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Sandesh Sharma</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/bucket_list"><span>Bucket List</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="https://twitter.com/sharmajee499" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Regularizations</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Apr 16, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+    <span class="middot-divider"></span>
+    <a href="/post/regularizations/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header container featured-image-wrapper mt-4 mb-4" style="max-width: 1100px; max-height: 423px;">
+  <div style="position: relative">
+    <img src="/post/regularizations/featured.jpg" alt="" class="featured-image">
+    <span class="article-header-caption">Photo by <a href="https://www.geeksforgeeks.org/underfitting-and-overfitting-in-machine-learning/">GeeksforGeeks</a></span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="https://sharmajee499.netlify.app/post/regularizations/index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>The notion of Regularization arises because of overfitting. So, let’s
+start with overfitting then. I will keep aside all fancy definition.
+Overfitting simply means when your model does good on the training data
+but performs poor on the testing data. In other words, the inadequacy of
+model to be generalized. The regularization adds the penalty term to
+reduce the overfitting.</p>
+<p>In Statistical Learning/Machine Learning there are in general 2 kinds of
+Regularization. They are as follows:</p>
+<div id="ridge-regression-l2-regularization" class="section level2">
+<h2>1. Ridge Regression (L2 Regularization)</h2>
+<p>These regularization techniques follow the same procedure to find the optimal weights
+as discussed in <a href="https://sharmajee499.netlify.app/post/gradient_multiple_regression/" target="_blank">Gradient Descent</a>.
+The only difference is, we add the penalty/regularized term on the cost
+function. In particular we add:
+<span class="math display">\[\lambda \sum_{j=1}^n \theta_{j}^2 \tag{1}\]</span>For instance, if we take
+the simple Linear Regression with MSE (Mean Squared Error) as our cost
+function then the cost function with regularization will look like:
+<span class="math display">\[\text{Error}=\frac{1}{n}\sum_{i=1}^n\bigg((y_{i} - \sum_{j =0}^p \theta_{j}x_{ij})\bigg)^2 + \lambda \sum_{j=1}^n \theta_{j}^2\]</span></p>
+<p>In this equation, <span class="math inline">\({x_{10}, x_{20}, \ldots, x_{n0} = 1}\)</span>. The same
+formula can be represented in this way too:
+<span class="math display">\[\frac{1}{n} \sum_{i=1}^n \bigg(y_{i}-\theta_{0}-\sum_{j=1}^p \theta_{j}x_{ij}\bigg)^2 + \lambda \sum_{j=1}^n \theta_{j}^2\]</span>.
+These are just different way of saying the same thing just to confuse
+novice people and also to make it look fancy. Forget all those fancy
+formula just remember:
+<span class="math display">\[\frac{1}{\text{number of obs.}}\bigg(\text{truth} - \text{predicted}\bigg)^2 + \text{regularization penalty}\]</span>
+This is much easier. As we already know, <span class="math inline">\(\theta\)</span>’s are the
+weight/coefficients. You might noticed or not but our weights starts
+with <span class="math inline">\(\theta_{0}\)</span>. Weights are the vector that looks like
+<span class="math inline">\([\theta_{0},\theta_{1},\ldots,\theta_{n}]\)</span>. If you put close attention
+to <span class="math inline">\(Eq1\)</span>, you see that we are summing the weights from <span class="math inline">\(\theta_{1}\)</span>,
+excluding <span class="math inline">\(\theta_{0}\)</span> in the regularization penalty term. I found very straight forward reason in <a href="https://www.statlearning.com/" target="_blank">ISLR
+Book</a>,<strong>"We want
+to shrink the estimated associations of the each variable with the
+response; however, we do not want to shrink the intercept, which is
+simply a measure of the mean value of the response when</strong>
+<span class="math inline">\(x_{i1} = x_{i2} = \ldots = x_{ip} = 0\)</span>."</p>
+<p>Now, the general question is why the regularization works better than
+the simple regression methods. The reason lies in the <strong>bias-variance
+tradeoff</strong>. Bias-Variance tradeoff could be a whole new topic, but I
+will try to explain it in as minimal as possible. You can check out
+<a href="https://www.youtube.com/watch?v=EuBBz3bI-aA" target="_blank">this</a> for
+more info.</p>
+<p>Take a instance, where you have a overfitted linear model, meaning the
+response and the predicted are close to linear in training data but poor
+on the testing data. This means the model has high variance and low
+bias. So, in order to decrease the variance, we introduce small bias.
+Small increase in bias can decrease the large variance. Therefore, the
+ridge regression or regularization performs better when we have high
+variance in our model. I know, you lost me in this paragraph but we will
+discuss this thing much more in details on our future post.</p>
+<p>You may have noticed that in the Ordinary Least Square (OLS) regression,
+scaling doesn’t have any effect on the <span class="math inline">\(\beta\)</span>. (Please note, I am
+taking about OLS. Regression using Gradient Descent should be scaled for
+efficient convergence). However, for the Ridge Regression the data has
+to be scaled to get the correct intrepretable results. So, scale the
+data before performing Ridge Regression or any regularization.</p>
+</div>
+<div id="lasso-regression-least-absolute-shrinkage-and-selector-operator-l1-regularization" class="section level2">
+<h2>2. Lasso Regression (Least Absolute Shrinkage and Selector Operator/ L1 Regularization)</h2>
+<p>One obvious disadvantage of the Ridge regression is that, ridge
+regression includes all predictor/features in the final model. This
+might not be the problem in term of accuracy however might give hard
+time in interpreting the results. With the increasing value of the
+<span class="math inline">\(\lambda\)</span>, the magnitudes of the coefficient reduces but never reaches
+to zero. Therefore, the LASSO regression comes to rescue. In LASSO
+regression we add, the following penalized term to the cost function:
+<span class="math display">\[\lambda \sum_{j=1}^{p}|\theta_{j}|\]</span>Instead of squaring the betas, in
+L1 we take the absolute value of the coefficients and sum them. Similar
+to the ridge regression, LASSO also shrinks the coefficients/weights
+towards zero. However, LASSO also can force some coefficients estimates
+equal to be zero when the tuning parameter is sufficiently large.</p>
+<p>We have heard and may be utilized the step-wise regression to do the
+variable selection. In the similar manner, LASSO can be used to perform
+the variable selection. Therefore, the model generated by the LASSO are
+easily interpretable as compared to Ridge.</p>
+<p>Now, as we already know that majority of the model performance depended
+upon the right selection of <span class="math inline">\(\lambda\)</span>. We choose a grid of <span class="math inline">\(\lambda\)</span>
+values and then compute the cross-validation error for each value of
+<span class="math inline">\(\lambda\)</span> to get optimal value of <span class="math inline">\(\lambda\)</span>.</p>
+<p>There is also third variation of the regularization that combine both L1
+and L2. It is called Elastic Net. The formula for the elastic net looks
+like:
+<span class="math display">\[\frac{1}{n}\sum_{i=1}^n\bigg((y_{i} - \sum_{1}^p \beta_{j}x_{ij})\bigg)^2 + \lambda_{1} \sum_{j=1}^n \theta_{j}^2 + \lambda_{2} \sum_{j=1}^{p}|\theta_{j}|\]</span></p>
+</div>
+<div id="why-lasso-can-make-the-coefficientsweights-zero-but-ridge-cannot" class="section level2">
+<h2>Why LASSO can make the coefficients/weights zero but Ridge cannot?</h2>
+<p>Majority of time, people have explained above question with the below
+figure which I extracted from ISLR book.</p>
+<p><img src="img.png" /></p>
+<p>In simple explanation, the contour is our cost function and diamond (L1)
+and circle (L2) are our regularization constrains. From the ISLR
+book,“The Ridge regression has a circular constrains with no sharp
+points which will not occur on the axis so the estimates will be
+exclusively zero. However, for Lasso, because of the corners at each of
+the axis, the ellipse often intersect the constrain region at an axis
+making the coefficients zero.” Please refer to the ISLR book or
+<a href="https://explained.ai/regularization/constraints.html">this</a> article for
+in-depth explanation.</p>
+<p>I know, it took me a long time to understand this concept too. However,
+there is another angle to look at the same explanation. I have made a
+small video that will help you to understand the same concept with
+different approach.</p>
+<p>Please, check out <a href="https://youtu.be/W1R33bGYaTA" target="&quot;_blank">this</a> link or click on the below
+picture to watch video.</p>
+<p><a href="https://youtu.be/W1R33bGYaTA"><img src="regula_thumbnail.png" alt="Why Lasso works as variable selection?" /></a></p>
+<div id="references" class="section level3">
+<h3>References</h3>
+<p>James, G., Witten, D., Hastie, T., &amp; Tibshirani, R. (2013). <em>An
+introduction to statistical learning</em> (1st ed.) [PDF]. Springer.</p>
+</div>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://sharmajee499.netlify.app/post/regularizations/&amp;text=Regularizations" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://sharmajee499.netlify.app/post/regularizations/&amp;t=Regularizations" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Regularizations&amp;body=https://sharmajee499.netlify.app/post/regularizations/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://sharmajee499.netlify.app/post/regularizations/&amp;title=Regularizations" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Regularizations%20https://sharmajee499.netlify.app/post/regularizations/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://sharmajee499.netlify.app/post/regularizations/&amp;title=Regularizations" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://sharmajee499.netlify.app"><img class="avatar mr-3 avatar-circle" src="/author/sandesh-sharma/avatar_hu1ea872d4bf3c24b5b3c1a9b72fe2b59d_212427_270x270_fill_q75_lanczos_center.jpg" alt="Sandesh Sharma"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://sharmajee499.netlify.app">Sandesh Sharma</a></h5>
+      <h6 class="card-subtitle">A Data Advocate</h6>
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/sharmajee499" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/sharmajee499" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/sharmajee499/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  <section id="comments">
+    
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://https-sharmajee499-netlify-app.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  </section>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+      <script id="dsq-count-scr" src="https://sharmajee499.disqus.com/count.js" async></script>
+    
+
+    <script src="/js/_vendor/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.c94d0fe1afcc7ce01dd92c78f1ddb5e6.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

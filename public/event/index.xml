@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recent &amp; Upcoming Talks | Sandesh Sharma</title>
+    <link>https://sharmajee499.netlify.app/event/</link>
+      <atom:link href="https://sharmajee499.netlify.app/event/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent &amp; Upcoming Talks</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_512x512_fill_lanczos_center_2.png</url>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://sharmajee499.netlify.app/event/</link>
+    </image>
+    
+    <item>
+      <title>Data Analytics: The Art of Converting Numbers into Decisions</title>
+      <link>https://sharmajee499.netlify.app/talk/data-analytics-the-art-of-converting-numbers-into-decisions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/talk/data-analytics-the-art-of-converting-numbers-into-decisions/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Data&lt;/strong&gt;: March 16, 2021 10:30 pm - 11:00 pm&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Location&lt;/strong&gt;: College of Business, Nicholls State University&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Class&lt;/strong&gt;: Management of Organizations and Behavioral Processes (MNGT-301)&lt;/p&gt;
+&lt;p&gt;The slides can be accessed via the &lt;a href=&#34;https://drive.google.com/file/d/1TNcZZPJD_vVGuKiF_YsmHHX6UBizL6cN/view?usp=sharing&#34; title=&#34;Slides Link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

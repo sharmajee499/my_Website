@@ -1,0 +1,1330 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.0.0-beta.3 for Hugo" />
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Sandesh Sharma" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Gradient descent is one of the most popular optimization algorithms in the data science and machine learning.
+For definition, as always, I investigated the Wikipedia. It says, “In mathematics gradient descent (also often called steepest descent) is a first-order iterative optimization algorithm for finding a local minimum of a differentiate function." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://sharmajee499.netlify.app/post/gradient_multiple_regression/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#4caf50" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono%7CLora:400,700%7CRoboto:400,700&display=swap">
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.a1df60f10c1ba929db5349d9e296669f.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://sharmajee499.netlify.app/post/gradient_multiple_regression/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Sandesh Sharma" />
+  <meta property="og:url" content="https://sharmajee499.netlify.app/post/gradient_multiple_regression/" />
+  <meta property="og:title" content="Math Behind Linear Regression: Gradient Descent | Sandesh Sharma" />
+  <meta property="og:description" content="Gradient descent is one of the most popular optimization algorithms in the data science and machine learning.
+For definition, as always, I investigated the Wikipedia. It says, “In mathematics gradient descent (also often called steepest descent) is a first-order iterative optimization algorithm for finding a local minimum of a differentiate function." /><meta property="og:image" content="https://sharmajee499.netlify.app/post/gradient_multiple_regression/featured.png" />
+    <meta property="twitter:image" content="https://sharmajee499.netlify.app/post/gradient_multiple_regression/featured.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2022-02-23T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2022-02-23T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sharmajee499.netlify.app/post/gradient_multiple_regression/"
+  },
+  "headline": "Math Behind Linear Regression: Gradient Descent",
+  
+  "image": [
+    "https://sharmajee499.netlify.app/post/gradient_multiple_regression/featured.png"
+  ],
+  
+  "datePublished": "2022-02-23T00:00:00Z",
+  "dateModified": "2022-02-23T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Sandesh Sharma"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Sandesh Sharma",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Gradient descent is one of the most popular optimization algorithms in the data science and machine learning.\nFor definition, as always, I investigated the Wikipedia. It says, “In mathematics gradient descent (also often called steepest descent) is a first-order iterative optimization algorithm for finding a local minimum of a differentiate function."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Math Behind Linear Regression: Gradient Descent | Sandesh Sharma</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="bf2f741b07590af74e3c6fe8b8c54ff9" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.b024895df05e271929739bb54886c674.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Sandesh Sharma</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Sandesh Sharma</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-center" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>About</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/bucket_list"><span>Bucket List</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="https://twitter.com/sharmajee499" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>Math Behind Linear Regression: Gradient Descent</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Feb 23, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+    <span class="middot-divider"></span>
+    <a href="/post/gradient_multiple_regression/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 573px;">
+  <div style="position: relative">
+    <img src="/post/gradient_multiple_regression/featured_hu8472047e1b31c9c8dfc46e44168f80bb_156055_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="https://sharmajee499.netlify.app/post/gradient_multiple_regression/index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Gradient descent is one of the most popular optimization algorithms in the data science and machine learning.</p>
+<p>For definition, as always, I investigated the Wikipedia. It says, “<em>In mathematics gradient descent (also often called steepest descent) is a <strong>first-order</strong> iterative optimization algorithm for <strong>finding a local minimum</strong> of a <strong>differentiate function</strong>. The idea is to take repeated steps in the <strong>opposite direction of the gradient</strong> (or approximate gradient) of the function at the current point, because this is the direction of steepest descent.</em>” Now, let me break down the key words from the definition to make ease.</p>
+<p><u>Gradient:</u> Gradient is like a slope. It is the rate of change. The only difference is, slope term is used when there are two variables i.e., x and y, whereas the gradient is applicable in multi-dimensions. Moreover, slope is a scalar whereas gradient is vector</p>
+<p><u>First-Order</u>: It only considers the first derivative when performing the update on the parameter.</p>
+<p><u>Local Minimum</u>: The lowest point of the function. For instance, if the function looks like a parabola facing upward, lowest point is where your function outputs minimum value for a given x.</p>
+<p><u>Differentiable Function</u>: It means we should be able to calculate the derivative of the given function. It sounds obvious. However, if you want to know what kind of function are differentiable, check out <a href="https://www.mathsisfun.com/calculus/differentiable.html">this</a> website.</p>
+<p><u>Opposite Direction of Gradient:</u> Since our objective is to find the minimum point, we travel in the opposite direction of the gradient. If we have to reach to the maximum point, we would have travelled in the direction of the gradient.</p>
+<p><u>Iterative:</u> It means finding minimum value by repeating the process until some criteria is met. The criteria can be number of iterations, change is gradient etc. depending upon the problem.</p>
+<p>The above whole thing can be summarized by the picture in the top:</p>
+<p>Woof, that’s a lot of definition and introduction. Now,let’s move over the application side. We will solve the problem of multiple regression using the Gradient Descent.</p>
+<p>First, let’s start with the hypothesis. As we all know the general hypothesis of the linear regression in Ordinary Least Square Method is:</p>
+<p><span class="math display">\[ h(x) = \beta_{0} + \beta_{1}x_{1} + \ldots+\beta_{n}x_{n} \tag{1}\]</span> However, we are going to change this equation with different machine learning notation, but the essence remains the same.</p>
+<p><span class="math display">\[ h(x) = \theta_{0}x_{0}+\theta_{1}x_{1}+\ldots+\theta_{n}x_{n} \tag{2}\]</span> where <span class="math inline">\(x_{0} = 1\)</span> and <span class="math inline">\(x_{1},x_{2},\ldots,x_{n}\)</span> are the multiple input values.</p>
+<p>This <span class="math inline">\(Equation2\)</span> can be changed into the matrix notation which will look like: <span class="math display">\[ h_{\theta}(x) = \theta^{T}x \tag{3}\]</span> <span class="math inline">\(x = [x_{0},x_{1},\ldots,x_{n}]\)</span> and <span class="math inline">\(\theta = [\theta_{0},\theta_{1},\ldots,\theta_{n}]\)</span></p>
+<p>The whole purpose of the optimization algorithms is to find the optimal value. But what is the optimal situation for the Linear Regression Problem. It is finding the minimum error possible while modeling. In other words, finds the values of <span class="math inline">\(\theta\)</span> , such that it will give us the lowest error possible.</p>
+<p>Now, from the statistics class you may have heard about the Mean Squared Error (MSE). As the word says itself, it is the average of the squared error/residuals. The formula for the MSE is</p>
+<p><span class="math display">\[ MSE = \frac{1}{m}\sum_{i=1}^{m}\bigg[h_{\theta}(x^{(i)}) - y^{i} \bigg]^2 \tag{4}\]</span> In the Machine Learning lingo, we call this Loss Function which is modified further:</p>
+<p><span class="math display">\[J(\theta_{0},\theta_{1},\ldots,\theta_{n}) = \frac{1}{2m}\sum_{i=1}^m \bigg[h_{\theta}(x^{(i)}) - y^{i} \bigg]^2 \tag{5}\]</span>
+Now, let’s look at the update rule, meaning how should we change <span class="math inline">\(\theta\)</span> according to the gradient. As you can see, there is extra constant 2, which is introduced because it makes easier in taking derivatives.</p>
+<p><span class="math display">\[ \theta_{j} := \theta_{j} - \alpha \frac{\partial}{\partial\theta_{j}}J(\theta) \tag{6}\]</span>
+As we see, we introduced a new term <span class="math inline">\(\alpha\)</span> which is called learning rate. Learning rate is a hyper-parameter for the step size while climbing down the hill. Check <a href="https://developers.google.com/machine-learning/crash-course/reducing-loss/learning-rate">this</a> link for more info on learning rate.</p>
+<p>For the understanding purpose, let’s first apply the update rule for <span class="math inline">\(\theta_{0}\)</span> only. The derivative is going to look like:</p>
+<p><span class="math display">\[\text{Substituiting eq5 in eq6, we get}\]</span></p>
+<p><span class="math display">\[\theta_{0} = \theta_{0} - \alpha \frac{\partial \bigg(\frac{1}{2m} \sum_{i=1}^{m} \big[h_{\theta}(x^{(i)}) - y^{(i)} \big] \bigg)^2}{\partial \theta_{0}} \]</span></p>
+<p><span class="math display">\[\text{Using Chain Rule}\]</span></p>
+<p><span class="math display">\[\theta_{0} = \theta_{0} - \alpha \bigg(\frac{2}{2m} \sum_{i=1}^{m} \big[h_{\theta}(x^{(i)}) - y^{(i)} \big] \bigg) \partial \frac {(h_{\theta}(x^{(i)}) - y^{(i)})} {\partial\theta_{0}} \]</span></p>
+<p><span class="math display">\[\theta_{0} =\theta_{0} - \alpha \bigg(\frac{1}{m} \sum_{i=1}^{m} \big[h_{\theta}(x^{(i)}) - y^{(i)} \big] x_{0}^{(i)} \bigg) \tag{7}\]</span></p>
+<p>Now, you must be wondering how we went to final step from second last step. Let me break it down for you:</p>
+<p><span class="math display">\[ \partial \frac {(h_{\theta}(x^{(i)}) - y^{(i)})} {\partial\theta_{0}} \]</span></p>
+<p><span class="math display">\[\text{From eq2, we can replace the } h_{\theta}(x^{(i)}) \text{ and we will take example for single row only}\]</span></p>
+<p><span class="math display">\[\frac{\partial \big (\theta_{0}x_{0} + \ldots + \theta_{n}x_{n} - y     \big)}{\partial \theta_{0}}\]</span></p>
+<p><span class="math display">\[=&gt; x_{0} \]</span></p>
+<p>All part that doesn’t contain <span class="math inline">\(\theta_{0}\)</span> are constant so, derivative with respect to <span class="math inline">\(\theta_{0}\)</span> will give zero output.</p>
+<p>This is just for the single observation, however for all observation it takes the form of the <span class="math inline">\(eq7\)</span>.</p>
+<p><u><strong>Multiple Linear Regression Using Gradient Descent</strong></u></p>
+<p>The same concept applies to the Multiple Linear Regression. Instead of doing it for only <span class="math inline">\(\theta_{0}\)</span>, we will do it for several variables.</p>
+<p>The Gradient descent formula or update rule looks like:</p>
+<p><span class="math display">\[ \text{repeat until convergence :}\]</span></p>
+<p><span class="math display">\[\theta_{0} = \theta_{0} - \alpha \bigg(\frac{1}{m} \sum_{i=1}^{m}\big[h_{\theta}(x^{(i)}) - y^{(i)} \big]x_{0}^{(i)} \bigg) \]</span></p>
+<p><span class="math display">\[\theta_{1} = \theta_{1} - \alpha \bigg(\frac{1}{m} \sum_{i=1}^{m}\big[h_{\theta}(x^{(i)}) - y^{(i)} \big]x_{1}^{(i)} \bigg) \]</span></p>
+<p><span class="math display">\[\vdots \]</span></p>
+<p><span class="math display">\[\theta_{n} =\theta_{n} - \alpha \bigg(\frac{1}{m} \sum_{i=1}^{m} \big[h_{\theta}(x^{(i)}) - y^{(i)} \big]x_{n}^{(i)} \bigg)\]</span></p>
+<p>Here, <span class="math inline">\(\text{repeat untill convergence}\)</span> means updating the <span class="math inline">\(\theta\)</span>’s until some iteration (epochs) or criteria are reached.</p>
+<p>This is just the tip of the Gradient Descent as it has wide application to offer. There are different types of Gradient Descent like Stochastic, Mini-batch which are more popular than the Batch Gradient Descent (Vanilla).</p>
+<p>Understanding of Gradient Descent is must in the field of data science/machine learning. I hope this article was helpful to build some intuition behind the working principle. I am not using any code because there are different popular library that does those jobs.</p>
+<p>If you want to understand the working of Gradient Descent in Excel, please check out this <a href="https://www.youtube.com/watch?v=3hYMuQXCj8c">link</a></p>
+<div id="references" class="section level2">
+<h2>References</h2>
+<p>Image Link: <a href="https://towardsdatascience.com/stochastic-gradient-descent-explained-in-real-life-predicting-your-pizzas-cooking-time-b7639d5e6a32" class="uri">https://towardsdatascience.com/stochastic-gradient-descent-explained-in-real-life-predicting-your-pizzas-cooking-time-b7639d5e6a32</a></p>
+<p>Wikimedia Foundation. (2022, February 15). <em>Gradient descent.</em> Wikipedia. Retrieved February 24, 2022, from <a href="https://en.wikipedia.org/wiki/Gradient_descent" class="uri">https://en.wikipedia.org/wiki/Gradient_descent</a></p>
+<p>Géron, A. (2020). <em>Hands-on machine learning with scikit-learn, Keras, and tensorflow: Concepts, tools, and techniques to build Intelligent Systems.</em> O’Reilly.</p>
+<p>Mani, A. (2019, December 1). <em>Solving multivariate linear regression using gradient descent.</em> Atma’s blog. Retrieved February 24, 2022, from <a href="https://atmamani.github.io/projects/ml/coursera-gd-multivariate-linear-regression/" class="uri">https://atmamani.github.io/projects/ml/coursera-gd-multivariate-linear-regression/</a></p>
+<p>Gunjal, S. (2020, May 13). <em>Multivariate linear regression from scratch with python.</em> Quality Tech Tutorials. Retrieved February 24, 2022, from <a href="https://satishgunjal.com/multivariate_lr/" class="uri">https://satishgunjal.com/multivariate_lr/</a></p>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://sharmajee499.netlify.app/post/gradient_multiple_regression/&amp;text=Math%20Behind%20Linear%20Regression:%20Gradient%20Descent" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://sharmajee499.netlify.app/post/gradient_multiple_regression/&amp;t=Math%20Behind%20Linear%20Regression:%20Gradient%20Descent" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Math%20Behind%20Linear%20Regression:%20Gradient%20Descent&amp;body=https://sharmajee499.netlify.app/post/gradient_multiple_regression/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://sharmajee499.netlify.app/post/gradient_multiple_regression/&amp;title=Math%20Behind%20Linear%20Regression:%20Gradient%20Descent" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Math%20Behind%20Linear%20Regression:%20Gradient%20Descent%20https://sharmajee499.netlify.app/post/gradient_multiple_regression/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://sharmajee499.netlify.app/post/gradient_multiple_regression/&amp;title=Math%20Behind%20Linear%20Regression:%20Gradient%20Descent" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://sharmajee499.netlify.app"><img class="avatar mr-3 avatar-circle" src="/author/sandesh-sharma/avatar_hu1ea872d4bf3c24b5b3c1a9b72fe2b59d_212427_270x270_fill_q75_lanczos_center.jpg" alt="Sandesh Sharma"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://sharmajee499.netlify.app">Sandesh Sharma</a></h5>
+      <h6 class="card-subtitle">A Data Advocate</h6>
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/sharmajee499" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/sharmajee499" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/sharmajee499/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  <section id="comments">
+    
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://https-sharmajee499-netlify-app.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  </section>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+      <script id="dsq-count-scr" src="https://sharmajee499.disqus.com/count.js" async></script>
+    
+
+    <script src="/js/_vendor/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.c94d0fe1afcc7ce01dd92c78f1ddb5e6.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>
