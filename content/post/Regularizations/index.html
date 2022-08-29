@@ -11,7 +11,6 @@ image:
   caption: "Photo by [GeeksforGeeks](https://www.geeksforgeeks.org/underfitting-and-overfitting-in-machine-learning/)"
 ---
 
-<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
 
 
 <p>The notion of Regularization arises because of overfitting. So, let’s
@@ -45,11 +44,11 @@ with <span class="math inline">\(\theta_{0}\)</span>. Weights are the vector tha
 <span class="math inline">\([\theta_{0},\theta_{1},\ldots,\theta_{n}]\)</span>. If you put close attention
 to <span class="math inline">\(Eq1\)</span>, you see that we are summing the weights from <span class="math inline">\(\theta_{1}\)</span>,
 excluding <span class="math inline">\(\theta_{0}\)</span> in the regularization penalty term. I found very straight forward reason in <a href="https://www.statlearning.com/" target="_blank">ISLR
-Book</a>,<strong>"We want
+Book</a>,<strong>“We want
 to shrink the estimated associations of the each variable with the
 response; however, we do not want to shrink the intercept, which is
 simply a measure of the mean value of the response when</strong>
-<span class="math inline">\(x_{i1} = x_{i2} = \ldots = x_{ip} = 0\)</span>."</p>
+<span class="math inline">\(x_{i1} = x_{i2} = \ldots = x_{ip} = 0\)</span>.”</p>
 <p>Now, the general question is why the regularization works better than
 the simple regression methods. The reason lies in the <strong>bias-variance
 tradeoff</strong>. Bias-Variance tradeoff could be a whole new topic, but I

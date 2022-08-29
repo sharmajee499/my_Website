@@ -54,5 +54,14 @@ item:
   organization: The O'Malley School of Business, Manhattan College
   organization_url: https://manhattan.edu/academics/schools-and-departments/school-of-business/business-analytics-competition/index.php
   title: Business Analytics Competition, 2nd Position
+
+  
+- certificate_url: "https://www.credly.com/badges/8ca7ddf9-6e0b-4f15-ba0f-fe0681d01e0b/public_url"
+  date_end: "2022-03-20"
+  date_start: "2021-04-09"
+  description: The Minnesota State IT Center of Excellence hosts the annual Data Derby Minnesota. This multidisciplinary competition is open to students at all Minnesota State institutions, which allows student teams to compete and present data-driven answers to defined problems and societal issues.
+  organization: Minnesota State IT Center of Excellence
+  organization_url: https://mnstateitcoe.org/
+  title: "Data Derby-Advance Group, 3rd Position"
   
 ---

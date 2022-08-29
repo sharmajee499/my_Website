@@ -63,4 +63,20 @@ experience:
         * Providing guidance, mentorship, moral as well as emotional support to overcome academic hurdles. 
         * Representing the College of Business to the prospective students through admission events, and meetings.
         
+        
+        
+  - title: Data Analyst - Intern
+    company: The Bernard Group
+    company_url: 'https://thebernardgroup.com/'
+    location: Chanhassen, Minnesota
+    date_start: '2022-05-23'
+    date_end: '2022-08-19'
+    description: |2-
+        Responsibilities include:
+        
+        * Creating different dashboard to support production and printing teams using Tableau, AWS QuickSight and Google Data Studio. 
+        *  Analyzed different reports for various department to optimize printing device time.  
+        * Automated Ad-hock tasks using Python to save manual work. 
+        * Participated in AWS Data Lab for data lake hydration using various tools like AWS Glue, S3 bucket.
+        
 ---
