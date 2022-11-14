@@ -1,0 +1,190 @@
+
+
+
+<div id="train-test-split" class="section level2">
+<h2>1. Train-Test Split</h2>
+<div id="splitting-the-data-into-training-and-testing-set" class="section level3">
+<h3>Splitting the data into training and testing set</h3>
+<p><a href="https://tinyurl.com/2p8xdskx"><img src="train_test_split.png" /></a></p>
+<div id="pros" class="section level4">
+<h4>Pros:</h4>
+<ol style="list-style-type: decimal">
+<li>It’s the most basic and efficient way of model evaluation.</li>
+<li>Computationally In-expensive</li>
+</ol>
+</div>
+<div id="when-to-use" class="section level4">
+<h4>When to use?</h4>
+<ol style="list-style-type: decimal">
+<li>If you have very large test-set.</li>
+<li>Less computational resources.</li>
+</ol>
+</div>
+<div id="cons" class="section level4">
+<h4>Cons</h4>
+<ol style="list-style-type: decimal">
+<li>Test error can be highly variable depending on which observation are included in the training and testing set.</li>
+</ol>
+<p><a href="https://www.statlearning.com/"><img src="variation.png" /></a></p>
+<p>1st degree: <span class="math inline">\(y_{1} = \beta_{0}+x_{1}\beta_{1}\)</span></p>
+<p>2nd degree: <span class="math inline">\(y_{2} = \beta_{0}+x_{1}\beta_{1}+x_{1}^{2}\beta_{2}\)</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>The model is trained on few data which might decrease the performance of trained model.</li>
+</ol>
+</div>
+</div>
+<div id="k-fold-cross-validation" class="section level3">
+<h3>K-Fold Cross Validation</h3>
+<p><a href="https://scikit-learn.org/stable/modules/cross_validation.html"><img src="kfold.png" /></a></p>
+<ol style="list-style-type: decimal">
+<li>Randomly divides the instances into k groups of equal size.</li>
+<li>Sets 1 group for testing and other for training.</li>
+<li>Repeated k times.</li>
+<li>Average the test error for final error value.</li>
+</ol>
+<div id="pros-1" class="section level4">
+<h4>Pros:</h4>
+<ol style="list-style-type: decimal">
+<li>Less variability in the test error when ran multiple times.</li>
+</ol>
+<p><a href="https://www.statlearning.com/"><img src="kfold_error.png" /></a></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Robust and Reliable result as we trained out model on every data points.</li>
+</ol>
+</div>
+<div id="cons-1" class="section level4">
+<h4>Cons:</h4>
+<ol style="list-style-type: decimal">
+<li>Computationally Expensive</li>
+</ol>
+</div>
+</div>
+<div id="faqs" class="section level3">
+<h3>FAQs</h3>
+<ol style="list-style-type: decimal">
+<li>What is the best way to split dataset for Cross-Validation?</li>
+</ol>
+<ul>
+<li>Train-Test split</li>
+<li>Cross-Validate on Train Dataset</li>
+<li>Find best parameters</li>
+<li>Retrain the model on whole training dataset</li>
+<li>Final evaluation is done on Test set</li>
+</ul>
+<p><a href="https://www.statlearning.com/"><img src="data_split.png" /></a></p>
+<ol start="2" style="list-style-type: decimal">
+<li>What is the right value of the K?</li>
+</ol>
+<ul>
+<li>It depends upon your scenario however, it is recommended 5 or 10 are best choices.</li>
+<li>Empirically it is shown that 10 fold is ideal. Refer: <em>Kohavi, R. (1995). A Study of Cross-Validation and Bootstrap for Accuracy Estimation and Model Selection. International Joint Conference of Artificial Intelligence. <a href="http://robotics.stanford.edu/~ronnyk" class="uri">http://robotics.stanford.edu/~ronnyk</a></em></li>
+</ul>
+</div>
+<div id="demo" class="section level3">
+<h3>Demo</h3>
+<div id="train-test-split-1" class="section level4">
+<h4>Train-Test Split</h4>
+<pre class="python"><code>
+from sklearn.datasets import make_classification
+from collections import Counter
+
+# Make the Synthetic Data
+X, y = make_classification(n_samples=1000, n_features=2, n_redundant=0, weights=[0.80],flip_y=0.3, random_state = 112233)
+
+# Data Statistics
+print(f&quot;Total number of instances in the dataset are {len(X)}&quot;)</code></pre>
+<pre><code>## Total number of instances in the dataset are 1000</code></pre>
+<pre class="python"><code>print(f&quot;The target class is imbalanced: {Counter(y)}&quot;)</code></pre>
+<pre><code>## The target class is imbalanced: Counter({0: 722, 1: 278})</code></pre>
+<pre class="python"><code>
+from sklearn.model_selection import train_test_split
+
+# Train-Test Split
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 112233, test_size=0.3, shuffle=True, stratify=y)
+
+print(f&quot;There are {len(X_train)} instances on the training and {len(X_test)} on testing set&quot;)</code></pre>
+<pre><code>## There are 700 instances on the training and 300 on testing set</code></pre>
+<pre class="python"><code>
+# Train a Logistic regression model 
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import f1_score
+
+
+# Fit the model
+lg = LogisticRegression().fit(X_train, y_train)
+
+# Score on the training data
+print(f&quot;Training Data Accuracy: {lg.score(X_train, y_train)}&quot;)</code></pre>
+<pre><code>## Training Data Accuracy: 0.8028571428571428</code></pre>
+<pre class="python"><code>print(f&quot;Training Data F1: {f1_score(y_train, lg.predict(X_train))}&quot;)</code></pre>
+<pre><code>## Training Data F1: 0.5548387096774193</code></pre>
+<pre class="python"><code>print(&quot;\n&quot;)
+
+
+# Predict the model</code></pre>
+<pre class="python"><code>lg_pred = lg.predict(X_test)
+
+
+# Evaluation on the testing set
+print(f&quot;Testing Data Accuracy: {lg.score(X_test, y_test)}&quot;)</code></pre>
+<pre><code>## Testing Data Accuracy: 0.7933333333333333</code></pre>
+<pre class="python"><code>print(f&quot;Testing Data F1: {f1_score(y_test, lg_pred)}&quot;)</code></pre>
+<pre><code>## Testing Data F1: 0.507936507936508</code></pre>
+</div>
+<div id="cross-validation" class="section level4">
+<h4>Cross Validation</h4>
+<pre class="python"><code>
+from sklearn.model_selection import StratifiedKFold
+
+
+kf = StratifiedKFold(n_splits = 10, shuffle=True, random_state=112233)
+
+#  Accuracy
+scores_CV_acc = []
+scores_test_acc = []
+
+# F1 Score
+scores_CV_f1 = []
+scores_test_f1 = []</code></pre>
+<pre class="python"><code>
+for train_index, test_index in kf.split(X_train, y_train):
+  
+  X_trainCV, X_testCV = X_train[train_index], X[test_index]
+  y_trainCV, y_testCV = y_train[train_index], y[test_index]
+    
+  lg_cv = LogisticRegression(random_state=112233).fit(X_trainCV, y_trainCV)
+
+  scores_CV_acc.append(lg_cv.score(X_testCV, y_testCV))
+  scores_test_acc.append(lg_cv.score(X_test, y_test))
+
+  scores_CV_f1.append(round(f1_score(y_testCV, lg_cv.predict(X_testCV)),2))
+  scores_test_f1.append(round(f1_score(y_test, lg_cv.predict(X_test)),2))
+    
+  print(lg_cv.score(X_testCV, y_testCV))
+  </code></pre>
+<pre><code>## 0.7857142857142857
+## 0.7714285714285715
+## 0.8428571428571429
+## 0.8571428571428571
+## 0.8142857142857143
+## 0.8
+## 0.7571428571428571
+## 0.8428571428571429
+## 0.8
+## 0.7428571428571429</code></pre>
+<pre class="python"><code>for i in scores_test_f1:
+  print(i)
+  </code></pre>
+<pre><code>## 0.5
+## 0.5
+## 0.49
+## 0.5
+## 0.5
+## 0.51
+## 0.49
+## 0.5
+## 0.5
+## 0.49</code></pre>
+</div>
+</div>
+</div>

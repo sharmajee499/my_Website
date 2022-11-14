@@ -1,0 +1,141 @@
+---
+title: "Stationarity and ADF Test"
+author: "Sandesh"
+date: "2022-11-06"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+image:
+  placement: 2
+  caption: "Photo by [gretel.ai](https://gretel.ai/blog/creating-synthetic-time-series-data)"
+---
+
+
+
+<p>Stationarity is one of the major concept that needed to be understood in
+order to model any time series. The
+<a href="https://en.wikipedia.org/wiki/Stationary_process" target="_blank">Wikipedia</a>
+defines stationary process as <em>“a stochastic process whose unconditional
+joint probability distribution does not change when shifted in time.”</em>.
+This simply means the given time series will have constant mean,
+variance and auto-correlation which are independent of time. Various
+forecasting models assumes the data to be stationary. Below I am quoting
+the words from the <a href="https://www.manning.com/books/time-series-forecasting-in-python-book" target="_blank"><em>Time Series Forecasting In
+Python</em></a>
+which clearly says why stationarity matters for forecasting.</p>
+<blockquote>
+<p>“These models can only be used if we verify that the data is indeed
+stationary. Otherwise, the models will not be valid, and the forecasts
+will not be reliable. Intuitively, this makes sense, because if the
+data is non-stationary, its properties are going change over time, and
+so it would mean that our model parameters must also change through
+time. This means that we cannot possibly derive a function of future
+values as a function of past values, since the coefficients change at
+each point in time, hence making forecasting unreliable.”</p>
+</blockquote>
+<p>Therefore, before modeling any forecast model we need to check the
+stationarity of the time series data.</p>
+<div id="augmented-dickey-fuller-test-adf-test" class="section level3">
+<h3>Augmented Dickey-Fuller Test (ADF Test)</h3>
+<p>ADF is an one of the common method to test the stationarity of the data.
+ADF is similar to the Dickey-Fuller Test. The only difference between
+the ADF and Dickey-Fuller Test is that Dickey-Fuller Test is used for
+AR(1) (Autoregressive model with order 1) model whereas ADF is augmented
+version used to generalize AR(p) models. You can refer to
+<a href="https://www.thoughtco.com/the-augmented-dickey-fuller-test-1145985" target="_blank">this</a>
+website for more details.</p>
+<p>In this article, we will derive the Dickey-Fuller test and expand the
+same concept to understand ADF.</p>
+<p>We have a univariate time-series data of <span class="math inline">\(y\)</span> then, the Autoregressive
+model of order 1 (AR 1) can be written in :
+<span class="math display">\[\text{AR (1) → } y_{t} = \alpha + \phi_{1}y_{t-1} + \epsilon_{t}  \tag{1}\]</span>
+Here, <span class="math inline">\(\alpha\)</span> is a constant, <span class="math inline">\(\epsilon_{t}\)</span> is a white noise and
+<span class="math inline">\(\phi_1\)</span> is a coefficient. You might find this equation resembling to
+the simple linear regression equation. For now, you can think like that.</p>
+<p>Now, our hypothesis are: <span class="math display">\[H_0 : \phi_1=1\]</span><span class="math display">\[H_1 : \phi_1 &lt; 1\]</span> If
+<span class="math inline">\(\phi_1\)</span> equals to one then, we have a unit root. That means we have a
+random walk, which is not stationary. However, if <span class="math inline">\(\phi_1\)</span> &lt; 1 means
+the process is stationary. In a random walk, the present <span class="math inline">\(y_t\)</span> is a
+function of previous time stamp <span class="math inline">\(y_{t-1}\)</span>, a constant <span class="math inline">\(\alpha\)</span>, and
+random number <span class="math inline">\(\epsilon_t\)</span> also known as white noise.</p>
+<p>Now, we will change the <span class="math inline">\(Equation1\)</span> to find out our test statistics.</p>
+<p>First, we will subtract <span class="math inline">\(y_{t-1}\)</span> from both sides</p>
+<p><span class="math display">\[y_t - y_{t-1} = \alpha+ \phi_1 y_{t-1} + \epsilon_t - y_{t-1} \]</span> Let’s
+assume, <span class="math inline">\(y-y_{t-1} = \Delta y\)</span></p>
+<p><span class="math display">\[\Delta y = \alpha + (\phi_1 -1)y_{t-1}+ \epsilon_t\]</span> We will change
+this equation slightly</p>
+<p><span class="math display">\[\Delta y = \alpha + \delta y_{t-1}+ \epsilon_t\]</span> where,
+<span class="math inline">\(\delta = \phi_1 -1\)</span></p>
+<p>Now, our hypothesis changes to</p>
+<p><span class="math display">\[H_0: \delta = 0\]</span><span class="math display">\[ H_1: \delta &lt; 0\]</span></p>
+<p>The t-statistics is calculated via the same formula that we use in
+linear regression which is:</p>
+<p><span class="math display">\[t_{\hat{\delta}} = \frac{\hat{\delta}}{se(\hat{\delta})} \tag{2}\]</span> We
+will compare the t-statistics that we get from <span class="math inline">\(Equation2\)</span> and compare
+it with the critical value. The only different thing is we will compare
+the critical value with the Dickey-Fuller Distribution Table which can
+be seen on the below figure.</p>
+<p><a href="https://en.wikipedia.org/wiki/Augmented_Dickey%E2%80%93Fuller_test"><img src="adf_ditribution.png" alt="Critical Values for Dickey-Fuller t-distribution" /></a></p>
+<p>If the calculated t-statistics is less then the critical value, we
+reject the null hypothesis stating that the time-series is stationary.</p>
+<p>The Augmented Dickey-Fuller Test follows the same method instead the
+equation becomes:</p>
+<p><span class="math display">\[y_t=\alpha+\sum_{i=1}^{p}\phi_iy_{t-i}+\epsilon_t \tag{3}\]</span>
+<span class="math inline">\(Equation3\)</span> is the AR(p) model. If we follow the same procedure like
+above for the Dickey-Fuller test we get:</p>
+<p><span class="math display">\[\Delta y_t = \alpha+\delta y_{t-1}+\sum_{i=1}^{p}\beta_{i}\Delta y_{t-i} +\epsilon_{t}\]</span>
+Our Null and Alternative hypothesis remains the same and we calculate
+the test statistics for the <span class="math inline">\(\delta\)</span></p>
+</div>
+<div id="excel-demo" class="section level3">
+<h3>Excel Demo</h3>
+<p>I know, the title sounds very old. But, the whole purpose of doing this
+in excel is to understand the basic core concept of the Dickey-Fuller
+Test. I will be performing the Dickey-Fuller test on AR(1) model. The
+data is randomly generated using the <code>statsmodel</code> package in <code>Python</code>.</p>
+<p>The demo video can be found at: <a href="https://youtu.be/R-WVz9YiaN8" class="uri">https://youtu.be/R-WVz9YiaN8</a></p>
+<p>Or simply, click on the picture below.</p>
+<p><a href="https://youtu.be/R-WVz9YiaN8"><img src="adf_thumbnail.png" alt="Excel ADF Test" /></a></p>
+</div>
+<div id="python-demo" class="section level3">
+<h3>Python Demo</h3>
+<p>We will also use the same data (data used in Excel) for the ADF test in
+Python.</p>
+<pre class="python"><code>import pandas as pd
+import numpy as np
+
+from statsmodels.tsa.arima_process import ArmaProcess #for data generation
+from statsmodels.tsa.stattools import adfuller #adf test</code></pre>
+<pre class="python"><code># Assigning random coefficient 
+ar1 = np.array([1, -0.9])
+
+# Since we are generating AR1 data the MA part remains constant
+ma1 = np.array([1])
+
+ar_obj = ArmaProcess(ar1, ma1)
+
+np.random.seed(112233)
+
+# Simulate the Data
+simulate_ar1 = ar_obj.generate_sample(nsample=50)
+
+# Convert the data to pandas data-frame
+sim_ar1 = pd.DataFrame({&#39;data&#39;: simulate_ar1})</code></pre>
+<pre class="python"><code>
+adf_test_ar1 = adfuller(sim_ar1[&#39;data&#39;])
+
+print(f&quot;The t-stat is: {adf_test_ar1[0]}&quot;)</code></pre>
+<pre><code>## The t-stat is: -3.172943627520224</code></pre>
+<pre class="python"><code>print(f&quot;The p-value is: {adf_test_ar1[1]}&quot;)</code></pre>
+<pre><code>## The p-value is: 0.021605203198304446</code></pre>
+<p>From the above result, we saw that the p-value is less than 0.05 which
+means we reject the null hypothesis stating that the series is
+stationary.</p>
+<p>In conclusion, ADF test is the first step taken in any time-series
+modeling. ADF test being a statistical test makes sure that the data
+that we working on follows the basic assumption of stationarity or not.
+In this article, we saw the basic math behind the DF and expanded it to
+understand ADF. We also implemented the demo in Excel as well as further
+validated the same results in Python.</p>
+</div>
