@@ -5,12 +5,20 @@
     <link>https://sharmajee499.netlify.app/tag/demo/</link>
       <atom:link href="https://sharmajee499.netlify.app/tag/demo/index.xml" rel="self" type="application/rss+xml" />
     <description>Demo</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 10 Sep 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_512x512_fill_lanczos_center_2.png</url>
       <title>Demo</title>
       <link>https://sharmajee499.netlify.app/tag/demo/</link>
     </image>
+    
+    <item>
+      <title>Telemarketing Success Prediction</title>
+      <link>https://sharmajee499.netlify.app/project/telemarketing_sales/</link>
+      <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/project/telemarketing_sales/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Image Classification with Transfer Learning</title>

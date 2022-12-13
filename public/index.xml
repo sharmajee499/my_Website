@@ -5,7 +5,7 @@
     <link>https://sharmajee499.netlify.app/</link>
       <atom:link href="https://sharmajee499.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <description>Sandesh Sharma</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 16 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 13 Dec 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://sharmajee499.netlify.app/media/icon_hu5666f1ae0d8e51197792a269747b1cce_24889_512x512_fill_lanczos_center_2.png</url>
       <title>Sandesh Sharma</title>
@@ -105,6 +105,365 @@ The variance of the distribution is $\sigma^{2}$.
   &lt;summary&gt;What is the parameter $\mu$?&lt;/summary&gt;
   &lt;p&gt;The parameter $\mu$ is the mean or expectation of the distribution.&lt;/p&gt;
 &lt;/details&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gradient Boosting: Principles &amp; Implementation</title>
+      <link>https://sharmajee499.netlify.app/post/gradient_-boosting/</link>
+      <pubDate>Tue, 13 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/post/gradient_-boosting/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Gradient Boosting (GB) is one of the most popular algorithms in the
+Machine Learning/Data Science community. You might heard about various
+version of boosting algorithms like Ada-boost, XG Boost, LG Boost,
+CatBoost. They are very famous for wining the Kaggle competition. In
+this article, I want to talk about the vanilla Gradient Boosting and
+it’s working principle with some mathematical background.&lt;/p&gt;
+&lt;p&gt;The fundamental working principle of the boosting algorithms is to
+combine a number of weak learner into a stronger ensemble. The boosting
+algorithms sequential trains the weak learners and repeat the process.&lt;/p&gt;
+&lt;p&gt;Let us straight dive into the algorithm and it’s working principle then
+it will make more sense to you. Below picture is captured from the
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Gradient_boosting&#34;&gt;Wikipedia&lt;/a&gt; article
+which shows the pseudo algorithm. You can also find the in-depth
+description on the original paper by &lt;a href=&#34;https://www.jstor.org/stable/2699986&#34;&gt;Friedman
+(2001)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;GB.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;algorithm-breakdown&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Algorithm Breakdown&lt;/h3&gt;
+&lt;div id=&#34;step-1&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Step 1:&lt;/h4&gt;
+&lt;p&gt;Let’s look at the step one of the algorithm.&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Initialize model with a constant value:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[F_0(x) = \underset{\gamma}{\operatorname{argmin}} \sum_{i=1}^{n}L(y_i, \gamma)\]&lt;/span&gt;
+In the first step we need to find the constant value to initialize our
+base learner/first weak learner. From the equation, we see that we need
+to find &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; such that it minimized our loss function. Now, we need
+a loss function. Let’s assume we are working on the regression problem
+and we choose are loss function to be squared error(SE). Keep in mind,
+you can choose another loss function also. The formula for SE is:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[SE = (y_i - \hat{y_i})^2\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Here, we will replace &lt;span class=&#34;math inline&#34;&gt;\(\hat{y_i}\)&lt;/span&gt; with our &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; and the function
+becomes: &lt;span class=&#34;math display&#34;&gt;\[L_{SE} = (y_i - \gamma)^2\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The question arises how we will find the value that minimized the loss
+function. Here, comes our old friend derivative. We will take derivative
+of the loss function with respect to &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; and then equalize to zero
+to find the minimum value. The above SE equation only showed error for a
+observation. We have to sum the error of whole data to get total error.
+Therefore, the equation changes to:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\frac{\partial}{\partial {\gamma}} (\sum_{i=1}^n(y_i - \gamma)^2)\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Let’s apply chain rule and we will get:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[2 \sum_1^n (y_i -\gamma) \left(\frac{\partial(y_i - \gamma)}{\partial{\gamma}}\right)\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[2 \sum_1^n (y_i -\gamma) \left(\frac{\partial{y_i}}{\partial{\gamma}} - \frac{\partial{\gamma}}{\partial{\gamma}}\right)\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[2 \sum_1^n (y_i -\gamma) (-1)\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Now, to find the value of &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; that minimized the function, we will
+equalize above equation with zero.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\Rightarrow -2 \sum_{i=1}^n(y_i-\gamma) = 0\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\Rightarrow \sum_{i=1}^ny_i - n\gamma = 0\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[\gamma = \frac{\sum_{i=1}^ny_i}{n} \tag{1}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;If you look at the &lt;span class=&#34;math inline&#34;&gt;\(Eq1\)&lt;/span&gt;, you will see that &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; is equal to the
+mean of the target value(considering this as a regression problem).
+Therefore, the predicted value of our first weak model is the mean of
+the dependent variable. Meaning, if we choose mean to be our base
+learners predicted value then it will minimize the loss.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Step 2:&lt;/h4&gt;
+&lt;p&gt;In the step 2, we iterate the below process for &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt; times. Here, &lt;span class=&#34;math inline&#34;&gt;\(M\)&lt;/span&gt;
+represents the number of trees one wants in their GB algorithm.&lt;/p&gt;
+&lt;div id=&#34;step-2.1&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;Step 2.1&lt;/h5&gt;
+&lt;p&gt;In step 2.1, we are calculating the residual. We compute the
+pseudo-residual by taking the derivative of the loss function with
+respect to our previous prediction. Let’s look at the equation and
+mathematically derivative the equation:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[r_{im} = -\left[ \frac{\partial L(y_i, F(x_i))}{\partial F(x_i)} \right]_{F(x) = F_{m-1}(x)} \text{for i=1,...,n} \tag{2}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The derivative of the &lt;span class=&#34;math inline&#34;&gt;\(Eq2\)&lt;/span&gt; is similar to the above loss function
+derivative. If you replace &lt;span class=&#34;math inline&#34;&gt;\(F(x_i)\)&lt;/span&gt; with &lt;span class=&#34;math inline&#34;&gt;\(\gamma\)&lt;/span&gt; both of the equation
+are identical. Therefore, the result are same which is:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[= -1*-2(y_i - F_{m-1})\]&lt;/span&gt; &lt;span class=&#34;math display&#34;&gt;\[ = 2(y_i - F_{m-1}) \tag{3}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;If you remove 2, which is a constant, then you will see that why it is
+called pseudo-residual.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2.2&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;Step 2.2&lt;/h5&gt;
+&lt;p&gt;In this step, we will fit the base learner, Decision Tree, making the
+pseudo-residual dependent variable&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2.3&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;Step 2.3&lt;/h5&gt;
+&lt;p&gt;In step 3 we calculate the multiplier &lt;span class=&#34;math inline&#34;&gt;\(\gamma_m\)&lt;/span&gt; which is needed to
+update our model in next step. This is done by finding the minimum value
+of below function. Here, we are trying to minimize the loss function on
+each terminal node of our Decision Tree- &lt;span class=&#34;math inline&#34;&gt;\(h_m(x_i)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\gamma_m = \underset{\gamma}{\operatorname{argmin}} \sum_{i=1}^n L(y_i, F_{m-1}(x_i) + \gamma h_m(x_i)) \tag{4}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;span class=&#34;math inline&#34;&gt;\(Eq4\)&lt;/span&gt; is similar to our equation in Step 1. The only difference is,
+here we also have to consider the output of our previous learners
+prediction which is &lt;span class=&#34;math inline&#34;&gt;\(F_{m-1}(x_i)\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2.4&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;Step 2.4&lt;/h5&gt;
+&lt;p&gt;We will slightly change this step. The above formula is the official
+generalization of the GB algorithm from the original paper. However,
+that is more prone to over-fitting. Therefore, we will use shrinkage
+method as a regularization to make model robust. Therefore, the equation
+becomes:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[F_m(x) = F_{m-1}(x) + \nu . \gamma_m h_m(x), 0&amp;lt;\nu \le 1 \tag{5}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where &lt;span class=&#34;math inline&#34;&gt;\(\nu\)&lt;/span&gt; is learning rate that we have to pre-define. The &lt;span class=&#34;math inline&#34;&gt;\(Eq5\)&lt;/span&gt; is
+simply adding the output of the previous model with learning rate
+multiplied by currently predicted value by the decision tree. If the
+iteration was first, then the &lt;span class=&#34;math inline&#34;&gt;\(F_{m-1}(x)\)&lt;/span&gt; would be the mean and
+&lt;span class=&#34;math inline&#34;&gt;\(\gamma_m h_m(x)\)&lt;/span&gt; would be the predicted value of the first decision
+tree.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;python-implementation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Python Implementation&lt;/h3&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;
+# Import Libraries and Data
+
+from sklearn.datasets import load_diabetes
+from sklearn.tree import DecisionTreeRegressor
+from sklearn import metrics
+import numpy as np
+from sklearn.ensemble import GradientBoostingRegressor
+
+# data and split
+df= load_diabetes()
+train_size = 300
+
+x_train, y_train = df.data[:train_size], df.target[:train_size]
+x_test, y_test = df.data[train_size:], df.target[train_size:]
+
+np.random.seed(112233)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;
+# Create the Pre-requisite for the Gradient Boost
+
+# Number of Decision Tree
+dt_size = 50
+
+# Learning Rate
+lr = 0.1
+
+# Placeholder for all base learners
+base_learner = []
+
+# Initial Prediction (which is mean: Step 1)
+prv_pred = np.zeros(len(y_train))+ np.mean(y_train)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;
+# Loop (Step 2)
+
+for i in range(dt_size):
+  # Pseudo Residuals
+  err = y_train - prv_pred
+
+  # Train decision tree on the pseudo residual 
+  dt = DecisionTreeRegressor(max_depth=1, random_state=112233)
+  dt.fit(x_train, err)
+
+  # Prediction of the decision tree
+  gamma = dt.predict(x_train)
+
+  # Update the model
+  prv_pred = prv_pred + lr * gamma
+
+  # Save the base learners
+  base_learner.append(dt);&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;
+# Make the prediction
+
+# Again initializing the base learner prediction which is mean for test data prediction
+pred0 = np.zeros(len(y_test))+ np.mean(y_test)
+
+# Loop through the learners to predict
+for learner in base_learner:
+  prediction = learner.predict(x_test)
+  pred0 = pred0 + (lr * prediction);&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;
+# Evaluations using RMSE
+rmse = metrics.mean_squared_error(y_test, pred0, squared=False)
+print(f&amp;quot;RMSE: {rmse}&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## RMSE: 56.54069228996236&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;
+# Now Using the Sklearn Package for comparison
+
+gbr = GradientBoostingRegressor(n_estimators=dt_size, max_depth=1, learning_rate=lr, random_state=112233)
+gbr.fit(x_train, y_train)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## GradientBoostingRegressor(max_depth=1, n_estimators=50, random_state=112233)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;gbr_pred = gbr.predict(x_test)
+
+gbr_err = metrics.mean_squared_error(y_test, gbr_pred, squared=False)
+
+print(f&amp;quot;RMSE: {rmse}&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## RMSE: 56.54069228996236&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(f&amp;quot;RMSE (sklearn) : {gbr_err}&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## RMSE (sklearn) : 56.19156351809499&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;From the above result, you can see that we got the similar RMSE from
+scratch model as well as model from the sklearn package. I would highly
+recommend to watch the video by Josh Starmer to better understand the
+model. Here is the &lt;a href=&#34;https://www.youtube.com/watch?v=2xudPOBz-vs&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;References&lt;/h3&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Friedman, J. H. (2001). Greedy function approximation: a gradient
+boosting machine. Annals of statistics, 1189-1232.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Stationarity and ADF Test</title>
+      <link>https://sharmajee499.netlify.app/post/adf_test/</link>
+      <pubDate>Sun, 06 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/post/adf_test/</guid>
+      <description>
+
+
+&lt;p&gt;Stationarity is one of the major concept that needed to be understood in
+order to model any time series. The
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Stationary_process&#34; target=&#34;_blank&#34;&gt;Wikipedia&lt;/a&gt;
+defines stationary process as &lt;em&gt;“a stochastic process whose unconditional
+joint probability distribution does not change when shifted in time.”&lt;/em&gt;.
+This simply means the given time series will have constant mean,
+variance and auto-correlation which are independent of time. Various
+forecasting models assumes the data to be stationary. Below I am quoting
+the words from the &lt;a href=&#34;https://www.manning.com/books/time-series-forecasting-in-python-book&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;Time Series Forecasting In
+Python&lt;/em&gt;&lt;/a&gt;
+which clearly says why stationarity matters for forecasting.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“These models can only be used if we verify that the data is indeed
+stationary. Otherwise, the models will not be valid, and the forecasts
+will not be reliable. Intuitively, this makes sense, because if the
+data is non-stationary, its properties are going change over time, and
+so it would mean that our model parameters must also change through
+time. This means that we cannot possibly derive a function of future
+values as a function of past values, since the coefficients change at
+each point in time, hence making forecasting unreliable.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Therefore, before modeling any forecast model we need to check the
+stationarity of the time series data.&lt;/p&gt;
+&lt;div id=&#34;augmented-dickey-fuller-test-adf-test&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Augmented Dickey-Fuller Test (ADF Test)&lt;/h3&gt;
+&lt;p&gt;ADF is an one of the common method to test the stationarity of the data.
+ADF is similar to the Dickey-Fuller Test. The only difference between
+the ADF and Dickey-Fuller Test is that Dickey-Fuller Test is used for
+AR(1) (Autoregressive model with order 1) model whereas ADF is augmented
+version used to generalize AR(p) models. You can refer to
+&lt;a href=&#34;https://www.thoughtco.com/the-augmented-dickey-fuller-test-1145985&#34; target=&#34;_blank&#34;&gt;this&lt;/a&gt;
+website for more details.&lt;/p&gt;
+&lt;p&gt;In this article, we will derive the Dickey-Fuller test and expand the
+same concept to understand ADF.&lt;/p&gt;
+&lt;p&gt;We have a univariate time-series data of &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt; then, the Autoregressive
+model of order 1 (AR 1) can be written in :
+&lt;span class=&#34;math display&#34;&gt;\[\text{AR (1) → } y_{t} = \alpha + \phi_{1}y_{t-1} + \epsilon_{t}  \tag{1}\]&lt;/span&gt;
+Here, &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt; is a constant, &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_{t}\)&lt;/span&gt; is a white noise and
+&lt;span class=&#34;math inline&#34;&gt;\(\phi_1\)&lt;/span&gt; is a coefficient. You might find this equation resembling to
+the simple linear regression equation. For now, you can think like that.&lt;/p&gt;
+&lt;p&gt;Now, our hypothesis are: &lt;span class=&#34;math display&#34;&gt;\[H_0 : \phi_1=1\]&lt;/span&gt;&lt;span class=&#34;math display&#34;&gt;\[H_1 : \phi_1 &amp;lt; 1\]&lt;/span&gt; If
+&lt;span class=&#34;math inline&#34;&gt;\(\phi_1\)&lt;/span&gt; equals to one then, we have a unit root. That means we have a
+random walk, which is not stationary. However, if &lt;span class=&#34;math inline&#34;&gt;\(\phi_1\)&lt;/span&gt; &amp;lt; 1 means
+the process is stationary. In a random walk, the present &lt;span class=&#34;math inline&#34;&gt;\(y_t\)&lt;/span&gt; is a
+function of previous time stamp &lt;span class=&#34;math inline&#34;&gt;\(y_{t-1}\)&lt;/span&gt;, a constant &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt;, and
+random number &lt;span class=&#34;math inline&#34;&gt;\(\epsilon_t\)&lt;/span&gt; also known as white noise.&lt;/p&gt;
+&lt;p&gt;Now, we will change the &lt;span class=&#34;math inline&#34;&gt;\(Equation1\)&lt;/span&gt; to find out our test statistics.&lt;/p&gt;
+&lt;p&gt;First, we will subtract &lt;span class=&#34;math inline&#34;&gt;\(y_{t-1}\)&lt;/span&gt; from both sides&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[y_t - y_{t-1} = \alpha+ \phi_1 y_{t-1} + \epsilon_t - y_{t-1} \]&lt;/span&gt; Let’s
+assume, &lt;span class=&#34;math inline&#34;&gt;\(y-y_{t-1} = \Delta y\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\Delta y = \alpha + (\phi_1 -1)y_{t-1}+ \epsilon_t\]&lt;/span&gt; We will change
+this equation slightly&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\Delta y = \alpha + \delta y_{t-1}+ \epsilon_t\]&lt;/span&gt; where,
+&lt;span class=&#34;math inline&#34;&gt;\(\delta = \phi_1 -1\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Now, our hypothesis changes to&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[H_0: \delta = 0\]&lt;/span&gt;&lt;span class=&#34;math display&#34;&gt;\[ H_1: \delta &amp;lt; 0\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The t-statistics is calculated via the same formula that we use in
+linear regression which is:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[t_{\hat{\delta}} = \frac{\hat{\delta}}{se(\hat{\delta})} \tag{2}\]&lt;/span&gt; We
+will compare the t-statistics that we get from &lt;span class=&#34;math inline&#34;&gt;\(Equation2\)&lt;/span&gt; and compare
+it with the critical value. The only different thing is we will compare
+the critical value with the Dickey-Fuller Distribution Table which can
+be seen on the below figure.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Augmented_Dickey%E2%80%93Fuller_test&#34;&gt;&lt;img src=&#34;adf_ditribution.png&#34; alt=&#34;Critical Values for Dickey-Fuller t-distribution&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If the calculated t-statistics is less then the critical value, we
+reject the null hypothesis stating that the time-series is stationary.&lt;/p&gt;
+&lt;p&gt;The Augmented Dickey-Fuller Test follows the same method instead the
+equation becomes:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[y_t=\alpha+\sum_{i=1}^{p}\phi_iy_{t-i}+\epsilon_t \tag{3}\]&lt;/span&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(Equation3\)&lt;/span&gt; is the AR(p) model. If we follow the same procedure like
+above for the Dickey-Fuller test we get:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\Delta y_t = \alpha+\delta y_{t-1}+\sum_{i=1}^{p}\beta_{i}\Delta y_{t-i} +\epsilon_{t}\]&lt;/span&gt;
+Our Null and Alternative hypothesis remains the same and we calculate
+the test statistics for the &lt;span class=&#34;math inline&#34;&gt;\(\delta\)&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;excel-demo&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Excel Demo&lt;/h3&gt;
+&lt;p&gt;I know, the title sounds very old. But, the whole purpose of doing this
+in excel is to understand the basic core concept of the Dickey-Fuller
+Test. I will be performing the Dickey-Fuller test on AR(1) model. The
+data is randomly generated using the &lt;code&gt;statsmodel&lt;/code&gt; package in &lt;code&gt;Python&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The demo video can be found at: &lt;a href=&#34;https://youtu.be/R-WVz9YiaN8&#34; class=&#34;uri&#34;&gt;https://youtu.be/R-WVz9YiaN8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Or simply, click on the picture below.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://youtu.be/R-WVz9YiaN8&#34;&gt;&lt;img src=&#34;adf_thumbnail.png&#34; alt=&#34;Excel ADF Test&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;python-demo&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Python Demo&lt;/h3&gt;
+&lt;p&gt;We will also use the same data (data used in Excel) for the ADF test in
+Python.&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import pandas as pd
+import numpy as np
+
+from statsmodels.tsa.arima_process import ArmaProcess #for data generation
+from statsmodels.tsa.stattools import adfuller #adf test&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;# Assigning random coefficient 
+ar1 = np.array([1, -0.9])
+
+# Since we are generating AR1 data the MA part remains constant
+ma1 = np.array([1])
+
+ar_obj = ArmaProcess(ar1, ma1)
+
+np.random.seed(112233)
+
+# Simulate the Data
+simulate_ar1 = ar_obj.generate_sample(nsample=50)
+
+# Convert the data to pandas data-frame
+sim_ar1 = pd.DataFrame({&amp;#39;data&amp;#39;: simulate_ar1})&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;
+adf_test_ar1 = adfuller(sim_ar1[&amp;#39;data&amp;#39;])
+
+print(f&amp;quot;The t-stat is: {adf_test_ar1[0]}&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The t-stat is: -3.172943627520224&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(f&amp;quot;The p-value is: {adf_test_ar1[1]}&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The p-value is: 0.021605203198304446&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;From the above result, we saw that the p-value is less than 0.05 which
+means we reject the null hypothesis stating that the series is
+stationary.&lt;/p&gt;
+&lt;p&gt;In conclusion, ADF test is the first step taken in any time-series
+modeling. ADF test being a statistical test makes sure that the data
+that we working on follows the basic assumption of stationarity or not.
+In this article, we saw the basic math behind the DF and expanded it to
+understand ADF. We also implemented the demo in Excel as well as further
+validated the same results in Python.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Telemarketing Success Prediction</title>
+      <link>https://sharmajee499.netlify.app/project/telemarketing_sales/</link>
+      <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://sharmajee499.netlify.app/project/telemarketing_sales/</guid>
+      <description></description>
     </item>
     
     <item>

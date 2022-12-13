@@ -1,0 +1,218 @@
+---
+title: "Gradient Boosting: Principles & Implementation"
+author: "Sandesh"
+date: "2022-12-13"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+image:
+  placement: 2
+  caption: "Photo by [Haithem Ferdi](https://unsplash.com/photos/UXbv-EOCAYc)"
+---
+
+
+
+<div id="introduction" class="section level3">
+<h3>Introduction</h3>
+<p>Gradient Boosting (GB) is one of the most popular algorithms in the
+Machine Learning/Data Science community. You might heard about various
+version of boosting algorithms like Ada-boost, XG Boost, LG Boost,
+CatBoost. They are very famous for wining the Kaggle competition. In
+this article, I want to talk about the vanilla Gradient Boosting and
+it’s working principle with some mathematical background.</p>
+<p>The fundamental working principle of the boosting algorithms is to
+combine a number of weak learner into a stronger ensemble. The boosting
+algorithms sequential trains the weak learners and repeat the process.</p>
+<p>Let us straight dive into the algorithm and it’s working principle then
+it will make more sense to you. Below picture is captured from the
+<a href="https://en.wikipedia.org/wiki/Gradient_boosting">Wikipedia</a> article
+which shows the pseudo algorithm. You can also find the in-depth
+description on the original paper by <a href="https://www.jstor.org/stable/2699986">Friedman
+(2001)</a>.</p>
+<p><img src="GB.png" /></p>
+</div>
+<div id="algorithm-breakdown" class="section level3">
+<h3>Algorithm Breakdown</h3>
+<div id="step-1" class="section level4">
+<h4>Step 1:</h4>
+<p>Let’s look at the step one of the algorithm.</p>
+<ol style="list-style-type: decimal">
+<li>Initialize model with a constant value:</li>
+</ol>
+<p><span class="math display">\[F_0(x) = \underset{\gamma}{\operatorname{argmin}} \sum_{i=1}^{n}L(y_i, \gamma)\]</span>
+In the first step we need to find the constant value to initialize our
+base learner/first weak learner. From the equation, we see that we need
+to find <span class="math inline">\(\gamma\)</span> such that it minimized our loss function. Now, we need
+a loss function. Let’s assume we are working on the regression problem
+and we choose are loss function to be squared error(SE). Keep in mind,
+you can choose another loss function also. The formula for SE is:</p>
+<p><span class="math display">\[SE = (y_i - \hat{y_i})^2\]</span></p>
+<p>Here, we will replace <span class="math inline">\(\hat{y_i}\)</span> with our <span class="math inline">\(\gamma\)</span> and the function
+becomes: <span class="math display">\[L_{SE} = (y_i - \gamma)^2\]</span></p>
+<p>The question arises how we will find the value that minimized the loss
+function. Here, comes our old friend derivative. We will take derivative
+of the loss function with respect to <span class="math inline">\(\gamma\)</span> and then equalize to zero
+to find the minimum value. The above SE equation only showed error for a
+observation. We have to sum the error of whole data to get total error.
+Therefore, the equation changes to:</p>
+<p><span class="math display">\[\frac{\partial}{\partial {\gamma}} (\sum_{i=1}^n(y_i - \gamma)^2)\]</span></p>
+<p>Let’s apply chain rule and we will get:</p>
+<p><span class="math display">\[2 \sum_1^n (y_i -\gamma) \left(\frac{\partial(y_i - \gamma)}{\partial{\gamma}}\right)\]</span>
+<span class="math display">\[2 \sum_1^n (y_i -\gamma) \left(\frac{\partial{y_i}}{\partial{\gamma}} - \frac{\partial{\gamma}}{\partial{\gamma}}\right)\]</span>
+<span class="math display">\[2 \sum_1^n (y_i -\gamma) (-1)\]</span></p>
+<p>Now, to find the value of <span class="math inline">\(\gamma\)</span> that minimized the function, we will
+equalize above equation with zero.</p>
+<p><span class="math display">\[\Rightarrow -2 \sum_{i=1}^n(y_i-\gamma) = 0\]</span>
+<span class="math display">\[\Rightarrow \sum_{i=1}^ny_i - n\gamma = 0\]</span>
+<span class="math display">\[\gamma = \frac{\sum_{i=1}^ny_i}{n} \tag{1}\]</span></p>
+<p>If you look at the <span class="math inline">\(Eq1\)</span>, you will see that <span class="math inline">\(\gamma\)</span> is equal to the
+mean of the target value(considering this as a regression problem).
+Therefore, the predicted value of our first weak model is the mean of
+the dependent variable. Meaning, if we choose mean to be our base
+learners predicted value then it will minimize the loss.</p>
+</div>
+<div id="step-2" class="section level4">
+<h4>Step 2:</h4>
+<p>In the step 2, we iterate the below process for <span class="math inline">\(M\)</span> times. Here, <span class="math inline">\(M\)</span>
+represents the number of trees one wants in their GB algorithm.</p>
+<div id="step-2.1" class="section level5">
+<h5>Step 2.1</h5>
+<p>In step 2.1, we are calculating the residual. We compute the
+pseudo-residual by taking the derivative of the loss function with
+respect to our previous prediction. Let’s look at the equation and
+mathematically derivative the equation:</p>
+<p><span class="math display">\[r_{im} = -\left[ \frac{\partial L(y_i, F(x_i))}{\partial F(x_i)} \right]_{F(x) = F_{m-1}(x)} \text{for i=1,...,n} \tag{2}\]</span></p>
+<p>The derivative of the <span class="math inline">\(Eq2\)</span> is similar to the above loss function
+derivative. If you replace <span class="math inline">\(F(x_i)\)</span> with <span class="math inline">\(\gamma\)</span> both of the equation
+are identical. Therefore, the result are same which is:</p>
+<p><span class="math display">\[= -1*-2(y_i - F_{m-1})\]</span> <span class="math display">\[ = 2(y_i - F_{m-1}) \tag{3}\]</span></p>
+<p>If you remove 2, which is a constant, then you will see that why it is
+called pseudo-residual.</p>
+</div>
+<div id="step-2.2" class="section level5">
+<h5>Step 2.2</h5>
+<p>In this step, we will fit the base learner, Decision Tree, making the
+pseudo-residual dependent variable</p>
+</div>
+<div id="step-2.3" class="section level5">
+<h5>Step 2.3</h5>
+<p>In step 3 we calculate the multiplier <span class="math inline">\(\gamma_m\)</span> which is needed to
+update our model in next step. This is done by finding the minimum value
+of below function. Here, we are trying to minimize the loss function on
+each terminal node of our Decision Tree- <span class="math inline">\(h_m(x_i)\)</span></p>
+<p><span class="math display">\[\gamma_m = \underset{\gamma}{\operatorname{argmin}} \sum_{i=1}^n L(y_i, F_{m-1}(x_i) + \gamma h_m(x_i)) \tag{4}\]</span></p>
+<p>The <span class="math inline">\(Eq4\)</span> is similar to our equation in Step 1. The only difference is,
+here we also have to consider the output of our previous learners
+prediction which is <span class="math inline">\(F_{m-1}(x_i)\)</span></p>
+</div>
+<div id="step-2.4" class="section level5">
+<h5>Step 2.4</h5>
+<p>We will slightly change this step. The above formula is the official
+generalization of the GB algorithm from the original paper. However,
+that is more prone to over-fitting. Therefore, we will use shrinkage
+method as a regularization to make model robust. Therefore, the equation
+becomes:</p>
+<p><span class="math display">\[F_m(x) = F_{m-1}(x) + \nu . \gamma_m h_m(x), 0&lt;\nu \le 1 \tag{5}\]</span></p>
+<p>where <span class="math inline">\(\nu\)</span> is learning rate that we have to pre-define. The <span class="math inline">\(Eq5\)</span> is
+simply adding the output of the previous model with learning rate
+multiplied by currently predicted value by the decision tree. If the
+iteration was first, then the <span class="math inline">\(F_{m-1}(x)\)</span> would be the mean and
+<span class="math inline">\(\gamma_m h_m(x)\)</span> would be the predicted value of the first decision
+tree.</p>
+</div>
+</div>
+</div>
+<div id="python-implementation" class="section level3">
+<h3>Python Implementation</h3>
+<pre class="python"><code>
+# Import Libraries and Data
+
+from sklearn.datasets import load_diabetes
+from sklearn.tree import DecisionTreeRegressor
+from sklearn import metrics
+import numpy as np
+from sklearn.ensemble import GradientBoostingRegressor
+
+# data and split
+df= load_diabetes()
+train_size = 300
+
+x_train, y_train = df.data[:train_size], df.target[:train_size]
+x_test, y_test = df.data[train_size:], df.target[train_size:]
+
+np.random.seed(112233)</code></pre>
+<pre class="python"><code>
+# Create the Pre-requisite for the Gradient Boost
+
+# Number of Decision Tree
+dt_size = 50
+
+# Learning Rate
+lr = 0.1
+
+# Placeholder for all base learners
+base_learner = []
+
+# Initial Prediction (which is mean: Step 1)
+prv_pred = np.zeros(len(y_train))+ np.mean(y_train)</code></pre>
+<pre class="python"><code>
+# Loop (Step 2)
+
+for i in range(dt_size):
+  # Pseudo Residuals
+  err = y_train - prv_pred
+
+  # Train decision tree on the pseudo residual 
+  dt = DecisionTreeRegressor(max_depth=1, random_state=112233)
+  dt.fit(x_train, err)
+
+  # Prediction of the decision tree
+  gamma = dt.predict(x_train)
+
+  # Update the model
+  prv_pred = prv_pred + lr * gamma
+
+  # Save the base learners
+  base_learner.append(dt);</code></pre>
+<pre class="python"><code>
+# Make the prediction
+
+# Again initializing the base learner prediction which is mean for test data prediction
+pred0 = np.zeros(len(y_test))+ np.mean(y_test)
+
+# Loop through the learners to predict
+for learner in base_learner:
+  prediction = learner.predict(x_test)
+  pred0 = pred0 + (lr * prediction);</code></pre>
+<pre class="python"><code>
+# Evaluations using RMSE
+rmse = metrics.mean_squared_error(y_test, pred0, squared=False)
+print(f&quot;RMSE: {rmse}&quot;)</code></pre>
+<pre><code>## RMSE: 56.54069228996236</code></pre>
+<pre class="python"><code>
+# Now Using the Sklearn Package for comparison
+
+gbr = GradientBoostingRegressor(n_estimators=dt_size, max_depth=1, learning_rate=lr, random_state=112233)
+gbr.fit(x_train, y_train)</code></pre>
+<pre><code>## GradientBoostingRegressor(max_depth=1, n_estimators=50, random_state=112233)</code></pre>
+<pre class="python"><code>gbr_pred = gbr.predict(x_test)
+
+gbr_err = metrics.mean_squared_error(y_test, gbr_pred, squared=False)
+
+print(f&quot;RMSE: {rmse}&quot;)</code></pre>
+<pre><code>## RMSE: 56.54069228996236</code></pre>
+<pre class="python"><code>print(f&quot;RMSE (sklearn) : {gbr_err}&quot;)</code></pre>
+<pre><code>## RMSE (sklearn) : 56.19156351809499</code></pre>
+<p>From the above result, you can see that we got the similar RMSE from
+scratch model as well as model from the sklearn package. I would highly
+recommend to watch the video by Josh Starmer to better understand the
+model. Here is the <a href="https://www.youtube.com/watch?v=2xudPOBz-vs">link</a></p>
+</div>
+<div id="references" class="section level3">
+<h3>References</h3>
+<ol style="list-style-type: decimal">
+<li>Friedman, J. H. (2001). Greedy function approximation: a gradient
+boosting machine. Annals of statistics, 1189-1232.</li>
+</ol>
+</div>
