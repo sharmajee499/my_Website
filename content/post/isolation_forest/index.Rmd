@@ -235,7 +235,6 @@ axs[0].scatter(x=X_train['X1'], y=X_train['X2'], c=y_train['target'],)
 axs[0].set_title("Train Data")
 axs[1].scatter(x=X_test['X1'], y=X_test['X2'], c=y_test['target'])
 axs[1].set_title("Test Data")
-plt.plot()
 plt.show()
 
 """From the figure, it is clear that what data-points are anomaly. However, this
@@ -257,7 +256,6 @@ mdl = IsolationForest(random_state=112233, contamination=0.02).fit(X_train)
 # Visualizing one of the Isolation Tree
 #fig, ax = plt.subplots(1,1)
 _ = tree.plot_tree(mdl.estimators_[0])
-plt.plot()
 plt.show()
 ```
 
