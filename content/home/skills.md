@@ -16,21 +16,33 @@ subtitle:
 # - Add/remove as many `feature` blocks below as you like.
 # - For available icons, see: https://wowchemy.com/docs/page-builder/#icons
 feature:
-- icon: r-project
-  icon_pack: fab
-  name: R
-- icon: chart-line
+#- icon: r-project
+#  icon_pack: fab
+#  name: R
+- icon: arrows-to-eye
   icon_pack: fas
-  name: Statistics
+  name: Kafka
+  
+- icon: database-solid
+  icon_pack: fas
+  name: Oracle GoldenGate
+  
 - icon: python
   icon_pack: fab
   name: Python
+  
 - icon: robot
   icon_pack: fas
   name: Machine Learning
-- icon: chart-pie
+
+- icon: chart-line
   icon_pack: fas
-  name: Tableau
+  name: Statistics
+  
+#- icon: chart-pie
+#  icon_pack: fas
+#  name: Tableau
+
 - icon: user-tie
   icon_pack: fas
   name: Business Analysis

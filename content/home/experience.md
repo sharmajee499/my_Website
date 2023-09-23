@@ -54,7 +54,7 @@ experience:
     company_url: 'https://cob.mnsu.edu/studentcenter/'
     location: Mankato, Minnesota
     date_start: '2021-08-23'
-    date_end: ''
+    date_end: '2023-05-05'
     description: |2-
         Responsibilities include:
         
@@ -78,5 +78,17 @@ experience:
         *  Analyzed different reports for various department to optimize printing device time.  
         * Automated Ad-hock tasks using Python to save manual work. 
         * Participated in AWS Data Lab for data lake hydration using various tools like AWS Glue, S3 bucket.
+        
+  - title: Data Integration Engineer
+    company: Fastenal
+    company_url: 'https://www.fastenal.com/'
+    location: Winona, Minnesota
+    date_start: '2023-05-09'
+    description: |2-
+        Responsibilities include:
+        
+        * Data Integration Engineer specializing in Kafka and Oracle GoldenGate.
+        * Develops Kafka connectors, streams, and topics, ensuring efficient data flow.  
+        * Provides expert support for MongoDB and drives data integration innovation.
         
 ---

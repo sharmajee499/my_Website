@@ -9,6 +9,7 @@ education:
 email: "sandeshsharma499@gmail.com"
 highlight_name: true
 interests:
+- Data Infrastructure
 - Machine Learning
 - AI Ethics
 - Data Awareness
@@ -51,6 +52,8 @@ design:
 Couples of year ago, I saw the immense capability of **analytics**. So, I decided to make people see the power of data in **decision making** which could be applied to any domain. 
 
 Personally, I am interested in solving **business and organizational** problem through the data-driven approaches. Pointing out as well as excluding **biases** on algorithmic decision making to promote ethics has always been my core value.
+
+Currently, I am on route to develop my knowledge around the data infrastructure solutions and Software Development.
 
 #### #NoRoomForAnyDiscrimination
 
