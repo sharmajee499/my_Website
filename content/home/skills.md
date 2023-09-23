@@ -19,11 +19,12 @@ feature:
 #- icon: r-project
 #  icon_pack: fab
 #  name: R
-- icon: arrows-to-eye
+
+- icon: code-branch
   icon_pack: fas
   name: Kafka
   
-- icon: database-solid
+- icon: database
   icon_pack: fas
   name: Oracle GoldenGate
   
@@ -46,8 +47,9 @@ feature:
 - icon: user-tie
   icon_pack: fas
   name: Business Analysis
+  
 
-# Uncomment to use emoji icons.
+#Uncomment to use emoji icons.
 #- icon = ":smile:"
 #  icon_pack = "emoji"
 #  name = "Emojiness"
